@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>GENZO · Fotogiornalista</title>
-<meta name="description" content="Portfolio di GENZO, fotografo documentarista e reporter: manifestazioni, riti e città in movimento. Progetto in evidenza: Askatasuna, Torino, 31 gennaio 2026.">
+<meta name="description" content="Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento. Progetto in evidenza: Askatasuna, Torino, 31 gennaio 2026.">
 <meta name="theme-color" content="#fafaf7">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
 <meta property="og:title" content="GENZO · Fotogiornalista">
-<meta property="og:description" content="Fotografia documentaria: manifestazioni, riti e città in movimento.">
+<meta property="og:description" content="Fotogiornalismo: manifestazioni, riti e città in movimento.">
 <meta property="og:image" content="https://bonesph.com/img/og.jpg">
 <meta property="og:url" content="https://bonesph.com/">
 <meta name="twitter:card" content="summary_large_image">
@@ -116,7 +116,7 @@ a.card:hover img{transform:scale(1.025)}
  <nav aria-label="Principale"><a href="#home" data-n="home">Home</a><a href="#work" data-n="work">Portfolio</a><a href="#gallery" data-n="gallery">Gallery</a><a href="#blog" data-n="blog">Blog</a><a href="#profile" data-n="profile">Profilo</a><a href="#contact" data-n="contact">Contatti</a></nav>
 </header>
 <main id="app"></main>
-<footer><span>© GENZO · Tutti i diritti riservati</span><span>Fotografia documentaria</span></footer>
+<footer><span>© GENZO · Tutti i diritti riservati</span><span>Fotogiornalismo</span></footer>
 <script>
 const PROJ=[
  {id:'askatasuna',title:'Askatasuna, 31 gennaio',place:'Torino',years:'2026',cover:'img/ask-05.jpg',
@@ -173,7 +173,7 @@ const seal='<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></
 let idx=0,cur=null,tx=null,startIdx=0;
 function home(){document.body.classList.add('home');
  app.innerHTML=`<a class="hero fade" href="#work" aria-label="Vai ai progetti"><img src="img/home.jpg" alt="Un cassonetto rovesciato brucia in mezzo alla strada, Torino"><div class="cap"><span>Torino</span><span>20 dicembre 2025</span></div></a>`}
-function work(){app.innerHTML=`<div class="fade"><h1 class="pt">Portfolio</h1><p class="sub">Progetti documentari</p><div class="grid">${PROJ.map(p=>p.soon?
+function work(){app.innerHTML=`<div class="fade"><h1 class="pt">Portfolio</h1><p class="sub">Reportage</p><div class="grid">${PROJ.map(p=>p.soon?
  `<div class="card soon"><div class="ph">${seal}<span class="tag">In preparazione</span></div><h3>${esc(p.title)}</h3><p>${esc([p.place,p.years].filter(Boolean).join(' · '))}</p></div>`:
  `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(p.title)}"></div><h3>${esc(p.title)}</h3><p>${esc(p.place)} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
 const GAL=[
@@ -200,14 +200,14 @@ function show(i){const n=cur.photos.length;idx=(i+n)%n;const x=cur.photos[idx],i
  document.querySelectorAll('#th button').forEach((b,k)=>b.setAttribute('aria-current',k===idx?'true':'false'));
  const nx=cur.photos[(idx+1)%n];(new Image).src=nx.f}
 function go(d){show(idx+d)}
-function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><p class="sub">Fotografia documentaria</p><div class="cols">
- <div class="big it"><p>GENZO è un fotografo documentarista e un reporter. Va dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.</p>
+function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><p class="sub">Fotogiornalismo</p><div class="cols">
+ <div class="big it"><p>GENZO è un fotogiornalista. Va dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.</p>
  <p>Ha imparato presto che le fotografie più vere arrivano quando l’evento è già un ricordo: un gesto che nessuno nota, una mano che si appoggia a una spalla, la cenere che si posa sull’asfalto. Per questo cerca la distanza giusta, che è quasi sempre poca, e aspetta. Lavora con un solo obiettivo, un 28 mm, che obbliga a stare dentro la scena e a farsi notare il meno possibile.</p>
  <p>Gli piacciono le notti lunghe, il rumore che scende, le facce stanche dopo la folla. Segue le storie finché non diventano un luogo che conosce, e non ha fretta di chiuderle: un reportage per lui è una promessa fatta alle persone che ha incontrato.</p>
  <p>Il sigillo rosso che firma le sue stampe è l’unica cosa che si concede di aggiungere. Il resto, luce, tempo e pazienza, lo mette la strada.</p><figure class="pf"><img loading="lazy" src="img/ritratto.jpg" alt="GENZO si fotografa allo specchio con una Fujifilm X-T4"></figure></div>
  <div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg>
  <div class="row"><span>Base</span><span>Italia</span></div>
- <div class="row"><span>Lavora su</span><span>Reportage, foto documentaria</span></div>
+ <div class="row"><span>Lavora su</span><span>Reportage, fotogiornalismo</span></div>
  <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div></div>`}
 function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big it"><p>Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.</p></div>
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
