@@ -103,8 +103,20 @@ a.card:hover img{transform:scale(1.025)}
 .post{max-width:680px}
 .post .bd{font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 14px}
 .post h1{font:400 clamp(30px,4.4vw,46px)/1.15 var(--serif);margin:0 0 28px;text-wrap:balance}
-.post p{font:400 clamp(17px,1.6vw,19.5px)/1.7 var(--serif);margin:0 0 1.1em}
-.post img{display:block;width:100%;height:auto;margin:32px 0}
+.post p{font:italic 400 clamp(19px,1.6vw,21.5px)/1.7 var(--serif);margin:0 0 1.1em}
+.post .cap{font-size:1.75em;line-height:0;letter-spacing:.01em}
+.post img{display:block;width:100%;max-width:560px;height:auto;margin:32px auto}
+.post .seal{width:72px;height:72px;margin:36px auto 0}
+.post .ig{margin:-8px 0 28px;display:flex;justify-content:center}
+.post .ig a{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--fg);border:1px solid var(--line);border-radius:50%;transition:color .2s,border-color .2s}
+.post .ig svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.post .ig a:hover,.post .ig a:focus-visible{color:var(--accent);border-color:var(--accent)}
+.share{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:8px 0 0;padding-top:22px;border-top:1px solid var(--line)}
+.share .lb{font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-right:10px}
+.share a,.share button{width:44px;height:44px;display:inline-flex;align-items:center;justify-content:center;color:var(--fg);background:none;border:1px solid var(--line);border-radius:50%;padding:0;cursor:pointer;text-decoration:none;transition:color .2s,border-color .2s}
+.share svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.share a:hover,.share button:hover,.share a:focus-visible,.share button:focus-visible{color:var(--accent);border-color:var(--accent)}
+.share .ok{font:500 12px/1 var(--sans);color:var(--mut);margin-left:4px}
 .list a{border-bottom:1px solid var(--line)}.list a:hover{border-bottom-color:var(--fg)}
 .row{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:12px;font:400 15px/1.5 var(--sans)}
 .row span:first-child{color:var(--mut);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
@@ -238,10 +250,27 @@ function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><
 function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big it"><p>Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.</p></div>
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
  <div class="row"><span>Email</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div></div>`}
-const BLOG=[];
+const BLOG=[
+ {id:'prima-del-grido',t:'Prima del grido',d:'9 novembre 2026',x:'Il pomeriggio di Napoli, quando una città intera trattiene il fiato.',img:'img/blog-01.jpg',ig:'https://www.instagram.com/bones_p75/',a:'Una mamma sorride tenendo in braccio la figlia, che con una mascherina sugli occhi come quella di Osimhen alza un fumogeno rosso e verde in un vicolo di Napoli',p:[
+  'C’è un momento, prima di ogni festa, che nessuno fotografa. Non è il boato e non è il pianto: è il pomeriggio. A Napoli, il 4 maggio 2023, aveva il colore dell’attesa.',
+  'Trentatré anni sono tanti. Sono una vita intera per chi li ha contati uno a uno, e un racconto di famiglia per chi era troppo piccolo per ricordarli. In quelle ore la città sembrava sospesa, come un respiro tenuto in gola per non rompere l’incanto.',
+  'Sono entrato nei vicoli quando la luce scendeva obliqua tra i balconi. Le sciarpe erano già al collo, le bandiere già stese da una finestra all’altra come il bucato di una speranza lunga trentatré anni. Ogni muro aveva un volto, e ogni volto aveva un Diego.',
+  'Poi qualcuno ha acceso un fumogeno e l’aria è diventata azzurra. Poi verde. Poi rosa. Un uomo con la parrucca blu alzava le braccia come si fa davanti al mare; un altro ha sollevato la maglia per mostrare il suo santo, inciso sulla pelle. Nessuno si conosceva, e tutti si riconoscevano.',
+  'In mezzo a quel fumo ho visto una mamma con la sua bambina in braccio. La piccola, con una mascherina sugli occhi come quella di Osimhen, l’idolo di quei giorni, teneva il braccio teso verso l’alto e un fumogeno che sprigionava rosso e verde come una torcia, mentre la madre rideva con tutto il viso, come se intorno non ci fosse nient’altro. È un ricordo bellissimo, uno dei più belli che porto con me da quella giornata. Ho pensato che il vero scudetto fosse quello: non una coppa, ma una bambina che un giorno racconterà di esserci stata, anche se non ricorderà niente.',
+  'L’attesa ha una luce tutta sua. Non è quella dorata dei tramonti da cartolina, ma una luce sporca, mossa, piena di fumo, che entra negli occhi e li fa lacrimare prima ancora che ci sia un motivo. È la luce di chi sta per essere felice e ancora ha paura di crederci.',
+  'Fotografare in quelle ore è come camminare dentro una preghiera collettiva. Non si cerca l’istante decisivo: si aspetta che sia lui ad accorgersi di te. La macchina fotografica diventa un orecchio più che un occhio, e quello che ascolta è un respiro solo, di migliaia di persone, trattenuto.',
+  'A notte il respiro è diventato grido, e il grido, per qualcuno, lacrime. Ma io tengo caro il pomeriggio: il momento in cui una città intera ancora non sa di aver vinto, e per questo è bellissima.',
+  'Per questo comincio da qui, da un pomeriggio e non da una vittoria. Le storie, come le fotografie, hanno più verità quando le si guarda un attimo prima che accadano. Forse le fotografie migliori sono sempre quelle di un attimo prima.']}
+];
 /* Per aggiungere un articolo: {id:'titolo-breve',t:'Titolo',d:'9 novembre 2026',x:'Anteprima di una riga',img:'img/blog-01.jpg',p:['Primo paragrafo','Secondo paragrafo']} */
 function blog(){app.innerHTML=`<div class="fade"><h1 class="pt">Blog</h1><p class="sub">Storie dietro le fotografie</p>${BLOG.length?`<div class="bl">${BLOG.map(x=>`<a href="#blog-${x.id}"><div class="bd">${esc(x.d)}</div><div class="bt">${esc(x.t)}</div><p class="bx">${esc(x.x||'')}</p></a>`).join('')}</div>`:`<div class="big it" style="max-width:640px"><p>Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.</p></div>`}</div>`}
-function post(x){app.innerHTML=`<div class="fade"><a class="back" href="#blog">← Blog</a><article class="post"><p class="bd">${esc(x.d)}</p><h1>${esc(x.t)}</h1>${x.img?`<img src="${x.img}" alt="${esc(x.t)}">`:''}${(x.p||[]).map(t=>`<p>${esc(t)}</p>`).join('')}</article></div>`}
+function shareBar(x){const u=encodeURIComponent(location.href.split('#')[0]+'#blog-'+x.id),t=encodeURIComponent(x.t+' · GENZO');
+const I={wa:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg>',fb:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4l12 16h-4z"/><path d="M20 4l-6.5 7M4 20l6.5-7"/></svg>',mail:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',link:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>'};
+return `<div class="share"><span class="lb">Condividi</span><a href="https://wa.me/?text=${t}%20${u}" target="_blank" rel="noopener" aria-label="Condividi su WhatsApp" title="WhatsApp">${I.wa}</a><a href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener" aria-label="Condividi su Facebook" title="Facebook">${I.fb}</a><a href="https://twitter.com/intent/tweet?text=${t}&url=${u}" target="_blank" rel="noopener" aria-label="Condividi su X" title="X">${I.x}</a><a href="mailto:?subject=${t}&body=${u}" aria-label="Condividi via email" title="Email">${I.mail}</a><button type="button" id="cp" aria-label="Copia il link" title="Copia link">${I.link}</button><span class="ok" id="cpok" role="status"></span></div>`}
+function bindShare(){const b=document.getElementById('cp'),m=document.getElementById('cpok');if(!b)return;b.onclick=()=>{const u=location.href.split('#')[0]+location.hash;const done=()=>{m.textContent='Link copiato';setTimeout(()=>{m.textContent=''},2000)};
+const fb=()=>{const a=document.createElement('textarea');a.value=u;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()};
+try{navigator.clipboard.writeText(u).then(done,fb)}catch(e){fb()}}}
+function post(x){app.innerHTML=`<div class="fade"><a class="back" href="#blog">← Blog</a><article class="post"><p class="bd">${esc(x.d)}</p><h1>${esc(x.t)}</h1>${(x.p||[]).map((t,i)=>i?`<p>${esc(t)}</p>`:`<p><span class="cap">${esc(t.charAt(0))}</span>${esc(t.slice(1))}</p>`).join('')}${x.img?`<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg><img src="${x.img}" alt="${esc(x.a||x.t)}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}</article></div>`;bindShare()}
 function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon))||(n==='blog'&&h.indexOf('blog-')===0);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
