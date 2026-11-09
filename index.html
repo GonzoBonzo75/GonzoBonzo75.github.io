@@ -56,7 +56,7 @@ footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);displa
 .hero img.on{opacity:1}
 .hero .cap span{transition:opacity .7s ease}
 .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;color:#fff;font:500 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(transparent,rgba(0,0,0,.45));display:flex;justify-content:space-between;gap:12px}
-.hero .tip{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:96px clamp(18px,3vw,44px) clamp(40px,5vw,64px);background:rgba(18,17,16,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#fff;pointer-events:none}
+.hero .tip{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-start;gap:10px;padding:96px clamp(18px,3vw,44px) clamp(40px,5vw,64px);background:rgba(18,17,16,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#fff;pointer-events:none}
 .hero .tip p{margin:0;max-width:74ch;font:italic 400 clamp(18px,1.9vw,25px)/1.5 var(--serif);transition:opacity .7s ease}
 .hero .tip p.tl{align-self:flex-start;font:italic 400 clamp(17px,1.6vw,21px)/1.4 var(--serif);letter-spacing:.1em;text-transform:uppercase;text-decoration:underline;text-decoration-color:#c23a2c;text-decoration-thickness:2px;text-underline-offset:8px}
 .hero .cap{display:none}
@@ -199,7 +199,7 @@ body.postv main{min-height:0}
  <div class="tools"><button class="tm" id="tm" type="button" aria-label="Cambia tema"></button><button class="tm lg" id="lg" type="button">EN</button></div>
 </header>
 <main id="app"></main>
-<footer><span id="fl">© GENZO · Tutti i diritti riservati</span><span id="fr">Fotogiornalismo</span></footer>
+<footer><span id="fl">© GENZO · Tutti i diritti riservati</span></footer>
 <script>
 const PROJ=[
  {id:'terzo-scudetto',title:'Il terzo scudetto',place:'Napoli',years:'2023',cover:'img/scudetto-03.jpg',
@@ -239,7 +239,7 @@ const T={
 it:{
  title:'GENZO · Fotogiornalista',desc:'Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento.',ogdesc:'Fotogiornalismo: manifestazioni, riti e città in movimento.',
  n_home:'Home',n_work:'Portfolio',n_progress:'In Progress',n_blog:'Blog',n_prints:'Stampe',n_profile:'Profilo',n_contact:'Contatti',navLabel:'Principale',
- footL:'© GENZO · Tutti i diritti riservati',footR:'Fotogiornalismo',brand:'GENZO, home',
+ footL:'© GENZO · Tutti i diritti riservati',brand:'GENZO, home',
  toLight:'Passa al tema chiaro',toDark:'Passa al tema scuro',lgBtn:'EN',lgLabel:'Switch to English',
  heroGo:'Vai ai progetti',soon:'In preparazione',
  workSub:'Reportage',
@@ -268,7 +268,7 @@ it:{
 en:{
  title:'GENZO · Photojournalist',desc:'Portfolio of GENZO, photojournalist: demonstrations, rituals and cities in motion.',ogdesc:'Photojournalism: demonstrations, rituals and cities in motion.',
  n_home:'Home',n_work:'Portfolio',n_progress:'In Progress',n_blog:'Blog',n_prints:'Prints',n_profile:'About',n_contact:'Contact',navLabel:'Main',
- footL:'© GENZO · All rights reserved',footR:'Photojournalism',brand:'GENZO, home',
+ footL:'© GENZO · All rights reserved',brand:'GENZO, home',
  toLight:'Switch to light theme',toDark:'Switch to dark theme',lgBtn:'IT',lgLabel:'Passa all’italiano',
  heroGo:'Go to the projects',soon:'Coming soon',
  workSub:'Reportage',
@@ -308,7 +308,7 @@ function applyLang(){document.documentElement.lang=LANG;document.title=t('title'
  setMeta('meta[name="description"]',t('desc'));setMeta('meta[property="og:title"]',t('title'));setMeta('meta[property="og:description"]',t('ogdesc'));
  document.querySelectorAll('nav a').forEach(a=>{a.textContent=t('n_'+a.dataset.n)});
  $('nav').setAttribute('aria-label',t('navLabel'));$('.brand').setAttribute('aria-label',t('brand'));
- $('#fl').textContent=t('footL');$('#fr').textContent=t('footR');
+ $('#fl').textContent=t('footL');
  const b=$('#lg');b.textContent=t('lgBtn');b.setAttribute('aria-label',t('lgLabel'));b.title=t('lgLabel');paintTm()}
 $('#lg').onclick=()=>{LANG=LANG==='it'?'en':'it';try{localStorage.setItem(LANG_KEY,LANG)}catch(e){}applyLang();const y=window.scrollY;route();window.scrollTo(0,y)};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
@@ -322,11 +322,13 @@ const HERO=[
 let heroT=null;
 function hT(x){return pick(x,'l')+', '+pick(x,'d')}
 function hB(x){const s=pick(x,'s'),h=hT(x)+'. ';return s.startsWith(h)?s.slice(h.length):s}
+function fixTip(){const tp=document.querySelector('.hero .tip'),a=document.getElementById('ht'),b=document.getElementById('hs');if(!tp||!a||!b)return;const ta=a.textContent,tb=b.textContent;tp.style.height='auto';let m=0;HERO.forEach(x=>{a.textContent=hT(x);b.textContent=hB(x);m=Math.max(m,tp.offsetHeight)});a.textContent=ta;b.textContent=tb;tp.style.height=m+'px'}
+addEventListener('resize',fixTip);
 function home(){document.body.classList.add('home');
  app.innerHTML=`<a class="hero fade" href="#work" aria-label="${esc(t('heroGo'))}" aria-describedby="hs">${HERO.map((x,i)=>`<img class="${i?'':'on'}" src="${x.f}" alt="${esc(pick(x,'a'))}" style="object-position:${x.p}">`).join('')}<div class="cap"><span id="hl">${esc(pick(HERO[0],'l'))}</span><span id="hd">${esc(pick(HERO[0],'d'))}</span></div><div class="tip"><p class="tl" id="ht">${esc(hT(HERO[0]))}</p><p id="hs">${esc(hB(HERO[0]))}</p></div></a>`;
  clearInterval(heroT);
  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
- let i=0;const hero=app.querySelector('.hero'),im=app.querySelectorAll('.hero img'),hl=document.getElementById('hl'),hd=document.getElementById('hd'),hs=document.getElementById('hs'),ht=document.getElementById('ht');let hov=false;hero.onmouseenter=()=>{hov=true};hero.onmouseleave=()=>{hov=false};
+ let i=0;const hero=app.querySelector('.hero'),im=app.querySelectorAll('.hero img'),hl=document.getElementById('hl'),hd=document.getElementById('hd'),hs=document.getElementById('hs'),ht=document.getElementById('ht');fixTip();if(document.fonts)document.fonts.ready.then(fixTip);let hov=false;hero.onmouseenter=()=>{hov=true};hero.onmouseleave=()=>{hov=false};
  heroT=setInterval(()=>{if(hov)return;i=(i+1)%HERO.length;im.forEach((e,k)=>e.classList.toggle('on',k===i));
   hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=0;
   setTimeout(()=>{hl.textContent=pick(HERO[i],'l');hd.textContent=pick(HERO[i],'d');hs.textContent=hB(HERO[i]);ht.textContent=hT(HERO[i]);hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=1},700)},6500)}
