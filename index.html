@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>GENZO · Fotografo documentarista</title>
+<meta name="description" content="Portfolio di GENZO, fotografo documentarista e reporter: manifestazioni, riti e città in movimento. Progetto in evidenza: Askatasuna, Torino, 31 gennaio 2026.">
+<meta name="theme-color" content="#fafaf7">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:title" content="GENZO · Fotografo documentarista">
+<meta property="og:description" content="Fotografia documentaria: manifestazioni, riti e città in movimento.">
+<meta property="og:image" content="https://gonzobonzo75.github.io/img/og.jpg">
+<meta property="og:url" content="https://gonzobonzo75.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,600;1,6..72,400&display=swap">
+<style>
+:root{color-scheme:light}
+html{-webkit-text-size-adjust:100%}
+body{margin:0}
+img{max-width:100%}
+[hidden]{display:none!important}
+:root{--bg:#fafaf7;--fg:#1d1c1a;--mut:#77736b;--line:#e3e0d8;--accent:#c23a2c;--tile:#efece4;--serif:'Newsreader',Georgia,'Times New Roman',serif;--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#121110;--fg:#ece9e1;--mut:#9a958a;--line:#2b2926;--accent:#e0584a;--tile:#1b1a18;color-scheme:dark}}
+:root[data-theme="dark"]{--bg:#121110;--fg:#ece9e1;--mut:#9a958a;--line:#2b2926;--accent:#e0584a;--tile:#1b1a18;color-scheme:dark}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--fg);font:400 16px/1.6 var(--sans);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0;min-height:100svh;display:flex;flex-direction:column}
+a{color:inherit;text-decoration:none}
+header{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding:18px 0 16px}
+.brand{display:flex;align-items:center;gap:16px;font:600 15px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase}
+.brand svg{width:80px;height:80px;display:block}
+nav{display:flex;gap:28px;font:400 21px/1 var(--serif)}
+nav a{padding:8px 0;border-bottom:1px solid transparent;color:var(--mut)}
+nav a:hover,nav a[aria-current="page"]{color:var(--fg);border-bottom-color:var(--fg)}
+main{flex:1;display:flex;flex-direction:column;min-width:0}
+footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:48px}
+/* home */
+.hero{position:relative;flex:1;min-height:60svh;margin-top:4px;overflow:hidden;background:var(--tile)}
+.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block}
+.hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;color:#fff;font:500 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(transparent,rgba(0,0,0,.45));display:flex;justify-content:space-between;gap:12px}
+body.home footer{margin-top:18px}
+/* work */
+h1.pt{font:400 clamp(30px,5vw,46px)/1.1 var(--serif);letter-spacing:-.01em;margin:30px 0 6px}
+.sub{color:var(--mut);font:400 12px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;margin:0 0 28px}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:28px 22px}
+.card{display:block;min-width:0}
+.card .ph{aspect-ratio:3/2;background:var(--tile);overflow:hidden;display:flex;align-items:center;justify-content:center;position:relative}
+.card img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .5s ease,opacity .3s}
+a.card:hover img{transform:scale(1.025)}
+.card h3{font:400 22px/1.2 var(--serif);margin:12px 0 2px}
+.card p{margin:0;color:var(--mut);font:400 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase}
+.card.soon .ph svg{width:44px;height:44px;opacity:.35}
+.card.soon h3,.card.soon p{opacity:.6}
+.tag{position:absolute;right:10px;top:10px;background:var(--bg);color:var(--mut);font:500 10px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;padding:6px 8px}
+/* gallery */
+.gl{display:flex;flex-direction:column;gap:64px;align-items:center;margin-top:8px}
+.gl figure{margin:0;width:min(100%,1040px)}
+.gl img{display:block;width:100%;height:auto;max-height:78svh;object-fit:contain;background:var(--tile)}
+.gl figcaption{max-width:62ch;margin-top:14px}
+.gl .gt{font:400 22px/1.2 var(--serif)}
+.gl .gd{margin:6px 0 0;color:var(--mut);font:400 17px/1.55 var(--serif)}
+/* viewer */
+.back{display:inline-block;margin-top:22px;font:500 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mut)}
+.back:hover{color:var(--fg)}
+.viewer{position:relative;margin-top:14px;background:var(--tile);height:min(74svh,calc((100vw - 32px) * 1.1));display:flex;align-items:center;justify-content:center;overflow:hidden;touch-action:pan-y}
+.viewer img{max-width:100%;max-height:100%;width:auto;height:auto;object-fit:contain;display:block;user-select:none;-webkit-user-drag:none}
+.hit{position:absolute;top:0;bottom:0;width:50%;border:0;background:none;cursor:pointer;color:var(--fg);font:300 34px/1 var(--sans);opacity:0;transition:opacity .2s;display:flex;align-items:center;padding:0 16px}
+.hit.p{left:0;justify-content:flex-start}.hit.n{right:0;justify-content:flex-end}
+.hit:hover,.hit:focus-visible{opacity:.65}
+.hit span{background:var(--bg);width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center}
+@media (hover:none){.hit{opacity:0}}
+.bar{display:flex;justify-content:space-between;align-items:baseline;gap:8px 20px;flex-wrap:wrap;margin-top:12px;font:400 13px/1.4 var(--sans)}
+.bar .t{font:400 20px/1.2 var(--serif)}
+.bar .d{color:var(--mut);letter-spacing:.08em}
+.thumbs{display:flex;gap:8px;margin-top:14px;overflow-x:auto;padding-bottom:4px}
+.thumbs button{flex:0 0 auto;width:84px;aspect-ratio:3/2;border:0;padding:0;background:var(--tile);cursor:pointer;opacity:.55;outline-offset:2px}
+.thumbs button[aria-current="true"]{opacity:1;outline:1px solid var(--fg)}
+.thumbs img{width:100%;height:100%;object-fit:cover;display:block}
+.txt{max-width:62ch;margin:36px 0 0}
+.txt p{font:400 19px/1.65 var(--serif);margin:0 0 1em}
+.facts{display:grid;grid-template-columns:auto 1fr;gap:6px 22px;margin:26px 0 0;font:400 13px/1.5 var(--sans);max-width:62ch}
+.facts dt{color:var(--mut);letter-spacing:.14em;text-transform:uppercase;font-size:11px;padding-top:2px}.facts dd{margin:0}
+/* profile / contact */
+.cols{display:grid;grid-template-columns:minmax(0,1fr);gap:28px 56px;margin-top:6px}
+@media (min-width:860px){.cols{grid-template-columns:minmax(0,5fr) minmax(0,4fr)}}
+.big{font:400 clamp(18px,1.8vw,21px)/1.55 var(--serif)}
+.seal{width:96px;height:96px;display:block;margin:6px 0 18px}
+.list a{border-bottom:1px solid var(--line)}.list a:hover{border-bottom-color:var(--fg)}
+.row{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:12px;font:400 15px/1.5 var(--sans)}
+.row span:first-child{color:var(--mut);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
+.fade{animation:f .5s ease both}@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.fade{animation:none}a.card:hover img{transform:none}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="ink" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter><symbol id="hanko" viewBox="0 0 100 100"><g filter="url(#ink)"><path fill="#c23a2c" d="M12 5H88A7 7 0 0 1 95 12V88A7 7 0 0 1 88 95H12A7 7 0 0 1 5 88V12A7 7 0 0 1 12 5Z"/><path fill="#f6f3ec" fill-rule="evenodd" d="M13.7 10.5H86.3A3.2 3.2 0 0 1 89.5 13.7V86.3A3.2 3.2 0 0 1 86.3 89.5H13.7A3.2 3.2 0 0 1 10.5 86.3V13.7A3.2 3.2 0 0 1 13.7 10.5ZM14.3 12.1H85.69999999999999A2.2 2.2 0 0 1 87.89999999999999 14.3V85.69999999999999A2.2 2.2 0 0 1 85.69999999999999 87.89999999999999H14.3A2.2 2.2 0 0 1 12.1 85.69999999999999V14.3A2.2 2.2 0 0 1 14.3 12.1Z"/><path fill="#f6f3ec" d="M75.74 31.74 76.89 32.03V33.18Q75.74 33.68 74.43 34.06Q73.11 34.43 71.72 34.62Q70.33 34.81 68.94 34.81Q66.45 34.81 64.59 34.27Q62.72 33.73 61.48 32.66Q60.24 31.60 59.61 30.01Q58.99 28.42 58.99 26.32Q59.00 23.65 60.14 21.65Q61.28 19.66 63.54 18.55Q65.80 17.44 69.18 17.44Q70.29 17.44 71.35 17.60Q72.42 17.76 73.53 18.08L72.33 18.24L73.76 16.75H75.18L75.39 23.50L73.53 23.54L71.79 19.27L73.50 21.20Q72.49 20.56 71.50 20.28Q70.51 20.00 69.30 20.00Q67.87 20.00 66.84 20.33Q65.82 20.65 65.15 21.34Q64.48 22.03 64.16 23.10Q63.84 24.17 63.82 25.67Q63.80 27.96 64.49 29.42Q65.18 30.88 66.51 31.57Q67.83 32.27 69.72 32.27Q70.36 32.27 70.96 32.18Q71.56 32.10 72.13 31.90Q72.70 31.70 73.26 31.39L70.99 34.14V28.42L68.97 27.76V26.60H77.34V27.76L75.74 28.48Z M71.81 46.69V49.78V52.86H70.03L69.82 50.82H64.18V48.70H69.82L70.03 46.69ZM75.89 46.81 74.09 46.86 72.30 42.71 73.68 44.11H64.18V41.75H73.01L74.38 40.76H75.65ZM72.17 57.50 74.70 52.72 76.53 52.75 75.43 59.54H73.97L72.83 58.50H64.18V56.14H73.38ZM59.74 58.50V57.24L61.77 56.64V43.62L59.74 43.01V41.75H66.53V58.50Z M60.52 80.65V67.78L58.33 67.00V65.75H66.27L73.98 78.85L73.21 80.09V67.61L71.10 67.01V65.75H77.77V67.01L75.77 67.61V82.52H70.75L61.97 67.45L63.06 67.13V80.65L65.17 81.24V82.50H58.50V81.24Z M39.15 17.75V19.92L29.38 33.10L27.17 31.92H36.45L38.62 28.45L40.15 28.49L39.07 35.53H37.68L36.57 34.50H24.52V32.33L34.23 19.16L36.88 20.33H27.48L25.97 23.51L24.43 23.47L24.70 16.80H25.92L27.34 17.75Z M32.24 41.44Q34.33 41.44 35.98 42.04Q37.63 42.64 38.77 43.76Q39.92 44.89 40.52 46.49Q41.12 48.10 41.12 50.10Q41.12 52.12 40.47 53.72Q39.82 55.33 38.59 56.47Q37.36 57.61 35.64 58.21Q33.92 58.81 31.77 58.81Q29.67 58.81 28.02 58.21Q26.37 57.61 25.23 56.48Q24.08 55.36 23.48 53.75Q22.88 52.15 22.88 50.15Q22.88 48.13 23.53 46.52Q24.19 44.92 25.41 43.78Q26.64 42.64 28.36 42.04Q30.09 41.44 32.24 41.44ZM32.05 56.11Q33.40 56.11 34.35 55.54Q35.29 54.97 35.79 53.79Q36.28 52.61 36.28 50.78Q36.28 48.54 35.80 47.06Q35.32 45.59 34.36 44.86Q33.40 44.14 31.95 44.14Q30.61 44.14 29.66 44.71Q28.71 45.28 28.21 46.46Q27.72 47.64 27.72 49.46Q27.72 51.71 28.20 53.18Q28.68 54.66 29.64 55.39Q30.60 56.11 32.05 56.11Z M32 76.9a2.6 2.6 0 1 0 0.01 0Z"/></g></symbol></defs></svg>
+<header>
+ <a class="brand" href="#home" aria-label="GENZO, home"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></svg></a>
+ <nav aria-label="Principale"><a href="#work" data-n="work">Portfolio</a><a href="#gallery" data-n="gallery">Gallery</a><a href="#profile" data-n="profile">Profilo</a><a href="#contact" data-n="contact">Contatti</a></nav>
+</header>
+<main id="app"></main>
+<footer><span>© GENZO · Tutti i diritti riservati</span><span>Fotografia documentaria</span></footer>
+<script>
+const PROJ=[
+ {id:'askatasuna',title:'Askatasuna, 31 gennaio',place:'Torino',years:'2026',cover:'img/ask-05.jpg',
+  intro:['Il 31 gennaio 2026 Torino è scesa in piazza per Askatasuna, il centro sociale sgomberato a metà dicembre. Il corteo è partito da Porta Susa e da Porta Nuova e ha sfilato lungo il Po. Verso le 18, vicino alla vecchia sede in corso Regina Margherita, un gruppo di persone a volto coperto ha lanciato petardi e fumogeni; la polizia ha risposto con lacrimogeni e idranti.',
+         'Per circa un’ora e mezza il quartiere è rimasto nel fumo, tra cassonetti e barricate in fiamme. Ho seguito la serata da vicino, dal corteo ai cordoni, dalle 17 a notte. Nei giorni successivi ci sono stati tre arresti e una trentina di indagati; un agente è stato aggredito e ferito.'],
+  facts:[['Luogo','Torino, corso Regina Margherita'],['Data','31 gennaio 2026'],['Serie','10 fotografie']],
+  photos:[
+   {f:'img/ask-01.jpg',t:'Sulla pensilina',d:'31 gennaio 2026 · 17:05',a:'Due persone in piedi sul tetto di una pensilina con fumogeni accesi, tra la folla del corteo e con la Mole Antonelliana sullo sfondo'},
+   {f:'img/ask-02.jpg',t:'Corso Regina',d:'31 gennaio 2026 · 17:52',a:'Un lacrimogeno fumante sull’asfalto e fumogeni rossi lungo il viale alberato, con un fotografo in primo piano'},
+   {f:'img/ask-03.jpg',t:'Gli scudi',d:'31 gennaio 2026 · 17:57',a:'Agenti con gli scudi davanti a un blindato, tra il fumo e i lampeggianti blu'},
+   {f:'img/ask-04.jpg',t:'Fumogeno rosso',d:'31 gennaio 2026 · 18:00',a:'Un fumogeno rosso acceso sul bordo della strada e in fondo la linea degli agenti nella nebbia'},
+   {f:'img/ask-05.jpg',t:'L’idrante',d:'31 gennaio 2026 · 18:05',a:'Un idrante colpisce il viale mentre esplode un fuoco d’artificio davanti al cordone di scudi'},
+   {f:'img/ask-06.jpg',t:'La barricata',d:'31 gennaio 2026 · 18:29',a:'Cartoni e rifiuti in fiamme davanti a una saracinesca coperta di graffiti'},
+   {f:'img/ask-07.jpg',t:'Nel fumo',d:'31 gennaio 2026 · 18:50',a:'Una figura con il casco scatta nel fumo accanto a un’auto, con i lampeggianti blu sullo sfondo'},
+   {f:'img/ask-08.jpg',t:'Il lanciatore',d:'31 gennaio 2026 · 19:12',a:'Un agente spara un lacrimogeno con una scia di scintille davanti a un negozio chiuso'},
+   {f:'img/ask-09.jpg',t:'Accanto al fuoco',d:'31 gennaio 2026 · 19:13',a:'Un agente cammina accanto a un cumulo di rifiuti in fiamme'},
+   {f:'img/ask-10.jpg',t:'L’avanzata',d:'31 gennaio 2026 · 19:16',a:'Agenti in assetto antisommossa avanzano nel buio'}]},
+ {id:'settimana-santa',title:'Riti della Settimana Santa',place:'Taranto',years:'2025',cover:'img/ss-06.jpg',
+  intro:['A Taranto la Settimana Santa è un rito lungo, che occupa le notti. Tra il giovedì e il venerdì santo la città si riempie di folla e di silenzio: prima la processione dei Perdoni, che esce nella notte del giovedì e cammina fino al mattino, poi quella dei Misteri, che il venerdì sera percorre le strade fino a notte fonda.',
+         'Ho seguito i riti da vicino, tra i confratelli incappucciati, i bambini, i portatori e la folla, a piedi nudi sull’asfalto e alla luce delle lanterne. Mi interessano i gesti piccoli, il guanto che stringe il rosario, i piedi scalzi, più della processione in sé.'],
+  facts:[['Luogo','Taranto'],['Data','17 e 18 aprile 2025'],['Serie','12 fotografie']],
+  photos:[
+   {f:'img/ss-01.jpg',t:'Il sagrato',d:'17 aprile 2025 · 22:58',a:'Una facciata gotica con rosone, illuminata nella notte, con una piccola folla affacciata alla balaustra'},
+   {f:'img/ss-02.jpg',t:'I più piccoli',d:'18 aprile 2025 · 00:25',a:'Due ragazzi vestiti di bianco con una corona di spine e un cartello con la croce, tra la folla di un vicolo illuminato di arancione'},
+   {f:'img/ss-03.jpg',t:'Il teschio',d:'18 aprile 2025 · 02:29',a:'Un confratello incappucciato stringe con i guanti bianchi una croce scura con un teschio in cima'},
+   {f:'img/ss-04.jpg',t:'Il cappuccio',d:'18 aprile 2025 · 02:40',a:'Primo piano di un cappuccio bianco con una corona di spine, nella luce gialla della notte'},
+   {f:'img/ss-05.jpg',t:'La croce',d:'18 aprile 2025 · 02:53',a:'Una figura in bianco, incappucciata e con la corona di spine, porta una croce di legno sulla spalla'},
+   {f:'img/ss-06.jpg',t:'In coppia',d:'18 aprile 2025 · 03:01',a:'Due confratelli con cappuccio bianco e corona di spine, vestiti di nero con le medaglie sul petto'},
+   {f:'img/ss-07.jpg',t:'Tra la folla',d:'18 aprile 2025 · 20:19',a:'Un confratello vestito di bianco con un bastone cammina nella folla, tra autorità e fotografi'},
+   {f:'img/ss-08.jpg',t:'Il guanto',d:'18 aprile 2025 · 22:57',a:'Un guanto bianco stringe una corona di rosario scura, nel buio'},
+   {f:'img/ss-09.jpg',t:'A piedi nudi',d:'18 aprile 2025 · 22:57',a:'I piedi nudi di due confratelli in tunica bianca, con i rosari e un bastone, sull’asfalto'},
+   {f:'img/ss-10.jpg',t:'Il simulacro',d:'18 aprile 2025 · 22:58',a:'Una statua di Cristo con l’aureola, portata su una base di lanterne di vetro nella notte'},
+   {f:'img/ss-11.jpg',t:'L’Addolorata',d:'18 aprile 2025 · 23:24',a:'La statua della Madonna in nero portata in processione tra una grande folla, lungo le mura illuminate'},
+   {f:'img/ss-12.jpg',t:'Il Cristo morto',d:'18 aprile 2025 · 23:27',a:'La statua di Cristo morto sotto un velo, con le lanterne accese e i portatori intorno'}]},
+ {id:'cooleness',title:'The Cooleness',place:'Musica dal vivo',years:'2017',cover:'img/co-03.jpg',
+  intro:['Una notte di gennaio, un palco piccolo e un pubblico a un passo dagli strumenti. La luce cambia colore a ogni canzone, il fumo sale tra i microfoni e per un’ora il resto del mondo resta fuori dalla porta.',
+         'Ho fotografato la serata da vicino, cercando i volti e i gesti più che il palco: la mano che stringe il microfono, lo sguardo che si abbassa, il viola che sfuma nel nero.'],
+  facts:[['Genere','Musica dal vivo'],['Data','21 gennaio 2017'],['Serie','10 fotografie']],
+  photos:[
+   {f:'img/co-01.jpg',t:'Prime luci',d:'21 gennaio 2017 · 23:07',a:'Un musicista con la chitarra davanti al microfono, tra luci magenta, gialle e verdi'},
+   {f:'img/co-02.jpg',t:'Il ritmo',d:'21 gennaio 2017 · 23:18',a:'Un chitarrista in canotta suona sotto un fascio di luce verde'},
+   {f:'img/co-03.jpg',t:'Blu',d:'21 gennaio 2017 · 23:25',a:'Un cantante riccio con una giacca di paillettes canta al microfono su una luce blu'},
+   {f:'img/co-04.jpg',t:'Mani nella luce',d:'21 gennaio 2017 · 23:29',a:'Mani tra la folla nella luce blu e arancione, con un telefono alzato'},
+   {f:'img/co-05.jpg',t:'Paillettes',d:'21 gennaio 2017 · 23:32',a:'La schiena di una giacca di paillettes e il manico di una chitarra, in una luce ambra'},
+   {f:'img/co-06.jpg',t:'Fumo viola',d:'21 gennaio 2017 · 23:35',a:'Il cantante con un braccio alzato e il microfono in mano, nel fumo viola'},
+   {f:'img/co-07.jpg',t:'Viola',d:'21 gennaio 2017 · 23:38',a:'Il cantante con il microfono e una chitarra in primo piano, su un fondo viola'},
+   {f:'img/co-08.jpg',t:'Il grido',d:'21 gennaio 2017 · 23:40',a:'Il cantante in maglietta bianca canta forte nel microfono accanto a un chitarrista in luce verde'},
+   {f:'img/co-09.jpg',t:'Controluce',d:'21 gennaio 2017 · 23:43',a:'Un cantante riccio in controluce, con una luce morbida alle spalle'},
+   {f:'img/co-10.jpg',t:'A occhi bassi',d:'21 gennaio 2017 · 23:50',a:'Il volto chino di un cantante con una collana con la croce, nella luce viola'}]}
+];
+const $=s=>document.querySelector(s), app=$('#app');
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const seal='<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></svg>';
+let idx=0,cur=null,tx=null,startIdx=0;
+function home(){document.body.classList.add('home');
+ app.innerHTML=`<a class="hero fade" href="#work" aria-label="Vai ai progetti"><img src="img/home.jpg" alt="Un cassonetto rovesciato brucia in mezzo alla strada, Torino"><div class="cap"><span>Torino</span><span>20 dicembre 2025</span></div></a>`}
+function work(){app.innerHTML=`<div class="fade"><h1 class="pt">Portfolio</h1><p class="sub">Progetti documentari</p><div class="grid">${PROJ.map(p=>p.soon?
+ `<div class="card soon"><div class="ph">${seal}<span class="tag">In preparazione</span></div><h3>${esc(p.title)}</h3><p>${esc([p.place,p.years].filter(Boolean).join(' · '))}</p></div>`:
+ `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(p.title)}"></div><h3>${esc(p.title)}</h3><p>${esc(p.place)} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
+const GAL=[
+ {f:'img/ask-05.jpg',t:'L’idrante',d:'Torino, corso Regina Margherita, 31 gennaio 2026. Il getto d’acqua taglia la sera e un fuoco d’artificio si apre sopra gli scudi: per un istante la città diventa un teatro di luce, mentre la notte, lì sotto, è ancora tutta da vivere.',a:'Un idrante colpisce il viale mentre esplode un fuoco d’artificio davanti al cordone di scudi'},
+ {f:'img/ss-09.jpg',t:'A piedi nudi',d:'Taranto, 18 aprile 2025. Scalzi sull’asfalto, con i rosari che oscillano a ogni passo: qui il tempo si misura in passi lenti, e le promesse si pagano con i piedi.',a:'I piedi nudi di due confratelli in tunica bianca, con i rosari e un bastone, sull’asfalto'},
+ {f:'img/co-02.jpg',t:'Il ritmo',d:'21 gennaio 2017. Il chitarrista si piega sullo strumento sotto un fascio di luce verde, e la musica gli esce dalle mani come una corrente.',a:'Un chitarrista in canotta suona sotto un fascio di luce verde'}
+];
+function gallery(){app.innerHTML=`<div class="fade"><h1 class="pt">Gallery</h1><div class="gl">${GAL.map(x=>`<figure><img loading="lazy" src="${x.f}" alt="${esc(x.a)}"><figcaption><div class="gt">${esc(x.t)}</div><p class="gd">${esc(x.d)}</p></figcaption></figure>`).join('')}</div></div>`}
+function proj(p){cur=p;idx=0;
+ app.innerHTML=`<div class="fade"><a class="back" href="#work">← Portfolio</a>
+ <div class="viewer" id="vw" aria-roledescription="galleria" data-x="region" aria-label="Galleria"><button class="hit p" aria-label="Foto precedente"><span>‹</span></button><img id="vi" alt=""><button class="hit n" aria-label="Foto successiva"><span>›</span></button></div>
+ <div class="bar"><span class="t" id="vt"></span><span class="d" id="vd"></span></div>
+ <div class="thumbs" id="th">${p.photos.map((x,i)=>`<button data-i="${i}" aria-label="Foto ${i+1}"><img src="${x.f}" alt="" loading="lazy"></button>`).join('')}</div>
+ <h1 class="pt">${esc(p.title)}</h1><p class="sub">${esc(p.place)} · ${esc(p.years)}</p>
+ <div class="txt">${p.intro.map(t=>`<p>${esc(t)}</p>`).join('')}</div>
+ <dl class="facts">${p.facts.map(f=>`<dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd>`).join('')}</dl></div>`;
+ const v=$('#vw');v.querySelector('.p').onclick=()=>go(-1);v.querySelector('.n').onclick=()=>go(1);
+ $('#th').onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i)};
+ v.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
+ v.addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>40)go(dx<0?1:-1)});
+ show(startIdx);startIdx=0}
+function show(i){const n=cur.photos.length;idx=(i+n)%n;const x=cur.photos[idx],im=$('#vi');im.src=x.f;im.alt=x.a;
+ $('#vt').textContent=`${String(idx+1).padStart(2,'0')} / ${String(n).padStart(2,'0')} · ${x.t}`;$('#vd').textContent=`${cur.place} · ${x.d}`;
+ document.querySelectorAll('#th button').forEach((b,k)=>b.setAttribute('aria-current',k===idx?'true':'false'));
+ const nx=cur.photos[(idx+1)%n];(new Image).src=nx.f}
+function go(d){show(idx+d)}
+function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><p class="sub">Fotografia documentaria</p><div class="cols">
+ <div class="big"><p>GENZO è un fotografo documentarista e un reporter. Va dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.</p>
+ <p>Ha imparato presto che le fotografie più vere arrivano quando l’evento è già un ricordo: un gesto che nessuno nota, una mano che si appoggia a una spalla, la cenere che si posa sull’asfalto. Per questo cerca la distanza giusta, che è quasi sempre poca, e aspetta. Lavora con un solo obiettivo, un 28 mm, che obbliga a stare dentro la scena e a farsi notare il meno possibile.</p>
+ <p>Gli piacciono le notti lunghe, il rumore che scende, le facce stanche dopo la folla. Segue le storie finché non diventano un luogo che conosce, e non ha fretta di chiuderle: un reportage per lui è una promessa fatta alle persone che ha incontrato.</p>
+ <p>Il sigillo rosso che firma le sue stampe è l’unica cosa che si concede di aggiungere. Il resto, luce, tempo e pazienza, lo mette la strada.</p></div>
+ <div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg>
+ <div class="row"><span>Base</span><span>Italia</span></div>
+ <div class="row"><span>Lavora su</span><span>Reportage, foto documentaria</span></div>
+ <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div></div>`}
+function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big"><p>Per commissioni, collaborazioni o per vedere altri lavori, seguimi su Instagram e scrivimi in messaggio privato.</p></div>
+ <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div></div></div></div>`}
+function route(){const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
+ document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon));on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
+ const p=PROJ.find(q=>q.id===h&&!q.soon);
+ if(p)proj(p);else if(h==='work'||PROJ.some(q=>q.id===h))work();else if(h==='gallery')gallery();else if(h==='profile')profile();else if(h==='contact')contact();else home();
+ window.scrollTo(0,0)}
+addEventListener('hashchange',route);
+addEventListener('keydown',e=>{if(!cur)return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1)});
+route();
+</script>
+</body>
+</html>
