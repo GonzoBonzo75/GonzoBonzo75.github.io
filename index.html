@@ -56,8 +56,9 @@ footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);displa
 .hero img.on{opacity:1}
 .hero .cap span{transition:opacity .7s ease}
 .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;color:#fff;font:500 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(transparent,rgba(0,0,0,.45));display:flex;justify-content:space-between;gap:12px}
-.hero .tip{position:absolute;left:0;right:0;bottom:0;height:50%;z-index:2;display:flex;align-items:flex-end;padding:0 clamp(18px,3vw,44px) clamp(40px,5vw,64px);background:rgba(18,17,16,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#fff;transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.hero .tip{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:96px clamp(18px,3vw,44px) clamp(40px,5vw,64px);background:rgba(18,17,16,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#fff;transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
 .hero .tip p{margin:0;max-width:74ch;font:italic 400 clamp(18px,1.9vw,25px)/1.5 var(--serif);transition:opacity .7s ease}
+.hero .tip p.tl{align-self:flex-start;font:italic 400 clamp(17px,1.6vw,21px)/1.4 var(--serif);letter-spacing:.1em;text-transform:uppercase;text-decoration:underline;text-decoration-color:#c23a2c;text-decoration-thickness:2px;text-underline-offset:8px}
 @media (hover:hover){.hero:hover .tip,.hero:focus-visible .tip{transform:none}.hero:hover .cap,.hero:focus-visible .cap{opacity:0}}
 .hero .cap{transition:opacity .3s ease}
 @media (hover:none){.hero .tip{display:none}}
@@ -305,14 +306,16 @@ const HERO=[
  {f:'img/home2.jpg',a:'Un tifoso del Napoli regge un fumogeno acceso tra scintille e fumo, Napoli',p:'45% 42%',l:'Napoli',d:'4 maggio 2023',s:'Napoli, 4 maggio 2023. Un tifoso regge un fumogeno acceso e le scintille cadono nel fumo: nel giorno dello scudetto la città non sta ferma un attimo.',
   en:{a:'A Napoli fan holds a lit flare amid sparks and smoke, Naples',l:'Naples',d:'4 May 2023',s:'Naples, 4 May 2023. A fan holds up a lit flare and the sparks fall through the smoke: on the day of the title, the city does not stand still for a moment.'}}];
 let heroT=null;
+function hT(x){return pick(x,'l')+', '+pick(x,'d')}
+function hB(x){const s=pick(x,'s'),h=hT(x)+'. ';return s.startsWith(h)?s.slice(h.length):s}
 function home(){document.body.classList.add('home');
- app.innerHTML=`<a class="hero fade" href="#work" aria-label="${esc(t('heroGo'))}" aria-describedby="hs">${HERO.map((x,i)=>`<img class="${i?'':'on'}" src="${x.f}" alt="${esc(pick(x,'a'))}" style="object-position:${x.p}">`).join('')}<div class="cap"><span id="hl">${esc(pick(HERO[0],'l'))}</span><span id="hd">${esc(pick(HERO[0],'d'))}</span></div><div class="tip"><p id="hs">${esc(pick(HERO[0],'s'))}</p></div></a>`;
+ app.innerHTML=`<a class="hero fade" href="#work" aria-label="${esc(t('heroGo'))}" aria-describedby="hs">${HERO.map((x,i)=>`<img class="${i?'':'on'}" src="${x.f}" alt="${esc(pick(x,'a'))}" style="object-position:${x.p}">`).join('')}<div class="cap"><span id="hl">${esc(pick(HERO[0],'l'))}</span><span id="hd">${esc(pick(HERO[0],'d'))}</span></div><div class="tip"><p class="tl" id="ht">${esc(hT(HERO[0]))}</p><p id="hs">${esc(hB(HERO[0]))}</p></div></a>`;
  clearInterval(heroT);
  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
- let i=0;const hero=app.querySelector('.hero'),im=app.querySelectorAll('.hero img'),hl=document.getElementById('hl'),hd=document.getElementById('hd'),hs=document.getElementById('hs');let hov=false;hero.onmouseenter=()=>{hov=true};hero.onmouseleave=()=>{hov=false};
+ let i=0;const hero=app.querySelector('.hero'),im=app.querySelectorAll('.hero img'),hl=document.getElementById('hl'),hd=document.getElementById('hd'),hs=document.getElementById('hs'),ht=document.getElementById('ht');let hov=false;hero.onmouseenter=()=>{hov=true};hero.onmouseleave=()=>{hov=false};
  heroT=setInterval(()=>{if(hov)return;i=(i+1)%HERO.length;im.forEach((e,k)=>e.classList.toggle('on',k===i));
-  hl.style.opacity=hd.style.opacity=hs.style.opacity=0;
-  setTimeout(()=>{hl.textContent=pick(HERO[i],'l');hd.textContent=pick(HERO[i],'d');hs.textContent=pick(HERO[i],'s');hl.style.opacity=hd.style.opacity=hs.style.opacity=1},700)},6500)}
+  hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=0;
+  setTimeout(()=>{hl.textContent=pick(HERO[i],'l');hd.textContent=pick(HERO[i],'d');hs.textContent=hB(HERO[i]);ht.textContent=hT(HERO[i]);hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=1},700)},6500)}
 function work(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_work'))}</h1><p class="sub">${esc(t('workSub'))}</p><div class="grid">${PROJ.map(p=>p.soon?
  `<div class="card soon"><div class="ph">${seal}<span class="tag">${esc(t('soon'))}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc([pick(p,'place'),p.years].filter(Boolean).join(' · '))}</p></div>`:
  `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"><span class="wm" aria-hidden="true">${seal}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc(pick(p,'place'))} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
