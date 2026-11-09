@@ -4,10 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>GENZO · Fotogiornalista</title>
-<meta name="description" content="Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento. Progetto in evidenza: Askatasuna, Torino, 31 gennaio 2026.">
+<meta name="description" content="Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento.">
 <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
 <link rel="alternate" type="application/rss+xml" title="GENZO · Blog" href="/feed.xml">
+<link rel="alternate" type="application/rss+xml" hreflang="en" title="GENZO · Blog (EN)" href="/feed-en.xml">
+<link rel="alternate" hreflang="it" href="https://bonesph.com/">
+<link rel="alternate" hreflang="en" href="https://bonesph.com/en/">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <meta property="og:type" content="website">
@@ -33,14 +36,17 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px 24
 .brand{display:flex;align-items:center;gap:16px;font:600 15px/1 var(--sans);letter-spacing:.32em;text-transform:uppercase}
 .brand svg{width:80px;height:80px;display:block}
 nav{display:flex;gap:28px;font:400 21px/1 var(--serif)}
-@media (max-width:560px){nav{width:100%;justify-content:space-between;gap:6px;font-size:15px}}
-nav a{padding:8px 0;border-bottom:1px solid transparent;color:var(--mut)}
+@media (max-width:560px){nav{width:100%;justify-content:space-between;gap:4px;font-size:14px}}
+@media (max-width:350px){nav{font-size:12.5px;gap:2px}}
+nav a{white-space:nowrap;padding:8px 0;border-bottom:1px solid transparent;color:var(--mut)}
 nav a:hover,nav a[aria-current="page"]{color:var(--fg);border-bottom-color:var(--fg)}
-.tm{order:3;width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:color .2s,border-color .2s}
+.tools{order:3;display:flex;align-items:center;gap:8px}
+.lg{font:600 12px/1 var(--sans);letter-spacing:.06em}
+.tm{width:44px;height:44px;border-radius:50%;border:1px solid var(--line);background:none;color:var(--fg);display:inline-flex;align-items:center;justify-content:center;cursor:pointer;padding:0;transition:color .2s,border-color .2s}
 .tm:hover,.tm:focus-visible{color:var(--accent);border-color:var(--accent)}
 .tm svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 header .brand{order:1}header nav{order:2;margin-left:auto}
-@media (max-width:560px){header nav{order:3;margin-left:0}.tm{order:2;margin-left:auto}nav a[data-n="home"]{display:none}}
+@media (max-width:560px){header nav{order:3;margin-left:0}.tools{order:2;margin-left:auto}nav a[data-n="home"]{display:none}}
 main{flex:1;display:flex;flex-direction:column;min-width:0}
 footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);display:flex;justify-content:space-between;gap:8px 24px;flex-wrap:wrap;border-top:1px solid var(--line);margin-top:48px}
 /* home */
@@ -105,6 +111,11 @@ a.card:hover img{transform:scale(1.025)}
 .big.it{font-style:italic;font-size:clamp(16px,1.55vw,18.5px)}
 .seal{width:96px;height:96px;display:block;margin:6px 0 18px}
 .pf{margin:36px auto 0;width:min(100%,210px)}
+.jna{margin:44px 0 0;padding-top:22px;border-top:1px solid var(--line);max-width:62ch}
+.jna+.jna{margin-top:26px}
+.jna .lb{font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 12px}
+.jna a{border-bottom:1px solid var(--line);transition:color .2s,border-color .2s}
+.jna a:hover,.jna a:focus-visible{color:var(--accent);border-color:var(--accent)}
 .pf img{display:block;width:100%;height:auto}
 .bl{display:flex;flex-direction:column;max-width:760px}
 .bl a{display:block;padding:28px 0;border-top:1px solid var(--line)}
@@ -165,143 +176,168 @@ a.card:hover img{transform:scale(1.025)}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="ink" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter><symbol id="hanko" viewBox="0 0 100 100"><g filter="url(#ink)"><path fill="#c23a2c" d="M12 5H88A7 7 0 0 1 95 12V88A7 7 0 0 1 88 95H12A7 7 0 0 1 5 88V12A7 7 0 0 1 12 5Z"/><path fill="#f6f3ec" fill-rule="evenodd" d="M13.7 10.5H86.3A3.2 3.2 0 0 1 89.5 13.7V86.3A3.2 3.2 0 0 1 86.3 89.5H13.7A3.2 3.2 0 0 1 10.5 86.3V13.7A3.2 3.2 0 0 1 13.7 10.5ZM14.3 12.1H85.69999999999999A2.2 2.2 0 0 1 87.89999999999999 14.3V85.69999999999999A2.2 2.2 0 0 1 85.69999999999999 87.89999999999999H14.3A2.2 2.2 0 0 1 12.1 85.69999999999999V14.3A2.2 2.2 0 0 1 14.3 12.1Z"/><path fill="#f6f3ec" d="M75.74 31.74 76.89 32.03V33.18Q75.74 33.68 74.43 34.06Q73.11 34.43 71.72 34.62Q70.33 34.81 68.94 34.81Q66.45 34.81 64.59 34.27Q62.72 33.73 61.48 32.66Q60.24 31.60 59.61 30.01Q58.99 28.42 58.99 26.32Q59.00 23.65 60.14 21.65Q61.28 19.66 63.54 18.55Q65.80 17.44 69.18 17.44Q70.29 17.44 71.35 17.60Q72.42 17.76 73.53 18.08L72.33 18.24L73.76 16.75H75.18L75.39 23.50L73.53 23.54L71.79 19.27L73.50 21.20Q72.49 20.56 71.50 20.28Q70.51 20.00 69.30 20.00Q67.87 20.00 66.84 20.33Q65.82 20.65 65.15 21.34Q64.48 22.03 64.16 23.10Q63.84 24.17 63.82 25.67Q63.80 27.96 64.49 29.42Q65.18 30.88 66.51 31.57Q67.83 32.27 69.72 32.27Q70.36 32.27 70.96 32.18Q71.56 32.10 72.13 31.90Q72.70 31.70 73.26 31.39L70.99 34.14V28.42L68.97 27.76V26.60H77.34V27.76L75.74 28.48Z M71.81 46.69V49.78V52.86H70.03L69.82 50.82H64.18V48.70H69.82L70.03 46.69ZM75.89 46.81 74.09 46.86 72.30 42.71 73.68 44.11H64.18V41.75H73.01L74.38 40.76H75.65ZM72.17 57.50 74.70 52.72 76.53 52.75 75.43 59.54H73.97L72.83 58.50H64.18V56.14H73.38ZM59.74 58.50V57.24L61.77 56.64V43.62L59.74 43.01V41.75H66.53V58.50Z M60.52 80.65V67.78L58.33 67.00V65.75H66.27L73.98 78.85L73.21 80.09V67.61L71.10 67.01V65.75H77.77V67.01L75.77 67.61V82.52H70.75L61.97 67.45L63.06 67.13V80.65L65.17 81.24V82.50H58.50V81.24Z M39.15 17.75V19.92L29.38 33.10L27.17 31.92H36.45L38.62 28.45L40.15 28.49L39.07 35.53H37.68L36.57 34.50H24.52V32.33L34.23 19.16L36.88 20.33H27.48L25.97 23.51L24.43 23.47L24.70 16.80H25.92L27.34 17.75Z M32.24 41.44Q34.33 41.44 35.98 42.04Q37.63 42.64 38.77 43.76Q39.92 44.89 40.52 46.49Q41.12 48.10 41.12 50.10Q41.12 52.12 40.47 53.72Q39.82 55.33 38.59 56.47Q37.36 57.61 35.64 58.21Q33.92 58.81 31.77 58.81Q29.67 58.81 28.02 58.21Q26.37 57.61 25.23 56.48Q24.08 55.36 23.48 53.75Q22.88 52.15 22.88 50.15Q22.88 48.13 23.53 46.52Q24.19 44.92 25.41 43.78Q26.64 42.64 28.36 42.04Q30.09 41.44 32.24 41.44ZM32.05 56.11Q33.40 56.11 34.35 55.54Q35.29 54.97 35.79 53.79Q36.28 52.61 36.28 50.78Q36.28 48.54 35.80 47.06Q35.32 45.59 34.36 44.86Q33.40 44.14 31.95 44.14Q30.61 44.14 29.66 44.71Q28.71 45.28 28.21 46.46Q27.72 47.64 27.72 49.46Q27.72 51.71 28.20 53.18Q28.68 54.66 29.64 55.39Q30.60 56.11 32.05 56.11Z M32 76.9a2.6 2.6 0 1 0 0.01 0Z"/></g></symbol></defs></svg>
 <header>
  <a class="brand" href="#home" aria-label="GENZO, home"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></svg></a>
- <nav aria-label="Principale"><a href="#home" data-n="home">Home</a><a href="#work" data-n="work">Portfolio</a><a href="#gallery" data-n="gallery">Gallery</a><a href="#blog" data-n="blog">Blog</a><a href="#prints" data-n="prints">Stampe</a><a href="#profile" data-n="profile">Profilo</a><a href="#contact" data-n="contact">Contatti</a></nav>
- <button class="tm" id="tm" type="button" aria-label="Cambia tema"></button>
+ <nav aria-label="Principale"><a href="#home" data-n="home">Home</a><a href="#work" data-n="work">Portfolio</a><a href="#progress" data-n="progress">In Progress</a><a href="#blog" data-n="blog">Blog</a><a href="#prints" data-n="prints">Stampe</a><a href="#profile" data-n="profile">Profilo</a><a href="#contact" data-n="contact">Contatti</a></nav>
+ <div class="tools"><button class="tm" id="tm" type="button" aria-label="Cambia tema"></button><button class="tm lg" id="lg" type="button">EN</button></div>
 </header>
 <main id="app"></main>
-<footer><span>© GENZO · Tutti i diritti riservati</span><span>Fotogiornalismo</span></footer>
+<footer><span id="fl">© GENZO · Tutti i diritti riservati</span><span id="fr">Fotogiornalismo</span></footer>
 <script>
 const PROJ=[
- {id:'terzo-scudetto',title:'Il terzo scudetto',place:'Napoli',years:'2023',cover:'img/ns-03.jpg',
-  intro:['Trentatré anni di attesa, e poi una notte sola. Il 4 maggio 2023 il Napoli diventa campione d’Italia per la terza volta, e la città smette di contare i giorni.',
-         'Ho camminato dal pomeriggio fino a notte fonda, nei vicoli che si coprivano d’azzurro, nel fumo che saliva tra i balconi, in mezzo a gente che rideva e si abbracciava senza conoscersi.',
-         'Non sono le fotografie di una partita. Sono quelle di un popolo che, per una notte, si ritrova tutto insieme.'],
-  facts:[['Tema','Lo scudetto del Napoli'],['Data','4 maggio 2023'],['Serie','6 fotografie']],
-  photos:[
-   {f:'img/ns-01.jpg',t:'Sulla soglia',d:'4 maggio 2023',s:{cam:'Leica Q2',lens:'Summilux 28 mm f/1.7',ap:'f/2.8',sh:'1/80 s',iso:'100',h:'17:45'},a:'Un uomo con la parrucca blu e la maglia Buitoni alza le braccia sulla soglia di un locale, tra altri tifosi in festa nel vicolo'},
-   {f:'img/ns-02.jpg',t:'Diego sulla pelle',d:'4 maggio 2023',s:{cam:'Leica Q2',lens:'Summilux 28 mm f/1.7',ap:'f/1.7',sh:'1/80 s',iso:'250',h:'18:41'},a:'Il tatuaggio del volto di Maradona sul fianco di un tifoso, con la folla sfocata alle spalle'},
-   {f:'img/ns-03.jpg',t:'Il grido',d:'4 maggio 2023',s:{cam:'Leica Q2',lens:'Summilux 28 mm f/1.7',ap:'f/3.5',sh:'1/125 s',iso:'160',h:'18:40'},a:'Un uomo urla con un fumogeno verde in mano in un vicolo con gli striscioni, mentre altri fotografano con il telefono'},
-   {f:'img/ns-04.jpg',t:'Sorriso nel fumo azzurro',d:'4 maggio 2023',s:{cam:'Leica Q2',lens:'Summilux 28 mm f/1.7',ap:'f/1.7',sh:'1/125 s',iso:'160',h:'18:45'},a:'Un uomo con una sciarpa sulla testa sorride verso l’obiettivo in un vicolo coperto da fumo azzurro, davanti a un murale di Maradona'},
-   {f:'img/ns-05.jpg',t:'Lacrime',d:'4 maggio 2023',s:{cam:'Fujifilm X-T4',lens:'XF 56 mm f/1.2 R',ap:'f/1.6',sh:'1/105 s',iso:'320',h:'22:34'},a:'Un ragazzo piange nascondendo la bocca con la mano, di profilo, in mezzo ad altri tifosi'},
-   {f:'img/ns-06.jpg',t:'Il volto tra le mani',d:'4 maggio 2023',s:{cam:'Fujifilm X-T4',lens:'XF 56 mm f/1.2 R',ap:'f/1.2',sh:'1/85 s',iso:'400',h:'22:36'},a:'Un ragazzo con la maglia azzurra si copre il volto con la mano, sotto una luce rossa'}]},
- {id:'askatasuna',title:'Askatasuna, 31 gennaio',place:'Torino',years:'2026',cover:'img/ask-05.jpg',
-  intro:['Il 31 gennaio 2026 Torino è scesa in piazza per Askatasuna, il centro sociale sgomberato a metà dicembre. Il corteo è partito da Porta Susa e da Porta Nuova e ha sfilato lungo il Po. Verso le 18, vicino alla vecchia sede in corso Regina Margherita, un gruppo di persone a volto coperto ha lanciato petardi e fumogeni; la polizia ha risposto con lacrimogeni e idranti.',
-         'Per circa un’ora e mezza il quartiere è rimasto nel fumo, tra cassonetti e barricate in fiamme. Ho seguito la serata da vicino, dal corteo ai cordoni, dalle 17 a notte. Nei giorni successivi ci sono stati tre arresti e una trentina di indagati; un agente è stato aggredito e ferito.'],
-  facts:[['Luogo','Torino, corso Regina Margherita'],['Data','31 gennaio 2026'],['Serie','10 fotografie']],
-  photos:[
-   {f:'img/ask-01.jpg',t:'Sulla pensilina',d:'31 gennaio 2026 · 17:05',a:'Due persone in piedi sul tetto di una pensilina con fumogeni accesi, tra la folla del corteo e con la Mole Antonelliana sullo sfondo'},
-   {f:'img/ask-02.jpg',t:'Corso Regina',d:'31 gennaio 2026 · 17:52',a:'Un lacrimogeno fumante sull’asfalto e fumogeni rossi lungo il viale alberato, con un fotografo in primo piano'},
-   {f:'img/ask-03.jpg',t:'Gli scudi',d:'31 gennaio 2026 · 17:57',a:'Agenti con gli scudi davanti a un blindato, tra il fumo e i lampeggianti blu'},
-   {f:'img/ask-04.jpg',t:'Fumogeno rosso',d:'31 gennaio 2026 · 18:00',a:'Un fumogeno rosso acceso sul bordo della strada e in fondo la linea degli agenti nella nebbia'},
-   {f:'img/ask-05.jpg',t:'L’idrante',d:'31 gennaio 2026 · 18:05',a:'Un idrante colpisce il viale mentre esplode un fuoco d’artificio davanti al cordone di scudi'},
-   {f:'img/ask-06.jpg',t:'La barricata',d:'31 gennaio 2026 · 18:29',a:'Cartoni e rifiuti in fiamme davanti a una saracinesca coperta di graffiti'},
-   {f:'img/ask-07.jpg',t:'Nel fumo',d:'31 gennaio 2026 · 18:50',a:'Una figura con il casco scatta nel fumo accanto a un’auto, con i lampeggianti blu sullo sfondo'},
-   {f:'img/ask-08.jpg',t:'Il lanciatore',d:'31 gennaio 2026 · 19:12',a:'Un agente spara un lacrimogeno con una scia di scintille davanti a un negozio chiuso'},
-   {f:'img/ask-09.jpg',t:'Accanto al fuoco',d:'31 gennaio 2026 · 19:13',a:'Un agente cammina accanto a un cumulo di rifiuti in fiamme'},
-   {f:'img/ask-10.jpg',t:'L’avanzata',d:'31 gennaio 2026 · 19:16',a:'Agenti in assetto antisommossa avanzano nel buio'}]},
- {id:'settimana-santa',title:'Riti della Settimana Santa',place:'Taranto',years:'2025',cover:'img/ss-06.jpg',
-  intro:['A Taranto la Settimana Santa è un rito lungo, che occupa le notti. Tra il giovedì e il venerdì santo la città si riempie di folla e di silenzio: prima la processione dei Perdoni, che esce nella notte del giovedì e cammina fino al mattino, poi quella dei Misteri, che il venerdì sera percorre le strade fino a notte fonda.',
-         'Ho seguito i riti da vicino, tra i confratelli incappucciati, i bambini, i portatori e la folla, a piedi nudi sull’asfalto e alla luce delle lanterne. Mi interessano i gesti piccoli, il guanto che stringe il rosario, i piedi scalzi, più della processione in sé.'],
-  facts:[['Luogo','Taranto'],['Data','17 e 18 aprile 2025'],['Serie','12 fotografie']],
-  photos:[
-   {f:'img/ss-01.jpg',t:'Il sagrato',d:'17 aprile 2025 · 22:58',a:'Una facciata gotica con rosone, illuminata nella notte, con una piccola folla affacciata alla balaustra'},
-   {f:'img/ss-02.jpg',t:'I più piccoli',d:'18 aprile 2025 · 00:25',a:'Due ragazzi vestiti di bianco con una corona di spine e un cartello con la croce, tra la folla di un vicolo illuminato di arancione'},
-   {f:'img/ss-03.jpg',t:'Il teschio',d:'18 aprile 2025 · 02:29',a:'Un confratello incappucciato stringe con i guanti bianchi una croce scura con un teschio in cima'},
-   {f:'img/ss-04.jpg',t:'Il cappuccio',d:'18 aprile 2025 · 02:40',a:'Primo piano di un cappuccio bianco con una corona di spine, nella luce gialla della notte'},
-   {f:'img/ss-05.jpg',t:'La croce',d:'18 aprile 2025 · 02:53',a:'Una figura in bianco, incappucciata e con la corona di spine, porta una croce di legno sulla spalla'},
-   {f:'img/ss-06.jpg',t:'In coppia',d:'18 aprile 2025 · 03:01',a:'Due confratelli con cappuccio bianco e corona di spine, vestiti di nero con le medaglie sul petto'},
-   {f:'img/ss-07.jpg',t:'Tra la folla',d:'18 aprile 2025 · 20:19',a:'Un confratello vestito di bianco con un bastone cammina nella folla, tra autorità e fotografi'},
-   {f:'img/ss-08.jpg',t:'Il guanto',d:'18 aprile 2025 · 22:57',a:'Un guanto bianco stringe una corona di rosario scura, nel buio'},
-   {f:'img/ss-09.jpg',t:'A piedi nudi',d:'18 aprile 2025 · 22:57',a:'I piedi nudi di due confratelli in tunica bianca, con i rosari e un bastone, sull’asfalto'},
-   {f:'img/ss-10.jpg',t:'Il simulacro',d:'18 aprile 2025 · 22:58',a:'Una statua di Cristo con l’aureola, portata su una base di lanterne di vetro nella notte'},
-   {f:'img/ss-11.jpg',t:'L’Addolorata',d:'18 aprile 2025 · 23:24',a:'La statua della Madonna in nero portata in processione tra una grande folla, lungo le mura illuminate'},
-   {f:'img/ss-12.jpg',t:'Il Cristo morto',d:'18 aprile 2025 · 23:27',a:'La statua di Cristo morto sotto un velo, con le lanterne accese e i portatori intorno'}]},
- {id:'cooleness',title:'The Cooleness',place:'Londra',years:'2017',cover:'img/co-03.jpg',
-  intro:['Una notte di gennaio, un palco piccolo e un pubblico a un passo dagli strumenti. La luce cambia colore a ogni canzone, il fumo sale tra i microfoni e per un’ora il resto del mondo resta fuori dalla porta.',
-         'Ho fotografato la serata da vicino, cercando i volti e i gesti più che il palco: la mano che stringe il microfono, lo sguardo che si abbassa, il viola che sfuma nel nero.'],
-  facts:[['Luogo','Londra'],['Genere','Musica dal vivo'],['Data','21 gennaio 2017'],['Serie','10 fotografie']],
-  photos:[
-   {f:'img/co-01.jpg',t:'Prime luci',d:'21 gennaio 2017 · 23:07',a:'Un musicista con la chitarra davanti al microfono, tra luci magenta, gialle e verdi'},
-   {f:'img/co-02.jpg',t:'Il ritmo',d:'21 gennaio 2017 · 23:18',a:'Un chitarrista in canotta suona sotto un fascio di luce verde'},
-   {f:'img/co-03.jpg',t:'Blu',d:'21 gennaio 2017 · 23:25',a:'Un cantante riccio con una giacca di paillettes canta al microfono su una luce blu'},
-   {f:'img/co-04.jpg',t:'Mani nella luce',d:'21 gennaio 2017 · 23:29',a:'Mani tra la folla nella luce blu e arancione, con un telefono alzato'},
-   {f:'img/co-05.jpg',t:'Paillettes',d:'21 gennaio 2017 · 23:32',a:'La schiena di una giacca di paillettes e il manico di una chitarra, in una luce ambra'},
-   {f:'img/co-06.jpg',t:'Fumo viola',d:'21 gennaio 2017 · 23:35',a:'Il cantante con un braccio alzato e il microfono in mano, nel fumo viola'},
-   {f:'img/co-07.jpg',t:'Viola',d:'21 gennaio 2017 · 23:38',a:'Il cantante con il microfono e una chitarra in primo piano, su un fondo viola'},
-   {f:'img/co-08.jpg',t:'Il grido',d:'21 gennaio 2017 · 23:40',a:'Il cantante in maglietta bianca canta forte nel microfono accanto a un chitarrista in luce verde'},
-   {f:'img/co-09.jpg',t:'Controluce',d:'21 gennaio 2017 · 23:43',a:'Un cantante riccio in controluce, con una luce morbida alle spalle'},
-   {f:'img/co-10.jpg',t:'A occhi bassi',d:'21 gennaio 2017 · 23:50',a:'Il volto chino di un cantante con una collana con la croce, nella luce viola'}]}
+ {id:'terzo-scudetto',title:'Il terzo scudetto',place:'Napoli',years:'2023',soon:1,en:{title:'The third Scudetto',place:'Naples'}},
+ {id:'askatasuna',title:'Askatasuna, 31 gennaio',place:'Torino',years:'2026',soon:1,en:{title:'Askatasuna, 31 January',place:'Turin'}},
+ {id:'settimana-santa',title:'Riti della Settimana Santa',place:'Taranto',years:'2025',soon:1,en:{title:'Holy Week rites',place:'Taranto'}},
+ {id:'cooleness',title:'The Cooleness',place:'Londra',years:'2017',soon:1,en:{place:'London'}},
+ {id:'torino-piazza',title:'Torino, la piazza',place:'Torino',years:'',soon:1,en:{title:'Turin, the square',place:'Turin'}}
 ];
+/* Lingua: IT / EN. Le voci di contenuto (PROJ, HERO, BLOG, GAL, PRINTS, PROGRESS) hanno il testo italiano e, facoltativamente, un oggetto en:{...} con i campi tradotti. */
 const $=s=>document.querySelector(s), app=$('#app');
+const LANG_KEY='genzo-lang';
+let LANG='it';
+(function(){let l=null;
+ try{const q=new URLSearchParams(location.search).get('lang');if(q==='it'||q==='en'){l=q;try{localStorage.setItem(LANG_KEY,q)}catch(e){}history.replaceState(null,'',location.pathname+location.hash)}}catch(e){}
+ if(!l){try{l=localStorage.getItem(LANG_KEY)}catch(e){}}
+ if(l!=='it'&&l!=='en')l=/^it\b/i.test(navigator.language||'')?'it':'en';
+ LANG=l})();
+const T={
+it:{
+ title:'GENZO · Fotogiornalista',desc:'Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento.',ogdesc:'Fotogiornalismo: manifestazioni, riti e città in movimento.',
+ n_home:'Home',n_work:'Portfolio',n_progress:'In Progress',n_blog:'Blog',n_prints:'Stampe',n_profile:'Profilo',n_contact:'Contatti',navLabel:'Principale',
+ footL:'© GENZO · Tutti i diritti riservati',footR:'Fotogiornalismo',brand:'GENZO, home',
+ toLight:'Passa al tema chiaro',toDark:'Passa al tema scuro',lgBtn:'EN',lgLabel:'Switch to English',
+ heroGo:'Vai ai progetti',soon:'In preparazione',
+ workSub:'Reportage',
+ galSoon:'Le prime fotografie arriveranno presto.',
+ s_cam:'Macchina',s_lens:'Obiettivo',s_ap:'Diaframma',s_sh:'Tempo',s_iso:'ISO',s_h:'Ora',behind:'Dietro lo scatto',
+ pgSub:'Progetti in corso',pgTag:'In corso',pgText:'Qui raccolgo i progetti su cui sto lavorando: storie ancora aperte, che seguo giorno dopo giorno. Presto i primi.',
+ vwRole:'galleria',vwLabel:'Galleria',prev:'Foto precedente',next:'Foto successiva',photoN:'Foto ',
+ prSub:'Fotografie firmate col sigillo',pr1:'Alcune fotografie di queste pagine esistono anche su carta: stampe firmate col sigillo rosso GENZO, pensate per essere appese e guardate a lungo.',pr2:'Formati, carta e prezzi dipendono dalla fotografia e dallo spazio in cui deve vivere. Scrivimi e li decidiamo insieme.',
+ seal:'Sigillo GENZO',formats:'Formati',prices:'Prezzi',onReq:'Su richiesta',writeTo:'Scrivi a',prSoon:'Le prime stampe saranno disponibili presto.',priceReq:'Prezzo su richiesta',ask:'Chiedi informazioni',
+ mSubjPrint:'Stampa: ',mBodyPrint:(a,b)=>'Buongiorno, vorrei informazioni sulla stampa «'+a+'» ('+b+').',
+ pfSub:'Fotogiornalismo',
+ pf1:'Sono un fotogiornalista. Vado dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.',
+ pf2:'Ho imparato presto che le fotografie più vere arrivano quando l’evento è già un ricordo: un gesto che nessuno nota, una mano che si appoggia a una spalla, la cenere che si posa sull’asfalto. Per questo cerco la distanza giusta, che è quasi sempre poca, e aspetto. Lavoro soprattutto con un 28 mm, che obbliga a stare dentro la scena e a farsi notare il meno possibile.',
+ pf3:'Mi piacciono le notti lunghe, il rumore che scende, le facce stanche dopo la folla. Seguo le storie finché non diventano un luogo che conosco, e non ho fretta di chiuderle: un reportage per me è una promessa fatta alle persone che ho incontrato.',
+ pf4:'Il sigillo rosso che firma le mie stampe è l’unica cosa che mi concedo di aggiungere. Il resto, luce, tempo e pazienza, lo mette la strada.',
+ pfAlt:'Autoritratto allo specchio con una Fujifilm X-T4',
+ agency:'Agenzia',agencyTxt:a=>'Collaboro con '+a+', l’agenzia per cui sono accreditato come photo editor e fotogiornalista.',visit:'Visita jnapress.com ↗',
+ awards:'Premi',awardsTxt:'Shortlisted al Sony World Photography Awards 2023, categoria Open.',
+ base:'Base',baseV:'Italia',worksOn:'Lavoro su',worksOnV:'Reportage, fotogiornalismo',gear:'Attrezzatura',
+ ctSub:'Collaborazioni e richieste',ctTxt:'Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.',
+ blSub:'Storie dietro le fotografie',blSoon:'Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.',
+ sbLabel:'Ricevi i nuovi articoli',sbPh:'La tua email',sbBtn:'Iscriviti',sbNote:'Ti scrivo quando esce un nuovo racconto, e basta.',sbRss:' Oppure segui il <a class="lk" href="/feed.xml">feed RSS</a>.',
+ sbBad:'Controlla l’indirizzo email.',sbOk:'Grazie, sei iscritto.',sbErr:'Qualcosa non ha funzionato, riprova.',sbSubj:'Iscrizione al blog',sbBody:'Ciao, vorrei ricevere i nuovi articoli del blog. La mia email: ',sbMail:'Si apre la tua posta: invia il messaggio e sei iscritto.',
+ share:'Condividi',shWa:'Condividi su WhatsApp',shFb:'Condividi su Facebook',shX:'Condividi su X',shMail:'Condividi via email',shCopy:'Copia il link',shCopyT:'Copia link',shDone:'Link copiato'
+},
+en:{
+ title:'GENZO · Photojournalist',desc:'Portfolio of GENZO, photojournalist: demonstrations, rituals and cities in motion.',ogdesc:'Photojournalism: demonstrations, rituals and cities in motion.',
+ n_home:'Home',n_work:'Portfolio',n_progress:'In Progress',n_blog:'Blog',n_prints:'Prints',n_profile:'About',n_contact:'Contact',navLabel:'Main',
+ footL:'© GENZO · All rights reserved',footR:'Photojournalism',brand:'GENZO, home',
+ toLight:'Switch to light theme',toDark:'Switch to dark theme',lgBtn:'IT',lgLabel:'Passa all’italiano',
+ heroGo:'Go to the projects',soon:'Coming soon',
+ workSub:'Reportage',
+ galSoon:'The first photographs are coming soon.',
+ s_cam:'Camera',s_lens:'Lens',s_ap:'Aperture',s_sh:'Shutter',s_iso:'ISO',s_h:'Time',behind:'Behind the shot',
+ pgSub:'Projects underway',pgTag:'In progress',pgText:'This is where I collect the projects I’m working on: stories still open, which I follow day by day. The first ones are coming soon.',
+ vwRole:'gallery',vwLabel:'Gallery',prev:'Previous photo',next:'Next photo',photoN:'Photo ',
+ prSub:'Photographs signed with the seal',pr1:'Some of the photographs on these pages also exist on paper: prints signed with the red GENZO seal, made to be hung and looked at for a long time.',pr2:'Formats, paper and prices depend on the photograph and the space it is meant to live in. Write to me and we’ll work it out together.',
+ seal:'GENZO seal',formats:'Formats',prices:'Prices',onReq:'On request',writeTo:'Write to',prSoon:'The first prints will be available soon.',priceReq:'Price on request',ask:'Ask for details',
+ mSubjPrint:'Print: ',mBodyPrint:(a,b)=>'Hello, I would like some information about the print «'+a+'» ('+b+').',
+ pfSub:'Photojournalism',
+ pf1:'I am a photojournalist. I go where the story is being made: in squares, in marches, in rituals that return every year, and where the world cracks, all the way to war zones.',
+ pf2:'I learned early that the truest photographs arrive when the event is already a memory: a gesture nobody notices, a hand resting on a shoulder, ash settling on the asphalt. That is why I look for the right distance, which is almost always a short one, and I wait. I work mostly with a 28 mm, which forces you to stay inside the scene and to be noticed as little as possible.',
+ pf3:'I like long nights, the noise dying down, tired faces after the crowd. I follow stories until they become a place I know, and I am in no hurry to close them: for me a reportage is a promise made to the people I have met.',
+ pf4:'The red seal that signs my prints is the only thing I allow myself to add. The rest, light, time and patience, is given by the street.',
+ pfAlt:'Self-portrait in a mirror with a Fujifilm X-T4',
+ agency:'Agency',agencyTxt:a=>'I work with '+a+', the agency I am accredited with as a photo editor and photojournalist.',visit:'Visit jnapress.com ↗',
+ awards:'Awards',awardsTxt:'Shortlisted at the Sony World Photography Awards 2023, Open category.',
+ base:'Based in',baseV:'Italy',worksOn:'Working on',worksOnV:'Reportage, photojournalism',gear:'Gear',
+ ctSub:'Collaborations and enquiries',ctTxt:'For commissions, collaborations or to see more of my work, write me an email or follow me on Instagram.',
+ blSub:'Stories behind the photographs',blSoon:'Here I will tell the stories behind the photographs. The first ones are coming soon.',
+ sbLabel:'Get new articles',sbPh:'Your email',sbBtn:'Subscribe',sbNote:'I’ll write when a new story comes out, and that’s all.',sbRss:' Or follow the <a class="lk" href="/feed-en.xml">RSS feed</a>.',
+ sbBad:'Please check the email address.',sbOk:'Thank you, you’re subscribed.',sbErr:'Something went wrong, please try again.',sbSubj:'Blog subscription',sbBody:'Hi, I would like to receive new blog articles. My email: ',sbMail:'Your mail app is opening: send the message and you’re subscribed.',
+ share:'Share',shWa:'Share on WhatsApp',shFb:'Share on Facebook',shX:'Share on X',shMail:'Share by email',shCopy:'Copy the link',shCopyT:'Copy link',shDone:'Link copied'
+}};
+const t=k=>T[LANG][k];
+const pick=(o,k)=>(LANG==='en'&&o.en&&o.en[k]!=null)?o.en[k]:o[k];
 const THEME_KEY='genzo-theme',dmq=matchMedia('(prefers-color-scheme:dark)');
 const SUN='<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 3v2M12 19v2M3 12h2M19 12h2M5.6 5.6 7 7M17 17l1.4 1.4M5.6 18.4 7 17M17 7l1.4-1.4"/></svg>',MOON='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>';
 function curTheme(){const t=document.documentElement.dataset.theme;return t==='dark'||t==='light'?t:(dmq.matches?'dark':'light')}
-function paintTm(){const b=$('#tm');if(!b)return;const d=curTheme()==='dark';b.innerHTML=d?SUN:MOON;const l=d?'Passa al tema chiaro':'Passa al tema scuro';b.setAttribute('aria-label',l);b.title=l}
+function paintTm(){const b=$('#tm');if(!b)return;const d=curTheme()==='dark';b.innerHTML=d?SUN:MOON;const l=d?t('toLight'):t('toDark');b.setAttribute('aria-label',l);b.title=l}
 try{const s=localStorage.getItem(THEME_KEY);if(s==='dark'||s==='light')document.documentElement.dataset.theme=s}catch(e){}
 $('#tm').onclick=()=>{const n=curTheme()==='dark'?'light':'dark';document.documentElement.dataset.theme=n;try{localStorage.setItem(THEME_KEY,n)}catch(e){}paintTm()};
 dmq.addEventListener('change',paintTm);paintTm();
+function setMeta(sel,v){const m=document.querySelector(sel);if(m)m.setAttribute('content',v)}
+function applyLang(){document.documentElement.lang=LANG;document.title=t('title');
+ setMeta('meta[name="description"]',t('desc'));setMeta('meta[property="og:title"]',t('title'));setMeta('meta[property="og:description"]',t('ogdesc'));
+ document.querySelectorAll('nav a').forEach(a=>{a.textContent=t('n_'+a.dataset.n)});
+ $('nav').setAttribute('aria-label',t('navLabel'));$('.brand').setAttribute('aria-label',t('brand'));
+ $('#fl').textContent=t('footL');$('#fr').textContent=t('footR');
+ const b=$('#lg');b.textContent=t('lgBtn');b.setAttribute('aria-label',t('lgLabel'));b.title=t('lgLabel');paintTm()}
+$('#lg').onclick=()=>{LANG=LANG==='it'?'en':'it';try{localStorage.setItem(LANG_KEY,LANG)}catch(e){}applyLang();const y=window.scrollY;route();window.scrollTo(0,y)};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const seal='<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></svg>';
 let idx=0,cur=null,tx=null,startIdx=0;
 const HERO=[
- {f:'img/home.jpg',a:'Un cassonetto rovesciato brucia in mezzo alla strada, Torino',p:'50% 62%',l:'Torino',d:'20 dicembre 2025',s:'Torino, 20 dicembre 2025. Un cassonetto rovesciato brucia in mezzo alla strada, e intorno la gente guarda da lontano, nel fumo.'},
- {f:'img/home2.jpg',a:'Un tifoso del Napoli regge un fumogeno acceso tra scintille e fumo, Napoli',p:'45% 42%',l:'Napoli',d:'4 maggio 2023',s:'Napoli, 4 maggio 2023. Un tifoso regge un fumogeno acceso e le scintille cadono nel fumo: nel giorno dello scudetto la città non sta ferma un attimo.'}];
+ {f:'img/home.jpg',a:'Un cassonetto rovesciato brucia in mezzo alla strada, Torino',p:'50% 62%',l:'Torino',d:'20 dicembre 2025',s:'Torino, 20 dicembre 2025. Un cassonetto rovesciato brucia in mezzo alla strada, e intorno la gente guarda da lontano, nel fumo.',
+  en:{a:'An overturned dumpster burns in the middle of the street, Turin',l:'Turin',d:'20 December 2025',s:'Turin, 20 December 2025. An overturned dumpster burns in the middle of the street, and around it people watch from a distance, through the smoke.'}},
+ {f:'img/home2.jpg',a:'Un tifoso del Napoli regge un fumogeno acceso tra scintille e fumo, Napoli',p:'45% 42%',l:'Napoli',d:'4 maggio 2023',s:'Napoli, 4 maggio 2023. Un tifoso regge un fumogeno acceso e le scintille cadono nel fumo: nel giorno dello scudetto la città non sta ferma un attimo.',
+  en:{a:'A Napoli fan holds a lit flare amid sparks and smoke, Naples',l:'Naples',d:'4 May 2023',s:'Naples, 4 May 2023. A fan holds up a lit flare and the sparks fall through the smoke: on the day of the title, the city does not stand still for a moment.'}}];
 let heroT=null;
 function home(){document.body.classList.add('home');
- app.innerHTML=`<a class="hero fade" href="#work" aria-label="Vai ai progetti" aria-describedby="hs">${HERO.map((x,i)=>`<img class="${i?'':'on'}" src="${x.f}" alt="${esc(x.a)}" style="object-position:${x.p}">`).join('')}<div class="cap"><span id="hl">${HERO[0].l}</span><span id="hd">${HERO[0].d}</span></div><div class="tip"><p id="hs">${esc(HERO[0].s)}</p></div></a>`;
+ app.innerHTML=`<a class="hero fade" href="#work" aria-label="${esc(t('heroGo'))}" aria-describedby="hs">${HERO.map((x,i)=>`<img class="${i?'':'on'}" src="${x.f}" alt="${esc(pick(x,'a'))}" style="object-position:${x.p}">`).join('')}<div class="cap"><span id="hl">${esc(pick(HERO[0],'l'))}</span><span id="hd">${esc(pick(HERO[0],'d'))}</span></div><div class="tip"><p id="hs">${esc(pick(HERO[0],'s'))}</p></div></a>`;
  clearInterval(heroT);
  if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
  let i=0;const hero=app.querySelector('.hero'),im=app.querySelectorAll('.hero img'),hl=document.getElementById('hl'),hd=document.getElementById('hd'),hs=document.getElementById('hs');let hov=false;hero.onmouseenter=()=>{hov=true};hero.onmouseleave=()=>{hov=false};
  heroT=setInterval(()=>{if(hov)return;i=(i+1)%HERO.length;im.forEach((e,k)=>e.classList.toggle('on',k===i));
   hl.style.opacity=hd.style.opacity=hs.style.opacity=0;
-  setTimeout(()=>{hl.textContent=HERO[i].l;hd.textContent=HERO[i].d;hs.textContent=HERO[i].s;hl.style.opacity=hd.style.opacity=hs.style.opacity=1},700)},6500)}
-function work(){app.innerHTML=`<div class="fade"><h1 class="pt">Portfolio</h1><p class="sub">Reportage</p><div class="grid">${PROJ.map(p=>p.soon?
- `<div class="card soon"><div class="ph">${seal}<span class="tag">In preparazione</span></div><h3>${esc(p.title)}</h3><p>${esc([p.place,p.years].filter(Boolean).join(' · '))}</p></div>`:
- `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(p.title)}"></div><h3>${esc(p.title)}</h3><p>${esc(p.place)} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
-const GAL=[
- {f:'img/ns-01.jpg',t:'Il coro',s:{cam:'Leica Q2',lens:'Summilux 28 mm f/1.7',ap:'f/2.8',sh:'1/80 s',iso:'100',h:'17:45'},d:'Napoli, 4 maggio 2023. Parrucca blu, braccia al cielo e un Diego tatuato sulla pelle: in un vicolo, per un pomeriggio, trentatré anni di attesa si sciolgono in un solo coro.',a:'Un uomo con la parrucca blu e la maglia Buitoni alza le braccia sulla soglia di un locale, tra altri tifosi in festa nel vicolo'},
- {f:'img/ask-05.jpg',t:'L’idrante',d:'Torino, corso Regina Margherita, 31 gennaio 2026. Il getto d’acqua taglia la sera e un fuoco d’artificio si apre sopra gli scudi: per un istante la città diventa un teatro di luce, mentre la notte, lì sotto, è ancora tutta da vivere.',a:'Un idrante colpisce il viale mentre esplode un fuoco d’artificio davanti al cordone di scudi'},
- {f:'img/ss-09.jpg',t:'A piedi nudi',d:'Taranto, 18 aprile 2025. Scalzi sull’asfalto, con i rosari che oscillano a ogni passo: qui il tempo si misura in passi lenti, e le promesse si pagano con i piedi.',a:'I piedi nudi di due confratelli in tunica bianca, con i rosari e un bastone, sull’asfalto'},
- {f:'img/co-02.jpg',t:'Il ritmo',d:'Londra, 21 gennaio 2017. Il chitarrista si piega sullo strumento sotto un fascio di luce verde, e la musica gli esce dalle mani come una corrente.',a:'Un chitarrista in canotta suona sotto un fascio di luce verde'}
-];
-const SHOT=[['Macchina','cam'],['Obiettivo','lens'],['Diaframma','ap'],['Tempo','sh'],['ISO','iso'],['Ora','h']];
+  setTimeout(()=>{hl.textContent=pick(HERO[i],'l');hd.textContent=pick(HERO[i],'d');hs.textContent=pick(HERO[i],'s');hl.style.opacity=hd.style.opacity=hs.style.opacity=1},700)},6500)}
+function work(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_work'))}</h1><p class="sub">${esc(t('workSub'))}</p><div class="grid">${PROJ.map(p=>p.soon?
+ `<div class="card soon"><div class="ph">${seal}<span class="tag">${esc(t('soon'))}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc([pick(p,'place'),p.years].filter(Boolean).join(' · '))}</p></div>`:
+ `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"></div><h3>${esc(pick(p,'title'))}</h3><p>${esc(pick(p,'place'))} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
+const GAL=[];  // formato: {f:'img/xx.jpg',t:'Titolo',d:'Didascalia',a:'Testo alt',s:{cam,lens,ap,sh,iso,h},en:{t,d,a}}  (copia delle vecchie voci in portfolio-backup/GAL.js)
+const SHOT=['cam','lens','ap','sh','iso','h'];
 let shotOpen=false;
-function shot(s,o){return s?`<details class="shot"${o?' open':''}><summary>Dietro lo scatto</summary><dl class="facts">${SHOT.filter(k=>s[k[1]]).map(k=>`<dt>${k[0]}</dt><dd>${esc(s[k[1]])}</dd>`).join('')}</dl></details>`:''}
-function gallery(){app.innerHTML=`<div class="fade"><h1 class="pt">Gallery</h1><div class="gl">${GAL.map(x=>`<figure><img loading="lazy" src="${x.f}" alt="${esc(x.a)}"><figcaption><div class="gt">${esc(x.t)}</div><p class="gd">${esc(x.d)}</p>${shot(x.s)}</figcaption></figure>`).join('')}</div></div>`}
+function shot(s,o){return s?`<details class="shot"${o?' open':''}><summary>${esc(t('behind'))}</summary><dl class="facts">${SHOT.filter(k=>s[k]).map(k=>`<dt>${esc(t('s_'+k))}</dt><dd>${esc(s[k])}</dd>`).join('')}</dl></details>`:''}
+function gallery(){app.innerHTML=`<div class="fade"><h1 class="pt">Gallery</h1>${GAL.length?'':`<p class="sub" style="margin-top:8px">${esc(t('galSoon'))}</p>`}<div class="gl">${GAL.map(x=>`<figure><img loading="lazy" src="${x.f}" alt="${esc(pick(x,'a'))}"><figcaption><div class="gt">${esc(pick(x,'t'))}</div><p class="gd">${esc(pick(x,'d'))}</p>${shot(x.s)}</figcaption></figure>`).join('')}</div></div>`}
+const PROGRESS=[];  // formato: {t:'Titolo',p:'Luogo',y:'Anno',d:'Breve descrizione',f:'img/xx.jpg' (facoltativo),en:{t,p,d}}
+function progress(){app.innerHTML=`<div class="fade"><h1 class="pt">In Progress</h1><p class="sub">${esc(t('pgSub'))}</p>${PROGRESS.length?`<div class="grid">${PROGRESS.map(x=>`<div class="card${x.f?'':' soon'}"><div class="ph">${x.f?`<img loading="lazy" src="${x.f}" alt="${esc(pick(x,'t'))}">`:seal}<span class="tag">${esc(t('pgTag'))}</span></div><h3>${esc(pick(x,'t'))}</h3><p>${esc([pick(x,'p'),x.y].filter(Boolean).join(' · '))}</p>${pick(x,'d')?`<p>${esc(pick(x,'d'))}</p>`:''}</div>`).join('')}</div>`:`<p class="big it" style="max-width:62ch;font-style:italic">${esc(t('pgText'))}</p>`}</div>`}
 function proj(p){cur=p;idx=0;
- app.innerHTML=`<div class="fade"><a class="back" href="#work">← Portfolio</a>
- <div class="viewer" id="vw" aria-roledescription="galleria" data-x="region" aria-label="Galleria"><button class="hit p" aria-label="Foto precedente"><span>‹</span></button><img id="vi" alt=""><button class="hit n" aria-label="Foto successiva"><span>›</span></button></div>
+ app.innerHTML=`<div class="fade"><a class="back" href="#work">← ${esc(t('n_work'))}</a>
+ <div class="viewer" id="vw" aria-roledescription="${esc(t('vwRole'))}" data-x="region" aria-label="${esc(t('vwLabel'))}"><button class="hit p" aria-label="${esc(t('prev'))}"><span>‹</span></button><img id="vi" alt=""><button class="hit n" aria-label="${esc(t('next'))}"><span>›</span></button></div>
  <div class="bar"><span class="t" id="vt"></span><span class="d" id="vd"></span></div><div id="vs"></div>
- <div class="thumbs" id="th">${p.photos.map((x,i)=>`<button data-i="${i}" aria-label="Foto ${i+1}"><img src="${x.f}" alt="" loading="lazy"></button>`).join('')}</div>
- <h1 class="pt">${esc(p.title)}</h1><p class="sub">${esc(p.place)} · ${esc(p.years)}</p>
- <div class="txt">${p.intro.map(t=>`<p>${esc(t)}</p>`).join('')}</div>
- <dl class="facts">${p.facts.map(f=>`<dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd>`).join('')}</dl></div>`;
+ <div class="thumbs" id="th">${p.photos.map((x,i)=>`<button data-i="${i}" aria-label="${esc(t('photoN'))}${i+1}"><img src="${x.f}" alt="" loading="lazy"></button>`).join('')}</div>
+ <h1 class="pt">${esc(pick(p,'title'))}</h1><p class="sub">${esc(pick(p,'place'))} · ${esc(p.years)}</p>
+ <div class="txt">${(pick(p,'intro')||[]).map(x=>`<p>${esc(x)}</p>`).join('')}</div>
+ <dl class="facts">${(pick(p,'facts')||[]).map(f=>`<dt>${esc(f[0])}</dt><dd>${esc(f[1])}</dd>`).join('')}</dl></div>`;
  const v=$('#vw');v.querySelector('.p').onclick=()=>go(-1);v.querySelector('.n').onclick=()=>go(1);
  $('#th').onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i)};
  v.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
  v.addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>40)go(dx<0?1:-1)});
  show(startIdx);startIdx=0}
-function show(i){const n=cur.photos.length;idx=(i+n)%n;const x=cur.photos[idx],im=$('#vi');im.src=x.f;im.alt=x.a;
- $('#vt').textContent=`${String(idx+1).padStart(2,'0')} / ${String(n).padStart(2,'0')} · ${x.t}`;$('#vd').textContent=`${cur.place} · ${x.d}`;
+function show(i){const n=cur.photos.length;idx=(i+n)%n;const x=cur.photos[idx],im=$('#vi');im.src=x.f;im.alt=pick(x,'a');
+ $('#vt').textContent=`${String(idx+1).padStart(2,'0')} / ${String(n).padStart(2,'0')} · ${pick(x,'t')}`;$('#vd').textContent=`${pick(cur,'place')} · ${pick(x,'d')}`;
  document.querySelectorAll('#th button').forEach((b,k)=>b.setAttribute('aria-current',k===idx?'true':'false'));
  const vs=$('#vs');vs.innerHTML=shot(x.s,shotOpen);const dt=vs.querySelector('details');if(dt)dt.addEventListener('toggle',()=>{shotOpen=dt.open});
  const nx=cur.photos[(idx+1)%n];(new Image).src=nx.f}
 function go(d){show(idx+d)}
-/* Per aggiungere una stampa: {f:'img/xx.jpg',t:'Titolo',p:'Luogo · Anno',a:'Descrizione della foto'} */
+/* Per aggiungere una stampa: {f:'img/xx.jpg',t:'Titolo',p:'Luogo · Anno',a:'Descrizione della foto',en:{t,p,a}} */
 const PRINTS=[];
-function prints(){const mail=x=>'mailto:info@bonesph.com?subject='+encodeURIComponent('Stampa: '+x.t)+'&body='+encodeURIComponent('Buongiorno, vorrei informazioni sulla stampa «'+x.t+'» ('+x.p+').');
- app.innerHTML=`<div class="fade"><h1 class="pt">Stampe</h1><p class="sub">Fotografie firmate col sigillo</p><div class="cols"><div class="big it"><p>Alcune fotografie di queste pagine esistono anche su carta: stampe firmate col sigillo rosso GENZO, pensate per essere appese e guardate a lungo.</p><p>Formati, carta e prezzi dipendono dalla fotografia e dallo spazio in cui deve vivere. Scrivimi e li decidiamo insieme.</p></div><div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg><div class="row"><span>Formati</span><span>Su richiesta</span></div><div class="row"><span>Prezzi</span><span>Su richiesta</span></div><div class="row"><span>Scrivi a</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div>
- ${PRINTS.length?`<div class="grid pr" style="margin-top:40px">${PRINTS.map(x=>`<div class="card"><div class="ph"><img loading="lazy" src="${x.f}" alt="${esc(x.a)}"></div><h3>${esc(x.t)}</h3><div class="meta"><span>${esc(x.p)}</span><span>Prezzo su richiesta</span></div><a class="lk" href="${mail(x)}">Chiedi informazioni</a></div>`).join('')}</div>`:`<p class="big it" style="margin-top:40px">Le prime stampe saranno disponibili presto.</p>`}</div>`}
-function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><p class="sub">Fotogiornalismo</p><div class="cols">
- <div class="big it"><p>Sono un fotogiornalista. Vado dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.</p>
- <p>Ho imparato presto che le fotografie più vere arrivano quando l’evento è già un ricordo: un gesto che nessuno nota, una mano che si appoggia a una spalla, la cenere che si posa sull’asfalto. Per questo cerco la distanza giusta, che è quasi sempre poca, e aspetto. Lavoro soprattutto con un 28 mm, che obbliga a stare dentro la scena e a farsi notare il meno possibile.</p>
- <p>Mi piacciono le notti lunghe, il rumore che scende, le facce stanche dopo la folla. Seguo le storie finché non diventano un luogo che conosco, e non ho fretta di chiuderle: un reportage per me è una promessa fatta alle persone che ho incontrato.</p>
- <p>Il sigillo rosso che firma le mie stampe è l’unica cosa che mi concedo di aggiungere. Il resto, luce, tempo e pazienza, lo mette la strada.</p><figure class="pf"><img loading="lazy" src="img/ritratto.jpg" alt="Autoritratto allo specchio con una Fujifilm X-T4"></figure></div>
- <div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg>
- <div class="row"><span>Base</span><span>Italia</span></div>
- <div class="row"><span>Lavora su</span><span>Reportage, fotogiornalismo</span></div>
- <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div></div>`}
-function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big it"><p>Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.</p></div>
+function prints(){const mail=x=>'mailto:info@bonesph.com?subject='+encodeURIComponent(t('mSubjPrint')+pick(x,'t'))+'&body='+encodeURIComponent(t('mBodyPrint')(pick(x,'t'),pick(x,'p')));
+ app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_prints'))}</h1><p class="sub">${esc(t('prSub'))}</p><div class="cols"><div class="big it"><p>${esc(t('pr1'))}</p><p>${esc(t('pr2'))}</p></div><div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg><div class="row"><span>${esc(t('formats'))}</span><span>${esc(t('onReq'))}</span></div><div class="row"><span>${esc(t('prices'))}</span><span>${esc(t('onReq'))}</span></div><div class="row"><span>${esc(t('writeTo'))}</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div>
+ ${PRINTS.length?`<div class="grid pr" style="margin-top:40px">${PRINTS.map(x=>`<div class="card"><div class="ph"><img loading="lazy" src="${x.f}" alt="${esc(pick(x,'a'))}"></div><h3>${esc(pick(x,'t'))}</h3><div class="meta"><span>${esc(pick(x,'p'))}</span><span>${esc(t('priceReq'))}</span></div><a class="lk" href="${mail(x)}">${esc(t('ask'))}</a></div>`).join('')}</div>`:`<p class="big it" style="margin-top:40px">${esc(t('prSoon'))}</p>`}</div>`}
+function profile(){const jna='<a href="https://jnapress.com" target="_blank" rel="noopener">JNA Press</a>';
+ app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_profile'))}</h1><p class="sub">${esc(t('pfSub'))}</p><div class="cols">
+ <div class="big it"><p>${esc(t('pf1'))}</p>
+ <p>${esc(t('pf2'))}</p>
+ <p>${esc(t('pf3'))}</p>
+ <p>${esc(t('pf4'))}</p><figure class="pf"><img loading="lazy" src="img/ritratto.jpg" alt="${esc(t('pfAlt'))}"></figure>
+ <div class="jna"><p class="lb">${esc(t('agency'))}</p><p>${t('agencyTxt')(jna)}</p><p style="margin:16px 0 0;font-style:normal"><a class="lk" href="https://jnapress.com" target="_blank" rel="noopener">${esc(t('visit'))}</a></p></div>
+ <div class="jna"><p class="lb">${esc(t('awards'))}</p><p>${esc(t('awardsTxt'))}</p></div></div>
+ <div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>
+ <div class="row"><span>${esc(t('base'))}</span><span>${esc(t('baseV'))}</span></div>
+ <div class="row"><span>${esc(t('worksOn'))}</span><span>${esc(t('worksOnV'))}</span></div>
+ <div class="row"><span>${esc(t('gear'))}</span><span>Leica Q3</span></div></div></div></div>`}
+function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_contact'))}</h1><p class="sub">${esc(t('ctSub'))}</p><div class="cols"><div class="big it"><p>${esc(t('ctTxt'))}</p></div>
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
  <div class="row"><span>Email</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div></div>`}
 const BLOG=[
@@ -314,32 +350,43 @@ const BLOG=[
   'L’attesa ha una luce tutta sua. Non è quella dorata dei tramonti da cartolina, ma una luce sporca, mossa, piena di fumo, che entra negli occhi e li fa lacrimare prima ancora che ci sia un motivo. È la luce di chi sta per essere felice e ancora ha paura di crederci.',
   'Fotografare in quelle ore è come camminare dentro una preghiera collettiva. Non si cerca l’istante decisivo: si aspetta che sia lui ad accorgersi di te. La macchina fotografica diventa un orecchio più che un occhio, e quello che ascolta è un respiro solo, di migliaia di persone, trattenuto.',
   'A notte il respiro è diventato grido, e il grido, per qualcuno, lacrime. Ma io tengo caro il pomeriggio: il momento in cui una città intera ancora non sa di aver vinto, e per questo è bellissima.',
-  'Per questo comincio da qui, da un pomeriggio e non da una vittoria. Le storie, come le fotografie, hanno più verità quando le si guarda un attimo prima che accadano. Forse le fotografie migliori sono sempre quelle di un attimo prima.']}
+  'Per questo comincio da qui, da un pomeriggio e non da una vittoria. Le storie, come le fotografie, hanno più verità quando le si guarda un attimo prima che accadano. Forse le fotografie migliori sono sempre quelle di un attimo prima.'],
+  en:{t:'Before the Cry',d:'9 November 2026',x:'The afternoon in Naples, when a whole city holds its breath.',a:'A mother smiles as she holds her daughter, who, wearing a mask over her eyes like Osimhen’s, raises a red and green flare in an alley in Naples',p:[
+  'There is a moment before every celebration that nobody photographs. It isn’t the roar and it isn’t the tears: it’s the afternoon. In Naples, on 4 May 2023, it was the colour of waiting.',
+  'Thirty-three years is a long time. It is a whole life for those who counted them one by one, and a family tale for those too young to remember them. In those hours the city seemed suspended, like a breath held in the throat so as not to break the spell.',
+  'I walked into the alleys as the light fell slanting between the balconies. Scarves were already around necks, flags already strung from one window to the next like the washing of a hope thirty-three years long. Every wall had a face, and every face had a Diego.',
+  'Then someone lit a flare and the air turned sky blue. Then green. Then pink. A man in a blue wig raised his arms the way you do in front of the sea; another lifted his shirt to show his saint, inked on his skin. Nobody knew each other, and everyone recognised each other.',
+  'In the middle of that smoke I saw a mother with her little girl in her arms. The child, wearing a mask over her eyes like Osimhen’s, the idol of those days, held her arm stretched upward with a flare pouring out red and green like a torch, while her mother laughed with her whole face, as if there were nothing else around. It is a beautiful memory, one of the most beautiful I carry from that day. I thought that was the real Scudetto: not a trophy, but a little girl who will one day say she was there, even though she won’t remember a thing.',
+  'Waiting has a light all of its own. Not the golden light of postcard sunsets, but a dirty, restless light, full of smoke, that gets into your eyes and makes them water before there is even a reason. It is the light of people about to be happy who are still afraid to believe it.',
+  'Photographing in those hours is like walking inside a collective prayer. You don’t look for the decisive moment: you wait for it to notice you. The camera becomes an ear more than an eye, and what it hears is a single breath, thousands of people’s, held.',
+  'By night the breath became a shout, and the shout, for some, tears. But I hold the afternoon dear: the moment when a whole city still doesn’t know it has won, and that is why it is beautiful.',
+  'That is why I start here, from an afternoon and not from a victory. Stories, like photographs, hold more truth when you look at them a moment before they happen. Maybe the best photographs are always the ones from a moment before.']}}
 ];
-/* Per aggiungere un articolo: {id:'titolo-breve',t:'Titolo',d:'9 novembre 2026',x:'Anteprima di una riga',img:'img/blog-01.jpg',p:['Primo paragrafo','Secondo paragrafo']} */
+/* Per aggiungere un articolo: {id:'titolo-breve',t:'Titolo',d:'9 novembre 2026',x:'Anteprima di una riga',img:'img/blog-01.jpg',p:['Primo paragrafo','Secondo paragrafo'],en:{t,d,x,a,p:[...]}} */
 const SUBSCRIBE_URL=''; /* endpoint di un servizio newsletter (es. Buttondown/Formspree): se vuoto, il modulo apre una mail a info@bonesph.com */
 const isProd=()=>/(^|\.)bonesph\.com$|\.github\.io$/.test(location.hostname);
-function postUrl(x){return isProd()?location.origin+'/blog/'+x.id+'/':location.href.split('#')[0]+'#blog-'+x.id}
-function subBox(){return `<form class="sb" id="sf" novalidate><label for="se">Ricevi i nuovi articoli</label><div class="sf"><input id="se" name="email" type="email" required autocomplete="email" placeholder="La tua email"><button type="submit">Iscriviti</button></div><p class="nt" id="sm" role="status">Ti scrivo quando esce un nuovo racconto, e basta.${isProd()?' Oppure segui il <a class="lk" href="/feed.xml">feed RSS</a>.':''}</p></form>`}
-function bindSub(){const f=$('#sf');if(!f)return;f.onsubmit=e=>{e.preventDefault();const em=$('#se').value.trim(),m=$('#sm');if(!/^\S+@\S+\.\S+$/.test(em)){m.textContent='Controlla l’indirizzo email.';return}
- if(SUBSCRIBE_URL){fetch(SUBSCRIBE_URL,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(r=>{m.textContent=r.ok?'Grazie, sei iscritto.':'Qualcosa non ha funzionato, riprova.';if(r.ok)f.reset()}).catch(()=>{m.textContent='Qualcosa non ha funzionato, riprova.'});return}
- location.href='mailto:info@bonesph.com?subject='+encodeURIComponent('Iscrizione al blog')+'&body='+encodeURIComponent('Ciao, vorrei ricevere i nuovi articoli del blog. La mia email: '+em);
- m.textContent='Si apre la tua posta: invia il messaggio e sei iscritto.'}}
-function blog(){app.innerHTML=`<div class="fade colb"><h1 class="pt">Blog</h1><p class="sub">Storie dietro le fotografie</p>${BLOG.length?`<div class="bl">${BLOG.map(x=>`<a href="#blog-${x.id}"><div class="bd">${esc(x.d)}</div><div class="bt">${esc(x.t)}</div><p class="bx">${esc(x.x||'')}</p></a>`).join('')}</div>`:`<div class="big it" style="max-width:640px"><p>Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.</p></div>`}${subBox()}</div>`;bindSub()}
-function shareBar(x){const u=encodeURIComponent(postUrl(x)),t=encodeURIComponent(x.t+' · GENZO');
+function postUrl(x){return isProd()?location.origin+(LANG==='en'?'/en':'')+'/blog/'+x.id+'/':location.href.split('#')[0]+'#blog-'+x.id}
+function subBox(){return `<form class="sb" id="sf" novalidate><label for="se">${esc(t('sbLabel'))}</label><div class="sf"><input id="se" name="email" type="email" required autocomplete="email" placeholder="${esc(t('sbPh'))}"><button type="submit">${esc(t('sbBtn'))}</button></div><p class="nt" id="sm" role="status">${esc(t('sbNote'))}${isProd()?t('sbRss'):''}</p></form>`}
+function bindSub(){const f=$('#sf');if(!f)return;f.onsubmit=e=>{e.preventDefault();const em=$('#se').value.trim(),m=$('#sm');if(!/^\S+@\S+\.\S+$/.test(em)){m.textContent=t('sbBad');return}
+ if(SUBSCRIBE_URL){fetch(SUBSCRIBE_URL,{method:'POST',headers:{'Accept':'application/json'},body:new FormData(f)}).then(r=>{m.textContent=r.ok?t('sbOk'):t('sbErr');if(r.ok)f.reset()}).catch(()=>{m.textContent=t('sbErr')});return}
+ location.href='mailto:info@bonesph.com?subject='+encodeURIComponent(t('sbSubj'))+'&body='+encodeURIComponent(t('sbBody')+em);
+ m.textContent=t('sbMail')}}
+function blog(){app.innerHTML=`<div class="fade colb"><h1 class="pt">Blog</h1><p class="sub">${esc(t('blSub'))}</p>${BLOG.length?`<div class="bl">${BLOG.map(x=>`<a href="#blog-${x.id}"><div class="bd">${esc(pick(x,'d'))}</div><div class="bt">${esc(pick(x,'t'))}</div><p class="bx">${esc(pick(x,'x')||'')}</p></a>`).join('')}</div>`:`<div class="big it" style="max-width:640px"><p>${esc(t('blSoon'))}</p></div>`}${subBox()}</div>`;bindSub()}
+function shareBar(x){const u=encodeURIComponent(postUrl(x)),tt=encodeURIComponent(pick(x,'t')+' · GENZO');
 const I={wa:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3a9 9 0 0 0-7.7 13.6L3 21l4.5-1.2A9 9 0 1 0 12 3z"/><path d="M9 8.5c0 3.5 3 6.5 6.5 6.5l1-1.5-2-1-1 .8c-1-.4-2-1.4-2.4-2.4l.8-1-1-2z"/></svg>',fb:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>',x:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h4l12 16h-4z"/><path d="M20 4l-6.5 7M4 20l6.5-7"/></svg>',mail:'<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>',link:'<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.5.5l3-3a5 5 0 0 0-7-7l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.5-.5l-3 3a5 5 0 0 0 7 7l1.7-1.7"/></svg>'};
-return `<div class="share"><span class="lb">Condividi</span><a href="https://wa.me/?text=${t}%20${u}" target="_blank" rel="noopener" aria-label="Condividi su WhatsApp" title="WhatsApp">${I.wa}</a><a href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener" aria-label="Condividi su Facebook" title="Facebook">${I.fb}</a><a href="https://twitter.com/intent/tweet?text=${t}&url=${u}" target="_blank" rel="noopener" aria-label="Condividi su X" title="X">${I.x}</a><a href="mailto:?subject=${t}&body=${u}" aria-label="Condividi via email" title="Email">${I.mail}</a><button type="button" id="cp" aria-label="Copia il link" title="Copia link">${I.link}</button><span class="ok" id="cpok" role="status"></span></div>`}
-function bindShare(){const b=document.getElementById('cp'),m=document.getElementById('cpok');if(!b)return;b.onclick=()=>{const px=BLOG.find(q=>'blog-'+q.id===location.hash.slice(1)),u=px?postUrl(px):location.href;const done=()=>{m.textContent='Link copiato';setTimeout(()=>{m.textContent=''},2000)};
+return `<div class="share"><span class="lb">${esc(t('share'))}</span><a href="https://wa.me/?text=${tt}%20${u}" target="_blank" rel="noopener" aria-label="${esc(t('shWa'))}" title="WhatsApp">${I.wa}</a><a href="https://www.facebook.com/sharer/sharer.php?u=${u}" target="_blank" rel="noopener" aria-label="${esc(t('shFb'))}" title="Facebook">${I.fb}</a><a href="https://twitter.com/intent/tweet?text=${tt}&url=${u}" target="_blank" rel="noopener" aria-label="${esc(t('shX'))}" title="X">${I.x}</a><a href="mailto:?subject=${tt}&body=${u}" aria-label="${esc(t('shMail'))}" title="Email">${I.mail}</a><button type="button" id="cp" aria-label="${esc(t('shCopy'))}" title="${esc(t('shCopyT'))}">${I.link}</button><span class="ok" id="cpok" role="status"></span></div>`}
+function bindShare(){const b=document.getElementById('cp'),m=document.getElementById('cpok');if(!b)return;b.onclick=()=>{const px=BLOG.find(q=>'blog-'+q.id===location.hash.slice(1)),u=px?postUrl(px):location.href;const done=()=>{m.textContent=t('shDone');setTimeout(()=>{m.textContent=''},2000)};
 const fb=()=>{const a=document.createElement('textarea');a.value=u;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()};
 try{navigator.clipboard.writeText(u).then(done,fb)}catch(e){fb()}}}
-function post(x){app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post"><p class="bd">${esc(x.d)}</p><h1>${esc(x.t)}</h1>${(x.p||[]).map((t,i)=>i?`<p>${esc(t)}</p>`:`<p><span class="cap">${esc(t.charAt(0))}</span>${esc(t.slice(1))}</p>`).join('')}${x.img?`<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg><img src="${x.img}" alt="${esc(x.a||x.t)}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}</article>${subBox()}</div>`;bindShare();bindSub()}
+function post(x){const ps=pick(x,'p')||[];app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1>${ps.map((p,i)=>i?`<p>${esc(p)}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`).join('')}${x.img?`<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}</article>${subBox()}</div>`;bindShare();bindSub()}
 function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon))||(n==='blog'&&h.indexOf('blog-')===0);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
- if(p)proj(p);else if(h==='work'||PROJ.some(q=>q.id===h))work();else if(h==='gallery')gallery();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='prints')prints();else if(h==='profile')profile();else if(h==='contact')contact();else home();
+ if(p)proj(p);else if(h==='work'||PROJ.some(q=>q.id===h))work();else if(h==='gallery')gallery();else if(h==='progress')progress();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='prints')prints();else if(h==='profile')profile();else if(h==='contact')contact();else home();
  window.scrollTo(0,0)}
 addEventListener('hashchange',route);
 addEventListener('keydown',e=>{if(!cur)return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1)});
+applyLang();
 route();
 </script>
 </body>
