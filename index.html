@@ -88,6 +88,8 @@ a.card:hover img{transform:scale(1.025)}
 .big{font:400 clamp(18px,1.8vw,21px)/1.55 var(--serif)}
 .big.it{font-style:italic;font-size:clamp(16px,1.55vw,18.5px)}
 .seal{width:96px;height:96px;display:block;margin:6px 0 18px}
+.pf{margin:56px auto 24px;width:min(100%,440px)}
+.pf img{display:block;width:100%;height:auto}
 .list a{border-bottom:1px solid var(--line)}.list a:hover{border-bottom-color:var(--fg)}
 .row{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:12px;font:400 15px/1.5 var(--sans)}
 .row span:first-child{color:var(--mut);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
@@ -194,7 +196,8 @@ function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><
  <div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="Sigillo GENZO"><use href="#hanko"/></svg>
  <div class="row"><span>Base</span><span>Italia</span></div>
  <div class="row"><span>Lavora su</span><span>Reportage, foto documentaria</span></div>
- <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div></div>`}
+ <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div>
+ <figure class="pf"><img loading="lazy" src="img/ritratto.jpg" alt="GENZO si fotografa allo specchio con una Fujifilm X-T4"></figure></div>`}
 function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big"><p>Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.</p></div>
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
  <div class="row"><span>Email</span><span><a href="mailto:stevegenzo@icloud.com">stevegenzo@icloud.com</a></span></div></div></div></div>`}
