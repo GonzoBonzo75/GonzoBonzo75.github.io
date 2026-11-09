@@ -86,6 +86,7 @@ a.card:hover img{transform:scale(1.025)}
 .cols{display:grid;grid-template-columns:minmax(0,1fr);gap:28px 56px;margin-top:6px}
 @media (min-width:860px){.cols{grid-template-columns:minmax(0,5fr) minmax(0,4fr)}}
 .big{font:400 clamp(18px,1.8vw,21px)/1.55 var(--serif)}
+.big.it{font-style:italic;font-size:clamp(16px,1.55vw,18.5px)}
 .seal{width:96px;height:96px;display:block;margin:6px 0 18px}
 .list a{border-bottom:1px solid var(--line)}.list a:hover{border-bottom-color:var(--fg)}
 .row{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:12px;font:400 15px/1.5 var(--sans)}
@@ -186,7 +187,7 @@ function show(i){const n=cur.photos.length;idx=(i+n)%n;const x=cur.photos[idx],i
  const nx=cur.photos[(idx+1)%n];(new Image).src=nx.f}
 function go(d){show(idx+d)}
 function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><p class="sub">Fotografia documentaria</p><div class="cols">
- <div class="big"><p>GENZO è un fotografo documentarista e un reporter. Va dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.</p>
+ <div class="big it"><p>GENZO è un fotografo documentarista e un reporter. Va dove la storia si sta facendo: nelle piazze, nei cortei, nei riti che tornano ogni anno, e dove il mondo si incrina, fino alle zone di guerra.</p>
  <p>Ha imparato presto che le fotografie più vere arrivano quando l’evento è già un ricordo: un gesto che nessuno nota, una mano che si appoggia a una spalla, la cenere che si posa sull’asfalto. Per questo cerca la distanza giusta, che è quasi sempre poca, e aspetta. Lavora con un solo obiettivo, un 28 mm, che obbliga a stare dentro la scena e a farsi notare il meno possibile.</p>
  <p>Gli piacciono le notti lunghe, il rumore che scende, le facce stanche dopo la folla. Segue le storie finché non diventano un luogo che conosce, e non ha fretta di chiuderle: un reportage per lui è una promessa fatta alle persone che ha incontrato.</p>
  <p>Il sigillo rosso che firma le sue stampe è l’unica cosa che si concede di aggiungere. Il resto, luce, tempo e pazienza, lo mette la strada.</p></div>
