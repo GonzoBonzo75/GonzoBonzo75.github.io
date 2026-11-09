@@ -136,6 +136,16 @@ a.card:hover img{transform:scale(1.025)}
 .bl a:hover .bt{color:var(--accent)}
 .bl .bx{font:italic 400 17px/1.55 var(--serif);color:var(--mut);margin:0}
 .post{max-width:680px}
+html:has(body.postv){overflow:hidden}
+body.postv{height:100svh;overflow:hidden}
+body.postv footer{display:none}
+body.postv main{min-height:0}
+.post.fr{display:flex;flex-direction:column;height:var(--ph,70vh);min-height:0}
+.post.fr .pt0{flex:none;position:relative;z-index:1;background:var(--bg);padding-top:6px}
+.post.fr h1{margin:0 0 10px}
+.post.fr .ps{flex:1;min-height:0;overflow-y:auto;overscroll-behavior:contain;padding:22px 6px 40px 0;scrollbar-width:none;-ms-overflow-style:none;-webkit-mask-image:linear-gradient(to bottom,transparent 0,#000 30px);mask-image:linear-gradient(to bottom,transparent 0,#000 30px)}
+.post.fr .ps::-webkit-scrollbar{display:none}
+.post.fr .ps:focus-visible{outline:none}
 .post .bd{font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin:0 0 14px}
 .post h1{font:400 clamp(30px,4.4vw,46px)/1.15 var(--serif);margin:0 0 28px;text-wrap:balance;color:var(--accent)}
 .post p{font:italic 400 clamp(19px,1.6vw,21.5px)/1.7 var(--serif);margin:0 0 1.1em}
@@ -444,8 +454,10 @@ return `<div class="share"><span class="lb">${esc(t('share'))}</span><a href="ht
 function bindShare(){const b=document.getElementById('cp'),m=document.getElementById('cpok');if(!b)return;b.onclick=()=>{const px=BLOG.find(q=>'blog-'+q.id===location.hash.slice(1)),u=px?postUrl(px):location.href;const done=()=>{m.textContent=t('shDone');setTimeout(()=>{m.textContent=''},2000)};
 const fb=()=>{const a=document.createElement('textarea');a.value=u;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()};
 try{navigator.clipboard.writeText(u).then(done,fb)}catch(e){fb()}}}
-function post(x){const ps=pick(x,'p')||[];app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1>${ps.map((p,i)=>i?`<p>${esc(p)}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`).join('')}${x.img?`<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}</article>${subBox()}</div>`;bindShare();bindSub()}
-function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
+function fit(){const a=document.querySelector('.post.fr');if(a)a.style.setProperty('--ph',Math.max(240,innerHeight-a.getBoundingClientRect().top-18)+'px')}
+addEventListener('resize',fit);
+function post(x){const ps=pick(x,'p')||[];app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post fr"><div class="pt0"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1></div><div class="ps" tabindex="0" role="region" aria-label="${esc(pick(x,'t'))}">${ps.map((p,i)=>i?`<p>${esc(p)}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`).join('')}${x.img?`<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}${subBox()}</div></article></div>`;document.body.classList.add('postv');fit();bindShare();bindSub()}
+function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');document.body.classList.remove('postv');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon))||(n==='blog'&&h.indexOf('blog-')===0);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
  if(p)proj(p);else if(h==='work'||PROJ.some(q=>q.id===h))work();else if(h==='gallery')gallery();else if(h==='progress')progress();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='prints')prints();else if(h==='profile')profile();else if(h==='contact')contact();else home();
