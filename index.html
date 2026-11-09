@@ -76,6 +76,8 @@ a.card:hover img{transform:scale(1.025)}
 .card p{margin:0;color:var(--mut);font:400 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase}
 .card.soon .ph svg{width:44px;height:44px;opacity:.35}
 .card.soon h3,.card.soon p{opacity:.6}
+.card.soon.has h3,.card.soon.has p{opacity:1}
+.card.soon.has .wm svg{width:100%;height:100%;opacity:1}
 .card.pg h3,.card.pg p{opacity:1}
 .card.pg{container-type:inline-size}
 .card.pg .ph{aspect-ratio:4/3}
@@ -207,7 +209,11 @@ const PROJ=[
           'I walked from the afternoon until late at night, through alleys filling up with blue, through smoke rising between the balconies, among people laughing and hugging without knowing each other.',
           'These are not photographs of a match. They are the photographs of a people who, for one night, find themselves all together.'],
    facts:[['Theme','Napoli’s Scudetto'],['Date','4 May 2023'],['Series','5 photographs']]}},
- {id:'askatasuna',title:'Askatasuna, 31 gennaio',place:'Torino',years:'2026',soon:1,en:{title:'Askatasuna, 31 January',place:'Turin'}},
+ {id:'askatasuna',title:'Askatasuna, 31 gennaio',place:'Torino',years:'2026',cover:'img/askatasuna-01.jpg',
+  facts:[['Data','31 gennaio 2026'],['Serie','1 fotografia']],
+  photos:[
+   {f:'img/askatasuna-01.jpg',t:'Askatasuna',d:'31 gennaio 2026',a:'Manifestanti incappucciati con bandiere rosse e bastoni a contatto con uno schieramento di agenti in assetto antisommossa, mentre un idrante spruzza acqua da un blindato',en:{t:'Askatasuna',d:'31 January 2026',a:'Hooded demonstrators with red flags and poles in contact with a line of riot police, as a water cannon sprays from an armoured vehicle'}}],
+  en:{title:'Askatasuna, 31 January',place:'Turin',facts:[['Date','31 January 2026'],['Series','1 photograph']]}},
  {id:'settimana-santa',title:'Riti della Settimana Santa',place:'Taranto',years:'2025',soon:1,en:{title:'Holy Week rites',place:'Taranto'}},
  {id:'cooleness',title:'The Cooleness',place:'Londra',years:'2017',soon:1,en:{place:'London'}},
  {id:'torino-piazza',title:'Torino, la piazza',place:'Torino',years:'',soon:1,en:{title:'Turin, the square',place:'Turin'}}
@@ -317,7 +323,7 @@ function home(){document.body.classList.add('home');
   hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=0;
   setTimeout(()=>{hl.textContent=pick(HERO[i],'l');hd.textContent=pick(HERO[i],'d');hs.textContent=hB(HERO[i]);ht.textContent=hT(HERO[i]);hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=1},700)},6500)}
 function work(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_work'))}</h1><p class="sub">${esc(t('workSub'))}</p><div class="grid">${PROJ.map(p=>p.soon?
- `<div class="card soon"><div class="ph">${seal}<span class="tag">${esc(t('soon'))}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc([pick(p,'place'),p.years].filter(Boolean).join(' · '))}</p></div>`:
+ `<div class="card soon${p.cover?' has':''}"><div class="ph">${p.cover?`<img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"><span class="wm" aria-hidden="true">${seal}</span>`:seal}<span class="tag">${esc(t('soon'))}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc([pick(p,'place'),p.years].filter(Boolean).join(' · '))}</p></div>`:
  `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"><span class="wm" aria-hidden="true">${seal}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc(pick(p,'place'))} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
 const GAL=[];  // formato: {f:'img/xx.jpg',t:'Titolo',d:'Didascalia',a:'Testo alt',s:{cam,lens,ap,sh,iso,h},en:{t,d,a}}  (copia delle vecchie voci in portfolio-backup/GAL.js)
 const SHOT=['cam','lens','ap','sh','iso','h'];
@@ -351,6 +357,7 @@ function proj(p){cur=p;idx=0;
  $('#th').onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i)};
  v.addEventListener('touchstart',e=>{tx=e.touches[0].clientX},{passive:true});
  v.addEventListener('touchend',e=>{if(tx==null)return;const dx=e.changedTouches[0].clientX-tx;tx=null;if(Math.abs(dx)>40)go(dx<0?1:-1)});
+ if(p.photos.length<2){v.querySelectorAll('.hit').forEach(e=>e.style.display='none');$('#th').style.display='none'}
  show(startIdx);startIdx=0}
 function show(i){const n=cur.photos.length;idx=(i+n)%n;const x=cur.photos[idx],im=$('#vi');im.src=x.f;im.alt=pick(x,'a');
  $('#vt').textContent=`${String(idx+1).padStart(2,'0')} / ${String(n).padStart(2,'0')} · ${pick(x,'t')}`;$('#vd').textContent=`${pick(cur,'place')} · ${pick(x,'d')}`;
