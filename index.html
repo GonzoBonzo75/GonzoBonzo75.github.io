@@ -38,7 +38,6 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px 24
 nav{display:flex;gap:28px;font:400 21px/1 var(--serif)}
 @media (max-width:560px){nav{width:100%;justify-content:space-between;gap:4px;font-size:14px}}
 @media (max-width:350px){nav{font-size:12.5px;gap:2px}}
-nav a b{font-weight:700}
 nav a{white-space:nowrap;padding:8px 0;border-bottom:1px solid transparent;color:var(--mut)}
 nav a:hover,nav a[aria-current="page"]{color:var(--fg);border-bottom-color:var(--fg)}
 .tools{order:3;display:flex;align-items:center;gap:8px}
@@ -57,13 +56,11 @@ footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);displa
 .hero img.on{opacity:1}
 .hero .cap span{transition:opacity .7s ease}
 .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;color:#fff;font:500 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(transparent,rgba(0,0,0,.45));display:flex;justify-content:space-between;gap:12px}
-.hero .tip{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:96px clamp(18px,3vw,44px) clamp(40px,5vw,64px);background:rgba(18,17,16,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#fff;transform:translateY(100%);transition:transform .5s cubic-bezier(.2,.7,.2,1);pointer-events:none}
+.hero .tip{position:absolute;left:0;right:0;bottom:0;z-index:2;display:flex;flex-direction:column;justify-content:flex-end;gap:10px;padding:96px clamp(18px,3vw,44px) clamp(40px,5vw,64px);background:rgba(18,17,16,.66);-webkit-backdrop-filter:blur(3px);backdrop-filter:blur(3px);color:#fff;pointer-events:none}
 .hero .tip p{margin:0;max-width:74ch;font:italic 400 clamp(18px,1.9vw,25px)/1.5 var(--serif);transition:opacity .7s ease}
 .hero .tip p.tl{align-self:flex-start;font:italic 400 clamp(17px,1.6vw,21px)/1.4 var(--serif);letter-spacing:.1em;text-transform:uppercase;text-decoration:underline;text-decoration-color:#c23a2c;text-decoration-thickness:2px;text-underline-offset:8px}
-@media (hover:hover){.hero:hover .tip,.hero:focus-visible .tip{transform:none}.hero:hover .cap,.hero:focus-visible .cap{opacity:0}}
-.hero .cap{transition:opacity .3s ease}
-@media (hover:none){.hero .tip{display:none}}
-@media (prefers-reduced-motion:reduce){.hero .tip{transition:none}}
+.hero .cap{display:none}
+@media (max-width:640px){.hero .tip{padding:56px 18px 22px;gap:8px}.hero .tip p{font-size:17px}.hero .tip p.tl{font-size:15px}}
 body.home footer{margin-top:18px}
 /* work */
 h1.pt{font:400 clamp(30px,5vw,46px)/1.1 var(--serif);letter-spacing:-.01em;margin:30px 0 6px}
@@ -309,7 +306,7 @@ dmq.addEventListener('change',paintTm);paintTm();
 function setMeta(sel,v){const m=document.querySelector(sel);if(m)m.setAttribute('content',v)}
 function applyLang(){document.documentElement.lang=LANG;document.title=t('title');
  setMeta('meta[name="description"]',t('desc'));setMeta('meta[property="og:title"]',t('title'));setMeta('meta[property="og:description"]',t('ogdesc'));
- document.querySelectorAll('nav a').forEach(a=>{a.innerHTML=esc(t('n_'+a.dataset.n)).replace(/(^|\s)(\S)/g,'$1<b>$2</b>')});
+ document.querySelectorAll('nav a').forEach(a=>{a.textContent=t('n_'+a.dataset.n)});
  $('nav').setAttribute('aria-label',t('navLabel'));$('.brand').setAttribute('aria-label',t('brand'));
  $('#fl').textContent=t('footL');$('#fr').textContent=t('footR');
  const b=$('#lg');b.textContent=t('lgBtn');b.setAttribute('aria-label',t('lgLabel'));b.title=t('lgLabel');paintTm()}
