@@ -38,6 +38,7 @@ header{display:flex;align-items:center;justify-content:space-between;gap:12px 24
 nav{display:flex;gap:28px;font:400 21px/1 var(--serif)}
 @media (max-width:560px){nav{width:100%;justify-content:space-between;gap:4px;font-size:14px}}
 @media (max-width:350px){nav{font-size:12.5px;gap:2px}}
+nav a b{font-weight:700}
 nav a{white-space:nowrap;padding:8px 0;border-bottom:1px solid transparent;color:var(--mut)}
 nav a:hover,nav a[aria-current="page"]{color:var(--fg);border-bottom-color:var(--fg)}
 .tools{order:3;display:flex;align-items:center;gap:8px}
@@ -252,7 +253,7 @@ it:{
  awards:'Premi',awardsTxt:'Shortlisted al Sony World Photography Awards 2023, categoria Open.',
  base:'Base',baseV:'Italia',worksOn:'Lavoro su',worksOnV:'Reportage, fotogiornalismo',gear:'Attrezzatura',
  ctSub:'Collaborazioni e richieste',ctTxt:'Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.',
- blSub:'Storie dietro le fotografie · Un post ogni giorno per parlare di fotografia',blSoon:'Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.',
+ blSub:'Storie dietro le fotografie, un post per parlare di fotografia',blSoon:'Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.',
  sbLabel:'Ricevi i nuovi articoli',sbPh:'La tua email',sbBtn:'Iscriviti',sbNote:'Ti scrivo quando esce un nuovo racconto, e basta.',sbRss:' Oppure segui il <a class="lk" href="/feed.xml">feed RSS</a>.',
  sbBad:'Controlla l’indirizzo email.',sbOk:'Grazie, sei iscritto.',sbErr:'Qualcosa non ha funzionato, riprova.',sbSubj:'Iscrizione al blog',sbBody:'Ciao, vorrei ricevere i nuovi articoli del blog. La mia email: ',sbMail:'Si apre la tua posta: invia il messaggio e sei iscritto.',
  share:'Condividi',shWa:'Condividi su WhatsApp',shFb:'Condividi su Facebook',shX:'Condividi su X',shMail:'Condividi via email',shCopy:'Copia il link',shCopyT:'Copia link',shDone:'Link copiato'
@@ -281,7 +282,7 @@ en:{
  awards:'Awards',awardsTxt:'Shortlisted at the Sony World Photography Awards 2023, Open category.',
  base:'Based in',baseV:'Italy',worksOn:'Working on',worksOnV:'Reportage, photojournalism',gear:'Gear',
  ctSub:'Collaborations and enquiries',ctTxt:'For commissions, collaborations or to see more of my work, write me an email or follow me on Instagram.',
- blSub:'Stories behind the photographs · One post a day to talk about photography',blSoon:'Here I will tell the stories behind the photographs. The first ones are coming soon.',
+ blSub:'Stories behind the photographs, a post to talk about photography',blSoon:'Here I will tell the stories behind the photographs. The first ones are coming soon.',
  sbLabel:'Get new articles',sbPh:'Your email',sbBtn:'Subscribe',sbNote:'I’ll write when a new story comes out, and that’s all.',sbRss:' Or follow the <a class="lk" href="/feed-en.xml">RSS feed</a>.',
  sbBad:'Please check the email address.',sbOk:'Thank you, you’re subscribed.',sbErr:'Something went wrong, please try again.',sbSubj:'Blog subscription',sbBody:'Hi, I would like to receive new blog articles. My email: ',sbMail:'Your mail app is opening: send the message and you’re subscribed.',
  share:'Share',shWa:'Share on WhatsApp',shFb:'Share on Facebook',shX:'Share on X',shMail:'Share by email',shCopy:'Copy the link',shCopyT:'Copy link',shDone:'Link copied'
@@ -298,7 +299,7 @@ dmq.addEventListener('change',paintTm);paintTm();
 function setMeta(sel,v){const m=document.querySelector(sel);if(m)m.setAttribute('content',v)}
 function applyLang(){document.documentElement.lang=LANG;document.title=t('title');
  setMeta('meta[name="description"]',t('desc'));setMeta('meta[property="og:title"]',t('title'));setMeta('meta[property="og:description"]',t('ogdesc'));
- document.querySelectorAll('nav a').forEach(a=>{a.textContent=t('n_'+a.dataset.n)});
+ document.querySelectorAll('nav a').forEach(a=>{a.innerHTML=esc(t('n_'+a.dataset.n)).replace(/(^|\s)(\S)/g,'$1<b>$2</b>')});
  $('nav').setAttribute('aria-label',t('navLabel'));$('.brand').setAttribute('aria-label',t('brand'));
  $('#fl').textContent=t('footL');$('#fr').textContent=t('footR');
  const b=$('#lg');b.textContent=t('lgBtn');b.setAttribute('aria-label',t('lgLabel'));b.title=t('lgLabel');paintTm()}
@@ -323,8 +324,8 @@ function home(){document.body.classList.add('home');
   hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=0;
   setTimeout(()=>{hl.textContent=pick(HERO[i],'l');hd.textContent=pick(HERO[i],'d');hs.textContent=hB(HERO[i]);ht.textContent=hT(HERO[i]);hl.style.opacity=hd.style.opacity=hs.style.opacity=ht.style.opacity=1},700)},6500)}
 function work(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_work'))}</h1><p class="sub">${esc(t('workSub'))}</p><div class="grid">${PROJ.map(p=>p.soon?
- `<div class="card soon${p.cover?' has':''}"><div class="ph">${p.cover?`<img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"><span class="wm" aria-hidden="true">${seal}</span>`:seal}<span class="tag">${esc(t('soon'))}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc([pick(p,'place'),p.years].filter(Boolean).join(' · '))}</p></div>`:
- `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"><span class="wm" aria-hidden="true">${seal}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc(pick(p,'place'))} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
+ `<div class="card soon${p.cover?' has':''}"><div class="ph">${p.cover?`<img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}">`:seal}<span class="tag">${esc(t('soon'))}</span></div><h3>${esc(pick(p,'title'))}</h3><p>${esc([pick(p,'place'),p.years].filter(Boolean).join(' · '))}</p></div>`:
+ `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(pick(p,'title'))}"></div><h3>${esc(pick(p,'title'))}</h3><p>${esc(pick(p,'place'))} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
 const GAL=[];  // formato: {f:'img/xx.jpg',t:'Titolo',d:'Didascalia',a:'Testo alt',s:{cam,lens,ap,sh,iso,h},en:{t,d,a}}  (copia delle vecchie voci in portfolio-backup/GAL.js)
 const SHOT=['cam','lens','ap','sh','iso','h'];
 let shotOpen=false;
