@@ -39,6 +39,9 @@ footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);displa
 /* home */
 .hero{position:relative;flex:1;min-height:60svh;margin-top:4px;overflow:hidden;background:var(--tile)}
 .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 62%;display:block}
+.hero img{opacity:0;transition:opacity 1.4s ease}
+.hero img.on{opacity:1}
+.hero .cap span{transition:opacity .7s ease}
 .hero .cap{position:absolute;left:0;right:0;bottom:0;padding:44px 20px 16px;color:#fff;font:500 11px/1.4 var(--sans);letter-spacing:.2em;text-transform:uppercase;background:linear-gradient(transparent,rgba(0,0,0,.45));display:flex;justify-content:space-between;gap:12px}
 body.home footer{margin-top:18px}
 /* work */
@@ -171,8 +174,18 @@ const $=s=>document.querySelector(s), app=$('#app');
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const seal='<svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></svg>';
 let idx=0,cur=null,tx=null,startIdx=0;
+const HERO=[
+ {f:'img/home.jpg',a:'Un cassonetto rovesciato brucia in mezzo alla strada, Torino',p:'50% 62%',l:'Torino',d:'20 dicembre 2025'},
+ {f:'img/home2.jpg',a:'Un tifoso del Napoli regge un fumogeno acceso tra scintille e fumo, Napoli',p:'45% 42%',l:'Napoli',d:'4 maggio 2023'}];
+let heroT=null;
 function home(){document.body.classList.add('home');
- app.innerHTML=`<a class="hero fade" href="#work" aria-label="Vai ai progetti"><img src="img/home.jpg" alt="Un cassonetto rovesciato brucia in mezzo alla strada, Torino"><div class="cap"><span>Torino</span><span>20 dicembre 2025</span></div></a>`}
+ app.innerHTML=`<a class="hero fade" href="#work" aria-label="Vai ai progetti">${HERO.map((x,i)=>`<img class="${i?'':'on'}" src="${x.f}" alt="${esc(x.a)}" style="object-position:${x.p}">`).join('')}<div class="cap"><span id="hl">${HERO[0].l}</span><span id="hd">${HERO[0].d}</span></div></a>`;
+ clearInterval(heroT);
+ if(matchMedia('(prefers-reduced-motion:reduce)').matches)return;
+ let i=0;const im=app.querySelectorAll('.hero img'),hl=document.getElementById('hl'),hd=document.getElementById('hd');
+ heroT=setInterval(()=>{i=(i+1)%HERO.length;im.forEach((e,k)=>e.classList.toggle('on',k===i));
+  hl.style.opacity=hd.style.opacity=0;
+  setTimeout(()=>{hl.textContent=HERO[i].l;hd.textContent=HERO[i].d;hl.style.opacity=hd.style.opacity=1},700)},6500)}
 function work(){app.innerHTML=`<div class="fade"><h1 class="pt">Portfolio</h1><p class="sub">Reportage</p><div class="grid">${PROJ.map(p=>p.soon?
  `<div class="card soon"><div class="ph">${seal}<span class="tag">In preparazione</span></div><h3>${esc(p.title)}</h3><p>${esc([p.place,p.years].filter(Boolean).join(' · '))}</p></div>`:
  `<a class="card" href="#${p.id}"><div class="ph"><img loading="lazy" src="${p.cover}" alt="${esc(p.title)}"></div><h3>${esc(p.title)}</h3><p>${esc(p.place)} · ${esc(p.years)}</p></a>`).join('')}</div></div>`}
@@ -216,7 +229,7 @@ const BLOG=[];
 /* Per aggiungere un articolo: {id:'titolo-breve',t:'Titolo',d:'9 novembre 2026',x:'Anteprima di una riga',img:'img/blog-01.jpg',p:['Primo paragrafo','Secondo paragrafo']} */
 function blog(){app.innerHTML=`<div class="fade"><h1 class="pt">Blog</h1><p class="sub">Storie dietro le fotografie</p>${BLOG.length?`<div class="bl">${BLOG.map(x=>`<a href="#blog-${x.id}"><div class="bd">${esc(x.d)}</div><div class="bt">${esc(x.t)}</div><p class="bx">${esc(x.x||'')}</p></a>`).join('')}</div>`:`<div class="big it" style="max-width:640px"><p>Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.</p></div>`}</div>`}
 function post(x){app.innerHTML=`<div class="fade"><a class="back" href="#blog">← Blog</a><article class="post"><p class="bd">${esc(x.d)}</p><h1>${esc(x.t)}</h1>${x.img?`<img src="${x.img}" alt="${esc(x.t)}">`:''}${(x.p||[]).map(t=>`<p>${esc(t)}</p>`).join('')}</article></div>`}
-function route(){const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
+function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon))||(n==='blog'&&h.indexOf('blog-')===0);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
  if(p)proj(p);else if(h==='work'||PROJ.some(q=>q.id===h))work();else if(h==='gallery')gallery();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='profile')profile();else if(h==='contact')contact();else home();
