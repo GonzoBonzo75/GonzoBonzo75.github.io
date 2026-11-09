@@ -211,7 +211,7 @@ function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><
  <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div></div>`}
 function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big it"><p>Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.</p></div>
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
- <div class="row"><span>Email</span><span><a href="mailto:stevegenzo@icloud.com">stevegenzo@icloud.com</a></span></div></div></div></div>`}
+ <div class="row"><span>Email</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div></div>`}
 const BLOG=[];
 /* Per aggiungere un articolo: {id:'titolo-breve',t:'Titolo',d:'9 novembre 2026',x:'Anteprima di una riga',img:'img/blog-01.jpg',p:['Primo paragrafo','Secondo paragrafo']} */
 function blog(){app.innerHTML=`<div class="fade"><h1 class="pt">Blog</h1><p class="sub">Storie dietro le fotografie</p>${BLOG.length?`<div class="bl">${BLOG.map(x=>`<a href="#blog-${x.id}"><div class="bd">${esc(x.d)}</div><div class="bt">${esc(x.t)}</div><p class="bx">${esc(x.x||'')}</p></a>`).join('')}</div>`:`<div class="big it" style="max-width:640px"><p>Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.</p></div>`}</div>`}
