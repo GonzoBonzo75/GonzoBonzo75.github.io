@@ -194,8 +194,9 @@ function profile(){app.innerHTML=`<div class="fade"><h1 class="pt">Profilo</h1><
  <div class="row"><span>Base</span><span>Italia</span></div>
  <div class="row"><span>Lavora su</span><span>Reportage, foto documentaria</span></div>
  <div class="row"><span>Attrezzatura</span><span>Leica Q3</span></div></div></div></div>`}
-function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big"><p>Per commissioni, collaborazioni o per vedere altri lavori, seguimi su Instagram e scrivimi in messaggio privato.</p></div>
- <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div></div></div></div>`}
+function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">Contatti</h1><p class="sub">Collaborazioni e richieste</p><div class="cols"><div class="big"><p>Per commissioni, collaborazioni o per vedere altri lavori, scrivimi una mail o seguimi su Instagram.</p></div>
+ <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
+ <div class="row"><span>Email</span><span><a href="mailto:stevegenzo@icloud.com">stevegenzo@icloud.com</a></span></div></div></div></div>`}
 function route(){const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon));on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
