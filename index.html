@@ -7,6 +7,8 @@
 <meta name="description" content="Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento.">
 <meta name="theme-color" content="#fafaf7" media="(prefers-color-scheme: light)">
 <meta name="theme-color" content="#121110" media="(prefers-color-scheme: dark)">
+<script>window.goatcounter={no_onload:true}</script>
+<script data-goatcounter="https://bonesph.goatcounter.com/count" async src="https://gc.zgo.at/count.js"></script>
 <link rel="alternate" type="application/rss+xml" title="GENZO · Blog" href="/feed.xml">
 <link rel="alternate" type="application/rss+xml" hreflang="en" title="GENZO · Blog (EN)" href="/feed-en.xml">
 <link rel="alternate" hreflang="it" href="https://bonesph.com/">
@@ -484,11 +486,14 @@ try{navigator.clipboard.writeText(u).then(done,fb)}catch(e){fb()}}}
 function fit(){const a=document.querySelector('.post.fr');if(a)a.style.setProperty('--ph',Math.max(240,innerHeight-a.getBoundingClientRect().top-18)+'px')}
 addEventListener('resize',fit);
 function post(x){const ps=pick(x,'p')||[];app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post fr"><div class="pt0"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1></div><div class="ps" tabindex="0" role="region" aria-label="${esc(pick(x,'t'))}">${ps.map((p,i)=>i?`<p>${esc(p)}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`).join('')}<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>${x.img?`<img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}${subBox()}</div></article></div>`;document.body.classList.add('postv');fit();bindShare();bindSub()}
+let gcFirst=true,gcTry=0;
+function gcCount(h){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;const g=window.goatcounter;if(!g||!g.count){if(gcTry++<20)setTimeout(()=>gcCount(h),500);return}
+ try{const src=new URLSearchParams(location.search).get('src');g.count({path:(LANG==='en'?'/en':'')+'/'+h,title:document.title,referrer:gcFirst?(src||undefined):''});gcFirst=false}catch(e){}}
 function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');document.body.classList.remove('postv');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='work'&&PROJ.some(p=>p.id===h&&!p.soon))||(n==='blog'&&h.indexOf('blog-')===0);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
  if(p)proj(p);else if(h==='work'||PROJ.some(q=>q.id===h))work();else if(h==='gallery')gallery();else if(h==='progress')progress();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='prints')prints();else if(h==='profile')profile();else if(h==='contact')contact();else home();
- window.scrollTo(0,0)}
+ window.scrollTo(0,0);gcCount(h)}
 addEventListener('hashchange',route);
 addEventListener('keydown',e=>{if(!cur)return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1)});
 applyLang();
