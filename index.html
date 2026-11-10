@@ -119,6 +119,7 @@ a.card:hover img{transform:scale(1.025)}
 .big.it{font-style:italic;font-size:clamp(16px,1.55vw,18.5px)}
 .seal{width:96px;height:96px;display:block;margin:6px 0 18px}
 .pf{margin:36px auto 0;width:min(100%,210px)}
+.seal.pfs{margin:64px auto 12px}
 .bag{margin:44px 0 0;max-width:62ch}
 .bag .k{white-space:nowrap;font:500 .62em/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--mut)}
 .bag h2{font:400 clamp(24px,3.6vw,34px)/1.15 var(--serif);letter-spacing:-.01em;margin:0 0 10px}
@@ -393,10 +394,10 @@ function profile(){const jna='<a href="https://jnapress.com" target="_blank" rel
  <div class="jna"><p class="lb">${esc(t('awards'))}</p><p>${esc(t('awardsTxt'))}</p></div>
  <figure class="pf"><img loading="lazy" src="img/ritratto.jpg" alt="${esc(t('pfAlt'))}"></figure>
  <section class="bag"><h2>${esc(t('bagT'))}</h2><p>${esc(t('bagP')).replace(/\[\[(.+?)\]\]/g,'<span class="k">$1</span>')}</p></section></div>
- <div><svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>
- <div class="row"><span>${esc(t('base'))}</span><span>${esc(t('baseV'))}</span></div>
+
+ <div><div class="row"><span>${esc(t('base'))}</span><span>${esc(t('baseV'))}</span></div>
  <div class="row"><span>${esc(t('worksOn'))}</span><span>${esc(t('worksOnV'))}</span></div>
- <div class="row"><span>${esc(t('gear'))}</span><span>Leica Q3</span></div></div></div></div>`}
+ <div class="row"><span>${esc(t('gear'))}</span><span>Leica Q3</span></div></div></div><svg class="seal pfs" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg></div>`}
 function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_contact'))}</h1><p class="sub">${esc(t('ctSub'))}</p><div class="cols"><div class="big it"><p>${esc(t('ctTxt'))}</p></div>
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
  <div class="row"><span>Email</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div></div>`}
