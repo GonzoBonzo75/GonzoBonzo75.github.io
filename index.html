@@ -327,8 +327,8 @@ let idx=0,cur=null,tx=null,startIdx=0;
 const HERO=[
  {f:'img/home.jpg',a:'Un cassonetto rovesciato brucia in mezzo alla strada, Torino',p:'50% 62%',l:'Torino',d:'20 dicembre 2025',s:'Torino, 20 dicembre 2025. Primo corteo contro lo sgombero di Askatasuna... finisce con barricate e cassonetti dati alle fiamme.',
   en:{a:'An overturned dumpster burns in the middle of the street, Turin',l:'Turin',d:'20 December 2025',s:'Turin, 20 December 2025. First march against the eviction of Askatasuna... ends with barricades and dumpsters set on fire.'}},
- {f:'img/home2.jpg',a:'Un tifoso del Napoli regge un fumogeno acceso tra scintille e fumo, Napoli',p:'45% 42%',l:'Napoli',d:'4 maggio 2023',s:'Napoli, 4 maggio 2023. Napoli festeggia dopo 33 anni, la città non si ferma ma si agita come il ragù che brontola sul fuoco.',
-  en:{a:'A Napoli fan holds a lit flare amid sparks and smoke, Naples',l:'Naples',d:'4 May 2023',s:'Naples, 4 May 2023. Naples celebrates after 33 years: the city does not stand still but stirs, like ragù simmering on the stove.'}}];
+ {f:'img/home-fuori-campo.jpg',a:'Un ragazzo a terra, rannicchiato con le braccia a proteggersi la testa, circondato da agenti in assetto antisommossa con i manganelli in mano',p:'50% 100%',l:'Torino',d:'24 ottobre 2026',s:'Torino, 24 ottobre 2026. Zona Aurora, deposito GTT: gli studenti provano a sfondare lo sbarramento del reparto celere, poi la carica. E uno resta a terra.',
+  en:{a:'A young man curled up on the ground, arms shielding his head, surrounded by riot police with batons in hand',l:'Turin',d:'24 October 2026',s:'Turin, 24 October 2026. Aurora district, GTT depot: the students try to break through the riot police line, then the charge. And one is left on the ground.'}}];
 let heroT=null;
 function hT(x){return pick(x,'l')+', '+pick(x,'d')}
 function hB(x){const s=pick(x,'s'),h=hT(x)+'. ';return s.startsWith(h)?s.slice(h.length):s}
