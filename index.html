@@ -153,6 +153,8 @@ body.postv main{min-height:0}
 .post h1{font:400 clamp(30px,4.4vw,46px)/1.15 var(--serif);margin:0 0 28px;text-wrap:balance;color:var(--accent)}
 .post p{font:italic 400 clamp(19px,1.6vw,21.5px)/1.7 var(--serif);margin:0 0 1.1em}
 .post .cap{font-size:1.75em;line-height:0;letter-spacing:.01em}
+.post .k{white-space:nowrap;font:500 .62em/1 var(--sans);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--mut)}
+.post h2{font:400 clamp(22px,2.6vw,28px)/1.2 var(--serif);margin:1.6em 0 .6em}
 .post img{display:block;width:100%;max-width:560px;height:auto;margin:32px auto}
 .post figure.pic{margin:32px auto;max-width:560px}.post figure.pic img{margin:0}.post figcaption{font:500 11px/1.6 var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-top:12px}
 .post .lk{margin:30px 0 0}.post .lk a{font:500 12px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;font-style:normal;color:var(--accent)}.post .lk a:hover{text-decoration:underline;text-underline-offset:4px}
@@ -410,7 +412,39 @@ function contact(){app.innerHTML=`<div class="fade"><h1 class="pt">${esc(t('n_co
  <div class="list"><div class="row"><span>Instagram</span><span><a href="https://www.instagram.com/bones_p75/" target="_blank" rel="noopener">@bones_p75</a></span></div>
  <div class="row"><span>Email</span><span><a href="mailto:info@bonesph.com">info@bonesph.com</a></span></div></div></div></div>`}
 const BLOG=[
-{id:'family-love',t:'Family Love',d:'13 novembre 2026',x:'Un libro fotografico che ho in casa: quasi diciotto anni nella vita di una ragazza e dei suoi figli.',img:'img/family-love.jpg',a:'Il frontespizio di «Family Love» con la firma di Darcy Padilla.',c:'«Family Love», frontespizio con la firma di Darcy Padilla',p:[
+ {id:'odissea',t:'Odissea',d:'Bozza',x:'Argo, Odisseo, Itaca e gli altri: i nomi delle cose che mi accompagnano.',p:[
+  "Ho dato un nome a tutto ciò che mi accompagna: i computer, i dischi, perfino la macchina fotografica. Li ho presi dall’Odissea, perché un fotografo fa lo stesso mestiere di Odisseo: parte, torna, e porta a casa qualcosa che prima non c’era.",
+  "# Quattro schermi",
+  "[[Argo]] sta in piazza, leggero e senza peso inutile.\nVede arrivare la folla prima che diventi una fotografia.",
+  "[[Odisseo]] parte quando c’è da partire.\nPorta con sé tutto ciò che serve a non perdersi lontano da casa.",
+  "[[Itaca]] aspetta.\nLì le immagini tornano, si mettono in ordine, e diventano memoria.",
+  "[[Ermes]] parla un’altra lingua, e proprio per questo porta tutto da un mondo all’altro.",
+  "# Un occhio",
+  "[[Atena]] ha occhi luminosi e arriva nel momento giusto.\nUn solo sguardo, mai due volte uguale: quello che resta, resta per sempre.",
+  "# Cinque dischi",
+  "[[Penelope]] è l’archivio generale, due terabyte di anni.\nTesse e disfa, ma non perde nulla: la luce di stagioni diverse sta nella stessa casa.",
+  "[[Telemaco]] custodisce ciò che è cresciuto aspettando.\nLe fotografie rimaste in silenzio, fino al giorno in cui qualcuno è tornato a cercarle.",
+  "[[Poseidone]] tiene il mare, e ciò che il mare restituisce.\nLe immagini grandi, pesanti, a volte indomabili, che non si fanno spostare senza fatica.",
+  "[[Era]] veglia, severa, su ciò che non deve andare perso.\nNon lascia passare nulla senza una copia.",
+  "[[Calipso]] trattiene. Sette anni su un’isola, e un’immagine che non voleva ancora essere lasciata andare.",
+  "Si va, si torna, si ricomincia. Ogni fotografia fa lo stesso viaggio."],
+ en:{t:'Odyssey',d:'Draft',x:'Argo, Odysseus, Ithaca and the others: the names of the things that travel with me.',p:[
+  "I have given a name to everything that travels with me: the computers, the drives, even the camera. I took them from the Odyssey, because a photographer does the same job as Odysseus: he leaves, he returns, and he brings home something that was not there before.",
+  "# Four screens",
+  "[[Argo]] stays in the square, light, carrying nothing it doesn’t need.\nIt sees the crowd arrive before it becomes a photograph.",
+  "[[Odysseus]] leaves whenever there is a leaving to be done.\nHe carries what you need so as not to get lost far from home.",
+  "[[Ithaca]] waits.\nThat is where images return, fall into order, and become memory.",
+  "[[Hermes]] speaks another language, and that is why he carries everything from one world to another.",
+  "# One eye",
+  "[[Athena]] has bright eyes and arrives at the right moment.\nOne single gaze, never the same twice: what remains, remains forever.",
+  "# Five drives",
+  "[[Penelope]] is the general archive, two terabytes of years.\nShe weaves and unweaves, but loses nothing: the light of different seasons lives in the same house.",
+  "[[Telemachus]] keeps what grew up while waiting.\nThe photographs that stayed silent, until someone came back to look for them.",
+  "[[Poseidon]] holds the sea, and whatever the sea gives back.\nThe large, heavy, sometimes untamable images that do not move without effort.",
+  "[[Hera]] watches, stern, over what must not be lost.\nShe lets nothing pass without a copy.",
+  "[[Calypso]] holds on. Seven years on an island, and an image that was not yet ready to be let go.",
+  "We go, we come back, we begin again. Every photograph makes the same journey."]}},
+ {id:'family-love',t:'Family Love',d:'13 novembre 2026',x:'Un libro fotografico che ho in casa: quasi diciotto anni nella vita di una ragazza e dei suoi figli.',img:'img/family-love.jpg',a:'Il frontespizio di «Family Love» con la firma di Darcy Padilla.',c:'«Family Love», frontespizio con la firma di Darcy Padilla',p:[
   'Il venerdì, un libro. Il primo è «Family Love» di Darcy Padilla, che ho in casa e che ogni tanto riapro senza un motivo preciso. Il mio esemplare porta la sua firma sul frontespizio.',
   'Il 28 febbraio 1993, nella hall dell’Ambassador Hotel di San Francisco, Padilla incontra una ragazza di diciotto anni con in braccio una neonata di otto giorni. Si chiamano Julie Baird e Rachel. Padilla è lì per fotografare i malati di AIDS ospitati nei residence a basso costo del quartiere, e Julie ha appena saputo di essere sieropositiva.',
   'Doveva essere un servizio. Diventa la storia di una vita: Padilla continua a fotografare Julie e la sua famiglia per quasi diciotto anni, dalle strade di San Francisco fino all’Alaska, dove Julie muore nel settembre 2010.',
@@ -531,7 +565,7 @@ const fb=()=>{const a=document.createElement('textarea');a.value=u;document.body
 try{navigator.clipboard.writeText(u).then(done,fb)}catch(e){fb()}}}
 function fit(){const a=document.querySelector('.post.fr');if(a)a.style.setProperty('--ph',Math.max(240,innerHeight-a.getBoundingClientRect().top-18)+'px')}
 addEventListener('resize',fit);
-function post(x){const ps=pick(x,'p')||[];const fig=x.img&&pick(x,'c')?`<figure class="pic"><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}"><figcaption>${esc(pick(x,'c'))}</figcaption></figure>`:'';app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post fr"><div class="pt0"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1></div><div class="ps" tabindex="0" role="region" aria-label="${esc(pick(x,'t'))}">${ps.map((p,i)=>(i?`<p>${esc(p)}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`)+(fig&&i===ps.length-1?fig:'')).join('')}${pick(x,'lk')?`<p class="lk"><a href="#${esc(pick(x,'lk').h)}">${esc(pick(x,'lk').t)} →</a></p>`:''}<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>${x.img&&!fig?`<img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}${subBox()}</div></article></div>`;document.body.classList.add('postv');fit();bindShare();bindSub()}
+function post(x){const ps=pick(x,'p')||[];const fig=x.img&&pick(x,'c')?`<figure class="pic"><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}"><figcaption>${esc(pick(x,'c'))}</figcaption></figure>`:'';app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post fr"><div class="pt0"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1></div><div class="ps" tabindex="0" role="region" aria-label="${esc(pick(x,'t'))}">${ps.map((p,i)=>(p.indexOf('# ')===0?`<h2>${esc(p.slice(2))}</h2>`:i?`<p>${esc(p).replace(/\[\[(.+?)\]\]/g,'<span class="k">$1</span>').replace(/\n/g,'<br>')}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`)+(fig&&i===ps.length-1?fig:'')).join('')}${pick(x,'lk')?`<p class="lk"><a href="#${esc(pick(x,'lk').h)}">${esc(pick(x,'lk').t)} →</a></p>`:''}<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>${x.img&&!fig?`<img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}${subBox()}</div></article></div>`;document.body.classList.add('postv');fit();bindShare();bindSub()}
 let gcFirst=true,gcTry=0;
 function gcCount(h){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;const g=window.goatcounter;if(!g||!g.count){if(gcTry++<20)setTimeout(()=>gcCount(h),500);return}
  try{const src=new URLSearchParams(location.search).get('src');g.count({path:(LANG==='en'?'/en':'')+'/'+h,title:document.title,referrer:gcFirst?(src||undefined):''});gcFirst=false}catch(e){}}
