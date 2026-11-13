@@ -171,6 +171,14 @@ body.postv main{min-height:0}
 .share svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
 .share a:hover,.share button:hover,.share a:focus-visible,.share button:focus-visible{color:var(--accent);border-color:var(--accent)}
 .share .ok{font:500 12px/1 var(--sans);color:var(--mut);margin-left:4px}
+.like{display:flex;flex-wrap:wrap;align-items:center;gap:12px 14px;margin:30px 0 0}
+.like .lb{font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);margin-right:10px}
+.like button{height:44px;display:inline-flex;align-items:center;gap:10px;padding:0 20px 0 16px;color:var(--fg);background:none;border:1px solid var(--line);border-radius:999px;font:500 13px/1 var(--sans);letter-spacing:.04em;cursor:pointer}
+.like svg{width:20px;height:20px;fill:none;stroke:currentColor;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.like button:hover,.like button:focus-visible{color:var(--accent);border-color:var(--accent)}
+.like button[aria-pressed="true"]{color:var(--accent);border-color:var(--accent);cursor:default}
+.like button[aria-pressed="true"] svg{fill:currentColor}
+.like .ok{font:500 12px/1 var(--sans);color:var(--mut)}
 .shot{margin-top:12px}
 .shot summary{cursor:pointer;list-style:none;display:inline-flex;align-items:center;gap:8px;font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:6px 0}
 .shot summary::-webkit-details-marker{display:none}
@@ -280,7 +288,7 @@ it:{
  blSub:'Storie dietro le fotografie, un post per parlare di fotografia',blSoon:'Qui racconterò le storie che stanno dietro le fotografie. I primi racconti arriveranno presto.',
  sbLabel:'Ricevi i nuovi articoli',sbPh:'La tua email',sbBtn:'Iscriviti',sbNote:'Ti scrivo quando esce un nuovo racconto, e basta.',sbRss:' Oppure segui il <a class="lk" href="/feed.xml">feed RSS</a>.',
  sbBad:'Controlla l’indirizzo email.',sbOk:'Grazie, sei iscritto.',sbErr:'Qualcosa non ha funzionato, riprova.',sbSubj:'Iscrizione al blog',sbBody:'Ciao, vorrei ricevere i nuovi articoli del blog. La mia email: ',sbMail:'Si apre la tua posta: invia il messaggio e sei iscritto.',
- share:'Condividi',shWa:'Condividi su WhatsApp',shFb:'Condividi su Facebook',shX:'Condividi su X',shMail:'Condividi via email',shCopy:'Copia il link',shCopyT:'Copia link',shDone:'Link copiato'
+ share:'Condividi',shWa:'Condividi su WhatsApp',shFb:'Condividi su Facebook',shX:'Condividi su X',shMail:'Condividi via email',shCopy:'Copia il link',shCopyT:'Copia link',shDone:'Link copiato',likeLb:'Ti è piaciuto?',likeBtn:'Mi piace',likeOk:'Grazie, mi fa piacere.'
 },
 en:{
  title:'GENZO · Photojournalist',desc:'Portfolio of GENZO, photojournalist: demonstrations, rituals and cities in motion.',ogdesc:'Photojournalism: demonstrations, rituals and cities in motion.',
@@ -309,7 +317,7 @@ en:{
  blSub:'Stories behind the photographs, a post to talk about photography',blSoon:'Here I will tell the stories behind the photographs. The first ones are coming soon.',
  sbLabel:'Get new articles',sbPh:'Your email',sbBtn:'Subscribe',sbNote:'I’ll write when a new story comes out, and that’s all.',sbRss:' Or follow the <a class="lk" href="/feed-en.xml">RSS feed</a>.',
  sbBad:'Please check the email address.',sbOk:'Thank you, you’re subscribed.',sbErr:'Something went wrong, please try again.',sbSubj:'Blog subscription',sbBody:'Hi, I would like to receive new blog articles. My email: ',sbMail:'Your mail app is opening: send the message and you’re subscribed.',
- share:'Share',shWa:'Share on WhatsApp',shFb:'Share on Facebook',shX:'Share on X',shMail:'Share by email',shCopy:'Copy the link',shCopyT:'Copy link',shDone:'Link copied'
+ share:'Share',shWa:'Share on WhatsApp',shFb:'Share on Facebook',shX:'Share on X',shMail:'Share by email',shCopy:'Copy the link',shCopyT:'Copy link',shDone:'Link copied',likeLb:'Enjoyed this?',likeBtn:'Like',likeOk:'Thank you, I’m glad.'
 }};
 const t=k=>T[LANG][k];
 const pick=(o,k)=>(LANG==='en'&&o.en&&o.en[k]!=null)?o.en[k]:o[k];
@@ -640,9 +648,14 @@ return `<div class="share"><span class="lb">${esc(t('share'))}</span><a href="ht
 function bindShare(){const b=document.getElementById('cp'),m=document.getElementById('cpok');if(!b)return;b.onclick=()=>{const px=BLOG.find(q=>'blog-'+q.id===location.hash.slice(1)),u=px?postUrl(px):location.href;const done=()=>{m.textContent=t('shDone');setTimeout(()=>{m.textContent=''},2000)};
 const fb=()=>{const a=document.createElement('textarea');a.value=u;document.body.appendChild(a);a.select();try{document.execCommand('copy');done()}catch(e){}a.remove()};
 try{navigator.clipboard.writeText(u).then(done,fb)}catch(e){fb()}}}
+const HEART='<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20.5s-7.5-4.6-9.2-9.4C1.6 7.7 3.600 4.500 7 4.500c2 0 3.600 1 5 2.900 1.400-1.900 3-2.900 5-2.900 3.400 0 5.400 3.200 4.200 6.600-1.700 4.800-9.200 9.400-9.200 9.400z"/></svg>';
+function likeDone(x){try{return localStorage.getItem('like-'+x.id)==='1'}catch(e){return false}}
+function likeBar(x){const on=likeDone(x);return `<div class="like"><span class="lb">${esc(t('likeLb'))}</span><button type="button" id="lkb" aria-pressed="${on}"${on?' disabled':''}>${HEART}<span>${esc(t('likeBtn'))}</span></button><span class="ok" id="lkok" role="status">${on?esc(t('likeOk')):''}</span></div>`}
+function likeCount(x,n){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;const g=window.goatcounter;if(!g||!g.count){if((n||0)<20)setTimeout(()=>likeCount(x,(n||0)+1),500);return}try{g.count({path:'like/'+x.id,title:'Mi piace: '+x.t,event:true})}catch(e){}}
+function bindLike(x){const b=document.getElementById('lkb');if(!b||b.disabled)return;b.onclick=()=>{b.disabled=true;b.setAttribute('aria-pressed','true');document.getElementById('lkok').textContent=t('likeOk');try{localStorage.setItem('like-'+x.id,'1')}catch(e){}likeCount(x)}}
 function fit(){const a=document.querySelector('.post.fr');if(a)a.style.setProperty('--ph',Math.max(240,innerHeight-a.getBoundingClientRect().top-18)+'px')}
 addEventListener('resize',fit);
-function post(x){const ps=pick(x,'p')||[];const fig=x.img&&pick(x,'c')?`<figure class="pic"><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}"><figcaption>${esc(pick(x,'c'))}</figcaption></figure>`:'';app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post fr"><div class="pt0"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1></div><div class="ps" tabindex="0" role="region" aria-label="${esc(pick(x,'t'))}">${ps.map((p,i)=>(p.indexOf('# ')===0?`<h2>${esc(p.slice(2))}</h2>`:i?`<p>${esc(p).replace(/\[\[(.+?)\]\]/g,(m,a)=>{const q=a.split('|');return '<span class="k">'+q[0]+'</span>'+(q[1]?' <span class="gr">('+q[1]+')</span>':'')}).replace(/\n/g,'<br>')}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`)+(fig&&i===ps.length-1?fig:'')).join('')}${pick(x,'lk')?`<p class="lk"><a href="#${esc(pick(x,'lk').h)}">${esc(pick(x,'lk').t)} →</a></p>`:''}<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>${x.img&&!fig?`<img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${shareBar(x)}${subBox()}</div></article></div>`;document.body.classList.add('postv');fit();bindShare();bindSub()}
+function post(x){const ps=pick(x,'p')||[];const fig=x.img&&pick(x,'c')?`<figure class="pic"><img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}"><figcaption>${esc(pick(x,'c'))}</figcaption></figure>`:'';app.innerHTML=`<div class="fade colp"><a class="back" href="#blog">← Blog</a><article class="post fr"><div class="pt0"><p class="bd">${esc(pick(x,'d'))}</p><h1>${esc(pick(x,'t'))}</h1></div><div class="ps" tabindex="0" role="region" aria-label="${esc(pick(x,'t'))}">${ps.map((p,i)=>(p.indexOf('# ')===0?`<h2>${esc(p.slice(2))}</h2>`:i?`<p>${esc(p).replace(/\[\[(.+?)\]\]/g,(m,a)=>{const q=a.split('|');return '<span class="k">'+q[0]+'</span>'+(q[1]?' <span class="gr">('+q[1]+')</span>':'')}).replace(/\n/g,'<br>')}</p>`:`<p><span class="cap">${esc(p.charAt(0))}</span>${esc(p.slice(1))}</p>`)+(fig&&i===ps.length-1?fig:'')).join('')}${pick(x,'lk')?`<p class="lk"><a href="#${esc(pick(x,'lk').h)}">${esc(pick(x,'lk').t)} →</a></p>`:''}<svg class="seal" viewBox="0 0 100 100" role="img" aria-label="${esc(t('seal'))}"><use href="#hanko"/></svg>${x.img&&!fig?`<img src="${x.img}" alt="${esc(pick(x,'a')||pick(x,'t'))}">`:''}${x.ig?`<p class="ig"><a href="${x.ig}" target="_blank" rel="noopener" aria-label="Instagram @bones_p75" title="Instagram"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r=".6"/></svg></a></p>`:''}${likeBar(x)}${shareBar(x)}${subBox()}</div></article></div>`;document.body.classList.add('postv');fit();bindShare();bindLike(x);bindSub()}
 let gcFirst=true,gcTry=0;
 function gcCount(h){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;const g=window.goatcounter;if(!g||!g.count){if(gcTry++<20)setTimeout(()=>gcCount(h),500);return}
  try{const src=new URLSearchParams(location.search).get('src');g.count({path:(LANG==='en'?'/en':'')+'/'+h,title:document.title,referrer:gcFirst?(src||undefined):''});gcFirst=false}catch(e){}}
