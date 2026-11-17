@@ -239,7 +239,7 @@ body.postv main{min-height:0}
 .ct{margin:0;display:flex;flex-wrap:wrap;gap:4px 10px;font:500 10.5px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
 .ct i{font-style:normal;display:inline-flex;align-items:center;gap:6px}.ct i:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
 .ct .tS:before{background:var(--accent)}.ct .tP:before{background:var(--fg)}.ct .tM:before{background:var(--c-m)}.ct .tA:before{background:var(--c-a)}
-.ct em{font-style:normal;color:var(--accent)}
+.ct em{font-style:normal;color:var(--accent)}.ct .ks{font-weight:600;color:var(--fg)}.ck[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:#fff}.ck:not([aria-pressed="true"]){color:var(--accent);border-color:var(--accent)}
 .cnote{max-width:720px;margin:36px 0 0;color:var(--mut);font:400 13px/1.6 var(--sans)}.cnote h2{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--fg);margin:0 0 8px}.cnote p{margin:0 0 12px}.cnote a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}.cnote a:hover{color:var(--fg)}
 .clg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 0;font:500 11px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
 @media (max-width:900px){.cg{grid-template-columns:minmax(0,1fr)}.cm{position:static}.cvb{display:inline-block}.cg[data-v="list"] .cm{display:none}.cg[data-v="map"] .cl-w .cl,.cg[data-v="map"] .cl-w .cn{display:none}.cm svg{max-height:none}}
@@ -700,15 +700,15 @@ function gcCount(h){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;con
  try{const src=new URLSearchParams(location.search).get('src');g.count({path:(LANG==='en'?'/en':'')+'/'+h,title:document.title,referrer:gcFirst?(src||undefined):''});gcFirst=false}catch(e){}}
 
 /* ===== Calendario: feste patronali e riti della Settimana Santa ===== */
-const CAL={ev:null,map:null,err:false,st:{reg:'',tipo:'',anno:'next',mese:'',q:'',com:'',view:'list'}};
+const CAL={ev:null,map:null,err:false,st:{reg:'',tipo:'',anno:'next',mese:'',q:'',com:'',view:'list',k:0}};
 const CT={it:{
  sub:"Feste patronali e riti della Settimana Santa nel Sud",
- intro:"Un calendario consultabile di feste patronali, riti della Settimana Santa e processioni di Puglia, Campania, Calabria e Sicilia. Le date si calcolano sul calendario di ogni anno: i riti pasquali si spostano con la Pasqua.",
+ intro:"Un calendario consultabile di feste patronali, riti della Settimana Santa e processioni di Puglia, Basilicata, Campania, Calabria e Sicilia. Le date si calcolano sul calendario di ogni anno: i riti pasquali si spostano con la Pasqua.",
  pasqua:"Pasqua",allReg:"Tutte le regioni",allTipo:"Tutti i tipi",tipi:{S:"Settimana Santa e Pasqua",P:"Feste patronali",M:"Feste mariane",A:"Altri riti"},
  next:"Prossimi 12 mesi",allMese:"Tutti i mesi",cerca:"Cerca un paese o una festa",cercaL:"Cerca",anno:"Periodo",mese:"Mese",
  vList:"Elenco",vMap:"Mappa",none:"Nessun evento con questi filtri.",und:"Senza data fissa",ver:"data da verificare",past:"concluso",
  one:"evento",many:"eventi",all:"Mostra tutti",on:"Solo",mapAria:"Mappa schematica del Sud Italia con gli eventi",load:"Carico il calendario…",err:"Non riesco a caricare il calendario. Riprova tra poco.",
- dn:"Le date",
+ dn:"Le date",star:"Riti particolari",starT:"rito particolare",starH:"Solo i riti più singolari, fuori dall'ordinario",
  n1:"Le date delle feste patronali e dei riti sono ricavate dal calendario liturgico e dalle tradizioni locali, e possono cambiare di anno in anno: maltempo, scelte dei comitati e delle curie, feste spostate al fine settimana. Prima di partire verifica sempre con il comune, la parrocchia o la confraternita. Le voci con «data da verificare» sono le meno sicure; gli orari non sono indicati perché cambiano troppo spesso.",
  n2:"Il calendario non è completo e non lo sarà mai: ogni paese ha i suoi riti. Se manca qualcosa o trovi un errore, scrivimi.",
  write:"Scrivimi",src:"Alcune fonti consultate",
@@ -716,12 +716,12 @@ const CT={it:{
  loc:"it-IT"},
 en:{
  sub:"Patronal feasts and Holy Week rites in Southern Italy",
- intro:"A searchable calendar of patronal feasts, Holy Week rites and processions in Puglia, Campania, Calabria and Sicily. Dates are calculated for each year: Easter rites move with Easter.",
+ intro:"A searchable calendar of patronal feasts, Holy Week rites and processions in Puglia, Basilicata, Campania, Calabria and Sicily. Dates are calculated for each year: Easter rites move with Easter.",
  pasqua:"Easter",allReg:"All regions",allTipo:"All types",tipi:{S:"Holy Week and Easter",P:"Patronal feasts",M:"Marian feasts",A:"Other rites"},
  next:"Next 12 months",allMese:"All months",cerca:"Search a town or a feast",cercaL:"Search",anno:"Period",mese:"Month",
  vList:"List",vMap:"Map",none:"No events match these filters.",und:"No fixed date",ver:"date to be checked",past:"over",
  one:"event",many:"events",all:"Show all",on:"Only",mapAria:"Schematic map of Southern Italy with the events",load:"Loading the calendar…",err:"I can’t load the calendar right now. Please try again shortly.",
- dn:"Dates",
+ dn:"Dates",star:"Distinctive rites",starT:"distinctive rite",starH:"Only the most singular, out-of-the-ordinary rites",
  n1:"Dates of patronal feasts and rites come from the liturgical calendar and local traditions, and can change from year to year: bad weather, decisions by committees and dioceses, feasts moved to the weekend. Always check with the town hall, the parish or the confraternity before you travel. Entries marked “date to be checked” are the least certain; times are not given because they change too often.",
  n2:"This calendar is not complete and never will be: every town has its own rites. If something is missing or wrong, write to me.",
  write:"Write to me",src:"Some of the sources consulted",
@@ -734,14 +734,14 @@ const addD=(d,n)=>new Date(d.getTime()+n*864e5);
 function occ(u,y){let r;
  if(r=u.match(/^E([+-]?\d+)(?:\/(\d+))?$/))return{s:addD(easter(y),+r[1]),n:+(r[2]||1)};
  if(r=u.match(/^D (\d+)\/(\d+)(?:\/(\d+))?$/))return{s:new Date(Date.UTC(y,r[1]-1,+r[2])),n:+(r[3]||1)};
- if(r=u.match(/^N (\d+)\/(\d|L)\/(\d)([+-]\d+)?$/)){const mo=+r[1]-1,w=+r[3];let d;if(r[2]==='L'){d=new Date(Date.UTC(y,mo+1,0));d=addD(d,-((d.getUTCDay()-w+7)%7))}else{d=new Date(Date.UTC(y,mo,1));d=addD(d,(w-d.getUTCDay()+7)%7+7*(+r[2]-1))}return{s:addD(d,+(r[4]||0)),n:1}}
+ if(r=u.match(/^N (\d+)\/(\d|L)\/(\d)([+-]\d+)?(?::(\d+))?$/)){const mo=+r[1]-1,w=+r[3];let d;if(r[2]==='L'){d=new Date(Date.UTC(y,mo+1,0));d=addD(d,-((d.getUTCDay()-w+7)%7))}else{d=new Date(Date.UTC(y,mo,1));d=addD(d,(w-d.getUTCDay()+7)%7+7*(+r[2]-1))}return{s:addD(d,+(r[4]||0)),n:+(r[5]||1)}}
  if(r=u.match(/^S (\d+)\/(\d+)\/(\d)$/)){const d=new Date(Date.UTC(y,r[1]-1,+r[2]));return{s:addD(d,(+r[3]-d.getUTCDay()+7)%7),n:1}}
  return null}
 function calToday(){const n=new Date();return new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()))}
 function calList(){const st=CAL.st,td=calToday(),y0=td.getUTCFullYear(),out=[],und=[];
  const q=st.q.trim().toLowerCase();
  CAL.ev.forEach(e=>{
-  if(st.reg&&e.r!==st.reg)return;if(st.tipo&&e.t!==st.tipo)return;if(st.com&&e.c+'|'+e.p!==st.com)return;
+  if(st.reg&&e.r!==st.reg)return;if(st.tipo&&e.t!==st.tipo)return;if(st.k&&!e.k)return;if(st.com&&e.c+'|'+e.p!==st.com)return;
   if(q&&(e.c+' '+e.ni+' '+e.ne+' '+e.di+' '+e.de+' '+e.r).toLowerCase().indexOf(q)<0)return;
   if(e.u==='T'){if(!st.mese)und.push(e);return}
   const ys=st.anno==='next'?[y0,y0+1]:[+st.anno];
@@ -756,7 +756,7 @@ function calItem(it,td){const e=it.e,s=it.s,en=it.en,nm=LANG==='en'?e.ne:e.ni,ds
  if(!s){dd='·';mm=''}else{const same=s.getUTCMonth()===en.getUTCMonth();dd=it.n>1?s.getUTCDate()+'–'+en.getUTCDate():s.getUTCDate();
   mm=calFmt(s,{month:'short'}).replace('.','')+(it.n>1&&!same?' – '+calFmt(en,{month:'short'}).replace('.',''):'')+' · '+(it.n>1?'':calFmt(s,{weekday:'short'}).replace('.',''))}
  const past=en&&en<td;
- return `<li class="ce${past?' past':''}" data-c="${esc(e.c+'|'+e.p)}"><div class="cd"><b${it.n>1?' class="rg2"':''}>${dd}</b><span>${esc(mm)}</span></div><div class="cb"><h3>${esc(nm)}</h3><p class="cp"><button type="button" data-com="${esc(e.c+'|'+e.p)}" title="${esc(cT('on'))} ${esc(e.c)}">${esc(e.c)}</button> (${esc(e.p)}) · ${esc(e.r)}</p><p class="cx">${esc(ds)}</p><p class="ct"><i class="t${e.t}">${esc(cT('tipi')[e.t])}</i>${e.v?`<em>${esc(cT('ver'))}</em>`:''}${past?`<span>${esc(cT('past'))}</span>`:''}</p></div></li>`}
+ return `<li class="ce${past?' past':''}" data-c="${esc(e.c+'|'+e.p)}"><div class="cd"><b${it.n>1?' class="rg2"':''}>${dd}</b><span>${esc(mm)}</span></div><div class="cb"><h3>${esc(nm)}</h3><p class="cp"><button type="button" data-com="${esc(e.c+'|'+e.p)}" title="${esc(cT('on'))} ${esc(e.c)}">${esc(e.c)}</button> (${esc(e.p)}) · ${esc(e.r)}</p><p class="cx">${esc(ds)}</p><p class="ct"><i class="t${e.t}">${esc(cT('tipi')[e.t])}</i>${e.k?`<b class="ks">★ ${esc(cT('starT'))}</b>`:''}${e.v?`<em>${esc(cT('ver'))}</em>`:''}${past?`<span>${esc(cT('past'))}</span>`:''}</p></div></li>`}
 function calListHtml(){const {out,und,td}=calList(),st=CAL.st;let h='',last='';
  out.forEach(it=>{const k=calFmt(it.s,st.anno==='next'?{month:'long',year:'numeric'}:{month:'long'});if(k!==last){h+=`<li class="cmo" role="presentation">${esc(k)}</li>`;last=k}h+=calItem(it,td)});
  if(und.length){h+=`<li class="cmo" role="presentation">${esc(cT('und'))}</li>`;und.forEach(e=>{h+=calItem({e,s:null,en:null,n:1},td)})}
@@ -765,7 +765,7 @@ function calMapHtml(items){const m=CAL.map,b=m.b,P=(la,lo)=>[(lo-b[0])/(b[1]-b[0
  const g={};items.forEach(e=>{const k=e.c+'|'+e.p;(g[k]=g[k]||{e,n:0,t:{}}).n++;g[k].t[e.t]=1});
  let vb=[0,0,m.w,m.h];const rg=CAL.st.reg&&m.r.find(r=>r.id===CAL.st.reg.toLowerCase());
  if(rg){const n=rg.d.match(/-?\d+\.?\d*/g).map(Number);let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;for(let i=0;i+1<n.length;i+=2){x0=Math.min(x0,n[i]);x1=Math.max(x1,n[i]);y0=Math.min(y0,n[i+1]);y1=Math.max(y1,n[i+1])}const pd=.07*Math.max(x1-x0,y1-y0);vb=[x0-pd,y0-pd,x1-x0+2*pd,y1-y0+2*pd]}
- const z=Math.max(.3,Math.min(1,vb[2]/m.w*(vb[2]>=vb[3]?1:vb[3]/vb[2]))),lab=[['Puglia',42.05,17.2],['Campania',39.95,14.0],['Calabria',38.9,17.65],['Sicilia',37.2,16.45]];
+ const z=Math.max(.3,Math.min(1,vb[2]/m.w*(vb[2]>=vb[3]?1:vb[3]/vb[2]))),lab=[['Puglia',42.05,17.2],['Campania',39.95,14.0],['Calabria',38.9,17.65],['Sicilia',37.2,16.45],['Basilicata',40.05,17.05]];
  let s=`<svg viewBox="${vb.map(v=>v.toFixed(0)).join(' ')}" role="img" aria-label="${esc(cT('mapAria'))}">`;
  m.r.forEach(r=>{s+=`<path class="rg${r.f?'':' o'}" d="${r.d}"/>`});
  if(!rg)lab.forEach(l=>{const [x,y]=P(l[1],l[2]);s+=`<text class="lb" x="${x.toFixed(0)}" y="${y.toFixed(0)}">${l[0]}</text>`});
@@ -774,10 +774,10 @@ function calMapHtml(items){const m=CAL.map,b=m.b,P=(la,lo)=>[(lo-b[0])/(b[1]-b[0
  return s+'</svg>'}
 function calLegend(){return `<div class="clg">${Object.keys(cT('tipi')).map(k=>`<span class="ct"><i class="t${k}">${esc(cT('tipi')[k])}</i></span>`).join('')}</div>`}
 function calFilters(){const st=CAL.st,y0=calToday().getUTCFullYear();
- const regs=['Puglia','Campania','Calabria','Sicilia'],chip=(v,l,k,cur)=>`<button type="button" class="ch" data-f="${k}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(l)}</button>`;
+ const regs=['Puglia','Basilicata','Campania','Calabria','Sicilia'],chip=(v,l,k,cur)=>`<button type="button" class="ch" data-f="${k}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(l)}</button>`;
  const yrs=[y0,y0+1,y0+2],mo=[...Array(12)].map((_,i)=>`<option value="${i+1}"${+st.mese===i+1?' selected':''}>${esc(calFmt(new Date(Date.UTC(2026,i,1)),{month:'long'}))}</option>`).join('');
  return `<div class="cr sc" role="group" aria-label="${esc(cT('allReg'))}">${chip('',cT('allReg'),'reg',st.reg)}${regs.map(r=>chip(r,r,'reg',st.reg)).join('')}</div>
-<div class="cr sc" role="group" aria-label="${esc(cT('allTipo'))}">${chip('',cT('allTipo'),'tipo',st.tipo)}${Object.keys(cT('tipi')).map(k=>chip(k,cT('tipi')[k],'tipo',st.tipo)).join('')}</div>
+<div class="cr sc" role="group" aria-label="${esc(cT('allTipo'))}">${chip('',cT('allTipo'),'tipo',st.tipo)}${Object.keys(cT('tipi')).map(k=>chip(k,cT('tipi')[k],'tipo',st.tipo)).join('')}<button type="button" class="ch ck" data-star="1" title="${esc(cT('starH'))}" aria-pressed="${!!st.k}">★ ${esc(cT('star'))}</button></div>
 <div class="cr"><select class="cs" id="cany" aria-label="${esc(cT('anno'))}"><option value="next"${st.anno==='next'?' selected':''}>${esc(cT('next'))}</option>${yrs.map(y=>`<option value="${y}"${+st.anno===y?' selected':''}>${y}</option>`).join('')}</select><select class="cs" id="cmes" aria-label="${esc(cT('mese'))}"><option value="">${esc(cT('allMese'))}</option>${mo}</select><input class="cq" id="cq" type="search" value="${esc(st.q)}" placeholder="${esc(cT('cerca'))}" aria-label="${esc(cT('cercaL'))}"></div>
 <div class="cr"><button type="button" class="cvb" data-view="list" aria-pressed="${st.view==='list'}">${esc(cT('vList'))}</button><button type="button" class="cvb" data-view="map" aria-pressed="${st.view==='map'}">${esc(cT('vMap'))}</button></div>`}
 function calPaint(){const L=calListHtml(),st=CAL.st;
@@ -787,7 +787,8 @@ function calPaint(){const L=calListHtml(),st=CAL.st;
  const comN=st.com?st.com.split('|')[0]:'';
  document.getElementById('cn').innerHTML=`${L.n} ${esc(cT(L.n===1?'one':'many'))}${comN?`<button type="button" class="cx0" id="cclr">${esc(comN)} ✕</button>`:''}`}
 function calBind(){const st=CAL.st,root=document.getElementById('cw');
- root.onclick=e=>{const t=e.target.closest('[data-f],[data-view],[data-com],#cclr');if(!t)return;
+ root.onclick=e=>{const t=e.target.closest('[data-f],[data-view],[data-com],[data-star],#cclr');if(!t)return;
+  if(t.dataset.star){st.k=st.k?0:1;st.com='';t.setAttribute('aria-pressed',String(!!st.k));calPaint();return}
   if(t.dataset.f){st[t.dataset.f]=t.dataset.v;st.com='';calAll();return}
   if(t.dataset.view){st.view=t.dataset.view;document.getElementById('cg').dataset.v=st.view;root.querySelectorAll('.cvb').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===st.view)));return}
   if(t.id==='cclr'){st.com='';calPaint();return}
