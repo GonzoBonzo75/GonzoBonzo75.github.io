@@ -206,6 +206,45 @@ body.postv main{min-height:0}
 .row{padding:14px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:130px 1fr;gap:12px;font:400 15px/1.5 var(--sans)}
 .row span:first-child{color:var(--mut);font-size:11px;letter-spacing:.16em;text-transform:uppercase;padding-top:3px}
 .colp,.colb{width:100%;margin-inline:auto}.colp{max-width:680px}.colb{max-width:760px}
+
+.colc{width:100%;max-width:1120px;margin-inline:auto}
+.cin{max-width:640px;color:var(--fg);font:400 17px/1.55 var(--serif);margin:-8px 0 20px}.cin small{display:block;color:var(--mut);font:400 12px/1.5 var(--sans);letter-spacing:.04em;margin-top:8px}
+.cf{display:grid;gap:10px;margin:0 0 18px}.cr{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center}
+.ch{font:500 12.5px/1 var(--sans);letter-spacing:.02em;padding:9px 12px;border:1px solid var(--line);border-radius:999px;background:none;color:var(--mut);cursor:pointer;min-height:36px}
+.ch:hover{color:var(--fg);border-color:var(--mut)}.ch[aria-pressed="true"]{color:var(--bg);background:var(--fg);border-color:var(--fg)}
+.ch:focus-visible,.cs:focus-visible,.cq:focus-visible,.cvb:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.cs,.cq{font:400 14px/1 var(--sans);padding:9px 10px;min-height:36px;border:1px solid var(--line);border-radius:8px;background:var(--bg);color:var(--fg)}
+.cq{flex:1 1 180px;min-width:0}
+.cvb{display:none;font:500 12.5px/1 var(--sans);padding:9px 14px;border:1px solid var(--line);background:none;color:var(--mut);cursor:pointer;min-height:36px}
+.cvb:first-child{border-radius:999px 0 0 999px}.cvb:last-child{border-radius:0 999px 999px 0;margin-left:-1px}.cvb[aria-pressed="true"]{color:var(--bg);background:var(--fg);border-color:var(--fg)}
+.cn{color:var(--mut);font:400 13px/1.4 var(--sans);margin:0 0 6px;min-height:18px}
+.cx0{display:inline-flex;gap:6px;align-items:center;font:500 12.5px/1 var(--sans);padding:7px 10px;border:1px solid var(--accent);border-radius:999px;background:none;color:var(--accent);cursor:pointer;margin-left:6px}
+.cg{display:grid;grid-template-columns:minmax(0,1fr) 420px;gap:40px;align-items:start}
+.cm{position:sticky;top:12px}.cm svg{width:100%;height:auto;display:block;max-height:calc(100svh - 120px)}
+.cm .rg{fill:var(--tile);stroke:var(--line);stroke-width:1}.cm .rg.o{fill:none;opacity:.7}
+.cm .lb{font:500 22px/1 var(--sans);letter-spacing:.2em;fill:var(--mut);text-anchor:middle;pointer-events:none;text-transform:uppercase}
+.cm circle{stroke:var(--bg);cursor:pointer}.cm circle:hover,.cm circle.hl,.cm circle:focus-visible{stroke:var(--fg)!important;stroke-width:3px!important;outline:none}
+.mS{fill:var(--accent)}.mP{fill:var(--fg)}.mM{fill:var(--c-m)}.mA{fill:var(--c-a)}
+:root{--c-m:#2f6f9f;--c-a:#b7791f}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--c-m:#6fb0e0;--c-a:#e0a84a}}
+:root[data-theme="dark"]{--c-m:#6fb0e0;--c-a:#e0a84a}
+.cl{list-style:none;margin:0;padding:0}
+.cmo{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--mut);padding:22px 0 8px;border-bottom:1px solid var(--fg);margin:0}
+.ce{display:grid;grid-template-columns:78px 1fr;gap:4px 16px;padding:16px 0;border-bottom:1px solid var(--line)}
+.ce:hover,.ce.hl{background:linear-gradient(90deg,var(--tile),transparent)}
+.ce.past{opacity:.5}
+.cd{text-align:left}.cd b{display:block;font:400 28px/1 var(--serif);letter-spacing:-.01em;white-space:nowrap}.cd b.rg2{font-size:23px}.cd span{display:block;color:var(--mut);font:500 10.5px/1.3 var(--sans);letter-spacing:.12em;text-transform:uppercase;margin-top:5px}
+.cb h3{font:600 17px/1.25 var(--serif);margin:0 0 3px}.cp{margin:0 0 5px;color:var(--mut);font:500 12.5px/1.4 var(--sans)}.cp button{font:inherit;color:inherit;background:none;border:0;padding:0;cursor:pointer;text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}.cp button:hover{color:var(--fg)}
+.cx{margin:0 0 6px;font:400 14.5px/1.5 var(--sans)}
+.ct{margin:0;display:flex;flex-wrap:wrap;gap:4px 10px;font:500 10.5px/1.4 var(--sans);letter-spacing:.1em;text-transform:uppercase;color:var(--mut)}
+.ct i{font-style:normal;display:inline-flex;align-items:center;gap:6px}.ct i:before{content:"";width:8px;height:8px;border-radius:50%;background:currentColor}
+.ct .tS:before{background:var(--accent)}.ct .tP:before{background:var(--fg)}.ct .tM:before{background:var(--c-m)}.ct .tA:before{background:var(--c-a)}
+.ct em{font-style:normal;color:var(--accent)}
+.cnote{max-width:720px;margin:36px 0 0;color:var(--mut);font:400 13px/1.6 var(--sans)}.cnote h2{font:600 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--fg);margin:0 0 8px}.cnote p{margin:0 0 12px}.cnote a{text-decoration:underline;text-underline-offset:3px;text-decoration-color:var(--line)}.cnote a:hover{color:var(--fg)}
+.clg{display:flex;flex-wrap:wrap;gap:4px 14px;margin:10px 0 0;font:500 11px/1.4 var(--sans);letter-spacing:.08em;text-transform:uppercase;color:var(--mut)}
+@media (max-width:900px){.cg{grid-template-columns:minmax(0,1fr)}.cm{position:static}.cvb{display:inline-block}.cg[data-v="list"] .cm{display:none}.cg[data-v="map"] .cl-w .cl,.cg[data-v="map"] .cl-w .cn{display:none}.cm svg{max-height:none}}
+@media (max-width:900px){.cr.sc{flex-wrap:nowrap;overflow-x:auto;margin-inline:-16px;padding-inline:16px;scrollbar-width:none}.cr.sc::-webkit-scrollbar{display:none}.ch{flex:none}.cin{font-size:15.5px;margin-bottom:14px}.cin small{margin-top:4px}.cf{gap:8px}}
+@media (max-width:420px){.ce{grid-template-columns:62px 1fr;gap:4px 12px}.cd b{font-size:24px}.cd b.rg2{font-size:20px}}
 .fade{animation:f .5s ease both}@keyframes f{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
 @media (prefers-reduced-motion:reduce){.fade{animation:none}a.card:hover img{transform:none}}
 </style>
@@ -214,7 +253,7 @@ body.postv main{min-height:0}
 <svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><filter id="ink" x="-5%" y="-5%" width="110%" height="110%"><feTurbulence type="fractalNoise" baseFrequency="0.85" numOctaves="2" seed="7" result="n"/><feDisplacementMap in="SourceGraphic" in2="n" scale="2.4"/></filter><symbol id="hanko" viewBox="0 0 100 100"><g filter="url(#ink)"><path fill="#c23a2c" d="M12 5H88A7 7 0 0 1 95 12V88A7 7 0 0 1 88 95H12A7 7 0 0 1 5 88V12A7 7 0 0 1 12 5Z"/><path fill="#f6f3ec" fill-rule="evenodd" d="M13.7 10.5H86.3A3.2 3.2 0 0 1 89.5 13.7V86.3A3.2 3.2 0 0 1 86.3 89.5H13.7A3.2 3.2 0 0 1 10.5 86.3V13.7A3.2 3.2 0 0 1 13.7 10.5ZM14.3 12.1H85.69999999999999A2.2 2.2 0 0 1 87.89999999999999 14.3V85.69999999999999A2.2 2.2 0 0 1 85.69999999999999 87.89999999999999H14.3A2.2 2.2 0 0 1 12.1 85.69999999999999V14.3A2.2 2.2 0 0 1 14.3 12.1Z"/><path fill="#f6f3ec" d="M75.74 31.74 76.89 32.03V33.18Q75.74 33.68 74.43 34.06Q73.11 34.43 71.72 34.62Q70.33 34.81 68.94 34.81Q66.45 34.81 64.59 34.27Q62.72 33.73 61.48 32.66Q60.24 31.60 59.61 30.01Q58.99 28.42 58.99 26.32Q59.00 23.65 60.14 21.65Q61.28 19.66 63.54 18.55Q65.80 17.44 69.18 17.44Q70.29 17.44 71.35 17.60Q72.42 17.76 73.53 18.08L72.33 18.24L73.76 16.75H75.18L75.39 23.50L73.53 23.54L71.79 19.27L73.50 21.20Q72.49 20.56 71.50 20.28Q70.51 20.00 69.30 20.00Q67.87 20.00 66.84 20.33Q65.82 20.65 65.15 21.34Q64.48 22.03 64.16 23.10Q63.84 24.17 63.82 25.67Q63.80 27.96 64.49 29.42Q65.18 30.88 66.51 31.57Q67.83 32.27 69.72 32.27Q70.36 32.27 70.96 32.18Q71.56 32.10 72.13 31.90Q72.70 31.70 73.26 31.39L70.99 34.14V28.42L68.97 27.76V26.60H77.34V27.76L75.74 28.48Z M71.81 46.69V49.78V52.86H70.03L69.82 50.82H64.18V48.70H69.82L70.03 46.69ZM75.89 46.81 74.09 46.86 72.30 42.71 73.68 44.11H64.18V41.75H73.01L74.38 40.76H75.65ZM72.17 57.50 74.70 52.72 76.53 52.75 75.43 59.54H73.97L72.83 58.50H64.18V56.14H73.38ZM59.74 58.50V57.24L61.77 56.64V43.62L59.74 43.01V41.75H66.53V58.50Z M60.52 80.65V67.78L58.33 67.00V65.75H66.27L73.98 78.85L73.21 80.09V67.61L71.10 67.01V65.75H77.77V67.01L75.77 67.61V82.52H70.75L61.97 67.45L63.06 67.13V80.65L65.17 81.24V82.50H58.50V81.24Z M39.15 17.75V19.92L29.38 33.10L27.17 31.92H36.45L38.62 28.45L40.15 28.49L39.07 35.53H37.68L36.57 34.50H24.52V32.33L34.23 19.16L36.88 20.33H27.48L25.97 23.51L24.43 23.47L24.70 16.80H25.92L27.34 17.75Z M32.24 41.44Q34.33 41.44 35.98 42.04Q37.63 42.64 38.77 43.76Q39.92 44.89 40.52 46.49Q41.12 48.10 41.12 50.10Q41.12 52.12 40.47 53.72Q39.82 55.33 38.59 56.47Q37.36 57.61 35.64 58.21Q33.92 58.81 31.77 58.81Q29.67 58.81 28.02 58.21Q26.37 57.61 25.23 56.48Q24.08 55.36 23.48 53.75Q22.88 52.15 22.88 50.15Q22.88 48.13 23.53 46.52Q24.19 44.92 25.41 43.78Q26.64 42.64 28.36 42.04Q30.09 41.44 32.24 41.44ZM32.05 56.11Q33.40 56.11 34.35 55.54Q35.29 54.97 35.79 53.79Q36.28 52.61 36.28 50.78Q36.28 48.54 35.80 47.06Q35.32 45.59 34.36 44.86Q33.40 44.14 31.95 44.14Q30.61 44.14 29.66 44.71Q28.71 45.28 28.21 46.46Q27.72 47.64 27.72 49.46Q27.72 51.71 28.20 53.18Q28.68 54.66 29.64 55.39Q30.60 56.11 32.05 56.11Z M32 76.9a2.6 2.6 0 1 0 0.01 0Z"/></g></symbol></defs></svg>
 <header>
  <a class="brand" href="#home" aria-label="GENZO, home"><svg viewBox="0 0 100 100" aria-hidden="true"><use href="#hanko"/></svg></a>
- <nav aria-label="Principale"><a href="#home" data-n="home">Home</a><a href="#progress" data-n="progress">Progetti</a><a href="#blog" data-n="blog">Blog</a><a href="#profile" data-n="profile">Profilo</a><a href="#contact" data-n="contact">Contatti</a></nav>
+ <nav aria-label="Principale"><a href="#home" data-n="home">Home</a><a href="#progress" data-n="progress">Progetti</a><a href="#blog" data-n="blog">Blog</a><a href="#profile" data-n="profile">Profilo</a><a href="#contact" data-n="contact">Contatti</a><a href="#calendario" data-n="calendario">Calendario</a></nav>
  <div class="tools"><button class="tm" id="tm" type="button" aria-label="Cambia tema"></button><button class="tm lg" id="lg" type="button">EN</button></div>
 </header>
 <main id="app"></main>
@@ -263,7 +302,7 @@ let LANG='it';
 const T={
 it:{
  title:'GENZO · Fotogiornalista',desc:'Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento.',ogdesc:'Fotogiornalismo: manifestazioni, riti e città in movimento.',
- n_home:'Home',n_work:'Portfolio',n_progress:'Progetti',n_blog:'Blog',n_prints:'Stampe',n_profile:'Profilo',n_contact:'Contatti',navLabel:'Principale',
+ n_home:'Home',n_work:'Portfolio',n_progress:'Progetti',n_blog:'Blog',n_prints:'Stampe',n_profile:'Profilo',n_contact:'Contatti',n_calendario:'Calendario',navLabel:'Principale',
  footL:'© GENZO · Tutti i diritti riservati',brand:'GENZO, home',
  toLight:'Passa al tema chiaro',toDark:'Passa al tema scuro',lgBtn:'EN',lgLabel:'Switch to English',
  heroGo:'Vai ai progetti',soon:'In preparazione',
@@ -292,7 +331,7 @@ it:{
 },
 en:{
  title:'GENZO · Photojournalist',desc:'Portfolio of GENZO, photojournalist: demonstrations, rituals and cities in motion.',ogdesc:'Photojournalism: demonstrations, rituals and cities in motion.',
- n_home:'Home',n_work:'Portfolio',n_progress:'Projects',n_blog:'Blog',n_prints:'Prints',n_profile:'About',n_contact:'Contact',navLabel:'Main',
+ n_home:'Home',n_work:'Portfolio',n_progress:'Projects',n_blog:'Blog',n_prints:'Prints',n_profile:'About',n_contact:'Contact',n_calendario:'Calendar',navLabel:'Main',
  footL:'© GENZO · All rights reserved',brand:'GENZO, home',
  toLight:'Switch to light theme',toDark:'Switch to dark theme',lgBtn:'IT',lgLabel:'Passa all’italiano',
  heroGo:'Go to the projects',soon:'Coming soon',
@@ -659,10 +698,122 @@ function post(x){const ps=pick(x,'p')||[];const fig=x.img&&pick(x,'c')?`<figure 
 let gcFirst=true,gcTry=0;
 function gcCount(h){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;const g=window.goatcounter;if(!g||!g.count){if(gcTry++<20)setTimeout(()=>gcCount(h),500);return}
  try{const src=new URLSearchParams(location.search).get('src');g.count({path:(LANG==='en'?'/en':'')+'/'+h,title:document.title,referrer:gcFirst?(src||undefined):''});gcFirst=false}catch(e){}}
+
+/* ===== Calendario: feste patronali e riti della Settimana Santa ===== */
+const CAL={ev:null,map:null,err:false,st:{reg:'',tipo:'',anno:'next',mese:'',q:'',com:'',view:'list'}};
+const CT={it:{
+ sub:"Feste patronali e riti della Settimana Santa nel Sud",
+ intro:"Un calendario consultabile di feste patronali, riti della Settimana Santa e processioni di Puglia, Campania, Calabria e Sicilia. Le date si calcolano sul calendario di ogni anno: i riti pasquali si spostano con la Pasqua.",
+ pasqua:"Pasqua",allReg:"Tutte le regioni",allTipo:"Tutti i tipi",tipi:{S:"Settimana Santa e Pasqua",P:"Feste patronali",M:"Feste mariane",A:"Altri riti"},
+ next:"Prossimi 12 mesi",allMese:"Tutti i mesi",cerca:"Cerca un paese o una festa",cercaL:"Cerca",anno:"Periodo",mese:"Mese",
+ vList:"Elenco",vMap:"Mappa",none:"Nessun evento con questi filtri.",und:"Senza data fissa",ver:"data da verificare",past:"concluso",
+ one:"evento",many:"eventi",all:"Mostra tutti",on:"Solo",mapAria:"Mappa schematica del Sud Italia con gli eventi",load:"Carico il calendario…",err:"Non riesco a caricare il calendario. Riprova tra poco.",
+ dn:"Le date",
+ n1:"Le date delle feste patronali e dei riti sono ricavate dal calendario liturgico e dalle tradizioni locali, e possono cambiare di anno in anno: maltempo, scelte dei comitati e delle curie, feste spostate al fine settimana. Prima di partire verifica sempre con il comune, la parrocchia o la confraternita. Le voci con «data da verificare» sono le meno sicure; gli orari non sono indicati perché cambiano troppo spesso.",
+ n2:"Il calendario non è completo e non lo sarà mai: ogni paese ha i suoi riti. Se manca qualcosa o trovi un errore, scrivimi.",
+ write:"Scrivimi",src:"Alcune fonti consultate",
+ map:"Confini regionali: ISTAT, elaborazione Openpolis (CC BY 4.0), semplificati. La mappa è uno schema, non una cartina stradale.",
+ loc:"it-IT"},
+en:{
+ sub:"Patronal feasts and Holy Week rites in Southern Italy",
+ intro:"A searchable calendar of patronal feasts, Holy Week rites and processions in Puglia, Campania, Calabria and Sicily. Dates are calculated for each year: Easter rites move with Easter.",
+ pasqua:"Easter",allReg:"All regions",allTipo:"All types",tipi:{S:"Holy Week and Easter",P:"Patronal feasts",M:"Marian feasts",A:"Other rites"},
+ next:"Next 12 months",allMese:"All months",cerca:"Search a town or a feast",cercaL:"Search",anno:"Period",mese:"Month",
+ vList:"List",vMap:"Map",none:"No events match these filters.",und:"No fixed date",ver:"date to be checked",past:"over",
+ one:"event",many:"events",all:"Show all",on:"Only",mapAria:"Schematic map of Southern Italy with the events",load:"Loading the calendar…",err:"I can’t load the calendar right now. Please try again shortly.",
+ dn:"Dates",
+ n1:"Dates of patronal feasts and rites come from the liturgical calendar and local traditions, and can change from year to year: bad weather, decisions by committees and dioceses, feasts moved to the weekend. Always check with the town hall, the parish or the confraternity before you travel. Entries marked “date to be checked” are the least certain; times are not given because they change too often.",
+ n2:"This calendar is not complete and never will be: every town has its own rites. If something is missing or wrong, write to me.",
+ write:"Write to me",src:"Some of the sources consulted",
+ map:"Regional boundaries: ISTAT, processed by Openpolis (CC BY 4.0), simplified. The map is a diagram, not a road map.",
+ loc:"en-GB"}};
+const CSRC=[["Comune di Molfetta, libretto della Pasqua","https://www.comune.molfetta.ba.it/documenti/notizie/Libretto_MOLFETTA_PASQUA_2023_c.pdf"],["Processione dei Misteri di Trapani","https://www.processionemisteritp.it/wp-content/uploads/2026/04/La-realta-di-Trapani.pdf"],["Digital History, Università del Molise: la Settimana Santa di Caltanissetta","https://digitalhistory.unite.it/en/themes/festivals/the-holy-week-of-caltanissetta/"],["Balarm: la Festa dei Giudei a San Fratello","https://www.balarm.it/eventi/la-festa-dei-giudei-l-antica-e-caratteristica-settimana-santa-a-san-fratello-82902"],["Balarm: l’Abballu dei Diavoli e gli altri riti pasquali","https://www.balarm.it/news/la-real-maestranza-l-abballu-dei-diavoli-le-lamentanze-in-sicilia-e-tempo-di-pasqua-129031"],["Touring Club: Settimana Santa a Petralia Sottana","https://www.touringclub.it/notizie/bandiere-arancioni/le-tradizioni-della-settimana-santa-petralia-sottana"],["Volo Scontato: Settimana Santa in Puglia","https://www.voloscontato.it/sagre-ed-eventi/settimana-santa-2026-in-puglia-quando-dove-e-info.php"]];
+const cT=k=>CT[LANG][k];
+function easter(y){const a=y%19,b=Math.floor(y/100),c=y%100,d=Math.floor(b/4),e=b%4,f=Math.floor((b+8)/25),g=Math.floor((b-f+1)/3),h=(19*a+b-d-g+15)%30,i=Math.floor(c/4),k=c%4,l=(32+2*e+2*i-h-k)%7,m=Math.floor((a+11*h+22*l)/451),mo=Math.floor((h+l-7*m+114)/31),da=((h+l-7*m+114)%31)+1;return new Date(Date.UTC(y,mo-1,da))}
+const addD=(d,n)=>new Date(d.getTime()+n*864e5);
+function occ(u,y){let r;
+ if(r=u.match(/^E([+-]?\d+)(?:\/(\d+))?$/))return{s:addD(easter(y),+r[1]),n:+(r[2]||1)};
+ if(r=u.match(/^D (\d+)\/(\d+)(?:\/(\d+))?$/))return{s:new Date(Date.UTC(y,r[1]-1,+r[2])),n:+(r[3]||1)};
+ if(r=u.match(/^N (\d+)\/(\d|L)\/(\d)([+-]\d+)?$/)){const mo=+r[1]-1,w=+r[3];let d;if(r[2]==='L'){d=new Date(Date.UTC(y,mo+1,0));d=addD(d,-((d.getUTCDay()-w+7)%7))}else{d=new Date(Date.UTC(y,mo,1));d=addD(d,(w-d.getUTCDay()+7)%7+7*(+r[2]-1))}return{s:addD(d,+(r[4]||0)),n:1}}
+ if(r=u.match(/^S (\d+)\/(\d+)\/(\d)$/)){const d=new Date(Date.UTC(y,r[1]-1,+r[2]));return{s:addD(d,(+r[3]-d.getUTCDay()+7)%7),n:1}}
+ return null}
+function calToday(){const n=new Date();return new Date(Date.UTC(n.getFullYear(),n.getMonth(),n.getDate()))}
+function calList(){const st=CAL.st,td=calToday(),y0=td.getUTCFullYear(),out=[],und=[];
+ const q=st.q.trim().toLowerCase();
+ CAL.ev.forEach(e=>{
+  if(st.reg&&e.r!==st.reg)return;if(st.tipo&&e.t!==st.tipo)return;if(st.com&&e.c+'|'+e.p!==st.com)return;
+  if(q&&(e.c+' '+e.ni+' '+e.ne+' '+e.di+' '+e.de+' '+e.r).toLowerCase().indexOf(q)<0)return;
+  if(e.u==='T'){if(!st.mese)und.push(e);return}
+  const ys=st.anno==='next'?[y0,y0+1]:[+st.anno];
+  ys.forEach(y=>{const o=occ(e.u,y);if(!o)return;const en=addD(o.s,o.n-1);
+   if(st.anno==='next'&&(en<td||o.s>=addD(td,366)))return;
+   if(st.mese&&o.s.getUTCMonth()+1!==+st.mese)return;
+   out.push({e,s:o.s,en,n:o.n})})});
+ out.sort((a,b)=>a.s-b.s||a.e.id-b.e.id);return{out,und,td}}
+const calFmt=(d,o)=>d.toLocaleDateString(cT('loc'),Object.assign({timeZone:'UTC'},o));
+function calItem(it,td){const e=it.e,s=it.s,en=it.en,nm=LANG==='en'?e.ne:e.ni,ds=LANG==='en'?e.de:e.di;
+ let dd,mm;
+ if(!s){dd='·';mm=''}else{const same=s.getUTCMonth()===en.getUTCMonth();dd=it.n>1?s.getUTCDate()+'–'+en.getUTCDate():s.getUTCDate();
+  mm=calFmt(s,{month:'short'}).replace('.','')+(it.n>1&&!same?' – '+calFmt(en,{month:'short'}).replace('.',''):'')+' · '+(it.n>1?'':calFmt(s,{weekday:'short'}).replace('.',''))}
+ const past=en&&en<td;
+ return `<li class="ce${past?' past':''}" data-c="${esc(e.c+'|'+e.p)}"><div class="cd"><b${it.n>1?' class="rg2"':''}>${dd}</b><span>${esc(mm)}</span></div><div class="cb"><h3>${esc(nm)}</h3><p class="cp"><button type="button" data-com="${esc(e.c+'|'+e.p)}" title="${esc(cT('on'))} ${esc(e.c)}">${esc(e.c)}</button> (${esc(e.p)}) · ${esc(e.r)}</p><p class="cx">${esc(ds)}</p><p class="ct"><i class="t${e.t}">${esc(cT('tipi')[e.t])}</i>${e.v?`<em>${esc(cT('ver'))}</em>`:''}${past?`<span>${esc(cT('past'))}</span>`:''}</p></div></li>`}
+function calListHtml(){const {out,und,td}=calList(),st=CAL.st;let h='',last='';
+ out.forEach(it=>{const k=calFmt(it.s,st.anno==='next'?{month:'long',year:'numeric'}:{month:'long'});if(k!==last){h+=`<li class="cmo" role="presentation">${esc(k)}</li>`;last=k}h+=calItem(it,td)});
+ if(und.length){h+=`<li class="cmo" role="presentation">${esc(cT('und'))}</li>`;und.forEach(e=>{h+=calItem({e,s:null,en:null,n:1},td)})}
+ return{h:h||`<li class="cx" style="padding:24px 0;color:var(--mut)">${esc(cT('none'))}</li>`,n:out.length+und.length,out,und}}
+function calMapHtml(items){const m=CAL.map,b=m.b,P=(la,lo)=>[(lo-b[0])/(b[1]-b[0])*m.w,(b[3]-la)/(b[3]-b[2])*m.h];
+ const g={};items.forEach(e=>{const k=e.c+'|'+e.p;(g[k]=g[k]||{e,n:0,t:{}}).n++;g[k].t[e.t]=1});
+ let vb=[0,0,m.w,m.h];const rg=CAL.st.reg&&m.r.find(r=>r.id===CAL.st.reg.toLowerCase());
+ if(rg){const n=rg.d.match(/-?\d+\.?\d*/g).map(Number);let x0=1e9,x1=-1e9,y0=1e9,y1=-1e9;for(let i=0;i+1<n.length;i+=2){x0=Math.min(x0,n[i]);x1=Math.max(x1,n[i]);y0=Math.min(y0,n[i+1]);y1=Math.max(y1,n[i+1])}const pd=.07*Math.max(x1-x0,y1-y0);vb=[x0-pd,y0-pd,x1-x0+2*pd,y1-y0+2*pd]}
+ const z=Math.max(.3,Math.min(1,vb[2]/m.w*(vb[2]>=vb[3]?1:vb[3]/vb[2]))),lab=[['Puglia',42.05,17.2],['Campania',39.95,14.0],['Calabria',38.9,17.65],['Sicilia',37.2,16.45]];
+ let s=`<svg viewBox="${vb.map(v=>v.toFixed(0)).join(' ')}" role="img" aria-label="${esc(cT('mapAria'))}">`;
+ m.r.forEach(r=>{s+=`<path class="rg${r.f?'':' o'}" d="${r.d}"/>`});
+ if(!rg)lab.forEach(l=>{const [x,y]=P(l[1],l[2]);s+=`<text class="lb" x="${x.toFixed(0)}" y="${y.toFixed(0)}">${l[0]}</text>`});
+ Object.keys(g).forEach(k=>{const o=g[k],e=o.e,[x,y]=P(e.la,e.lo),r=(9+Math.min(o.n,5)*2)*z,tp=o.t.S?'S':e.t;
+  s+=`<circle class="m${tp}" cx="${x.toFixed(1)}" cy="${y.toFixed(1)}" r="${r.toFixed(1)}" style="stroke-width:${(1.5*z).toFixed(2)}px" data-com="${esc(k)}" tabindex="0" role="button" aria-label="${esc(e.c)}: ${o.n}"><title>${esc(e.c)} (${esc(e.p)}): ${o.n}</title></circle>`});
+ return s+'</svg>'}
+function calLegend(){return `<div class="clg">${Object.keys(cT('tipi')).map(k=>`<span class="ct"><i class="t${k}">${esc(cT('tipi')[k])}</i></span>`).join('')}</div>`}
+function calFilters(){const st=CAL.st,y0=calToday().getUTCFullYear();
+ const regs=['Puglia','Campania','Calabria','Sicilia'],chip=(v,l,k,cur)=>`<button type="button" class="ch" data-f="${k}" data-v="${esc(v)}" aria-pressed="${cur===v}">${esc(l)}</button>`;
+ const yrs=[y0,y0+1,y0+2],mo=[...Array(12)].map((_,i)=>`<option value="${i+1}"${+st.mese===i+1?' selected':''}>${esc(calFmt(new Date(Date.UTC(2026,i,1)),{month:'long'}))}</option>`).join('');
+ return `<div class="cr sc" role="group" aria-label="${esc(cT('allReg'))}">${chip('',cT('allReg'),'reg',st.reg)}${regs.map(r=>chip(r,r,'reg',st.reg)).join('')}</div>
+<div class="cr sc" role="group" aria-label="${esc(cT('allTipo'))}">${chip('',cT('allTipo'),'tipo',st.tipo)}${Object.keys(cT('tipi')).map(k=>chip(k,cT('tipi')[k],'tipo',st.tipo)).join('')}</div>
+<div class="cr"><select class="cs" id="cany" aria-label="${esc(cT('anno'))}"><option value="next"${st.anno==='next'?' selected':''}>${esc(cT('next'))}</option>${yrs.map(y=>`<option value="${y}"${+st.anno===y?' selected':''}>${y}</option>`).join('')}</select><select class="cs" id="cmes" aria-label="${esc(cT('mese'))}"><option value="">${esc(cT('allMese'))}</option>${mo}</select><input class="cq" id="cq" type="search" value="${esc(st.q)}" placeholder="${esc(cT('cerca'))}" aria-label="${esc(cT('cercaL'))}"></div>
+<div class="cr"><button type="button" class="cvb" data-view="list" aria-pressed="${st.view==='list'}">${esc(cT('vList'))}</button><button type="button" class="cvb" data-view="map" aria-pressed="${st.view==='map'}">${esc(cT('vMap'))}</button></div>`}
+function calPaint(){const L=calListHtml(),st=CAL.st;
+ document.getElementById('cl').innerHTML=L.h;
+ const its=L.out.map(i=>i.e).concat(L.und);
+ document.getElementById('cmap').innerHTML=calMapHtml(its);
+ const comN=st.com?st.com.split('|')[0]:'';
+ document.getElementById('cn').innerHTML=`${L.n} ${esc(cT(L.n===1?'one':'many'))}${comN?`<button type="button" class="cx0" id="cclr">${esc(comN)} ✕</button>`:''}`}
+function calBind(){const st=CAL.st,root=document.getElementById('cw');
+ root.onclick=e=>{const t=e.target.closest('[data-f],[data-view],[data-com],#cclr');if(!t)return;
+  if(t.dataset.f){st[t.dataset.f]=t.dataset.v;st.com='';calAll();return}
+  if(t.dataset.view){st.view=t.dataset.view;document.getElementById('cg').dataset.v=st.view;root.querySelectorAll('.cvb').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===st.view)));return}
+  if(t.id==='cclr'){st.com='';calPaint();return}
+  if(t.dataset.com){st.com=st.com===t.dataset.com?'':t.dataset.com;if(st.com&&matchMedia('(max-width:900px)').matches){st.view='list';document.getElementById('cg').dataset.v='list';root.querySelectorAll('.cvb').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view==='list')))}calPaint()}};
+ root.onkeydown=e=>{if((e.key==='Enter'||e.key===' ')&&e.target.matches('circle[data-com]')){e.preventDefault();e.target.dispatchEvent(new MouseEvent('click',{bubbles:true}))}};
+ root.onchange=e=>{if(e.target.id==='cany'){st.anno=e.target.value;st.com='';calPaint()}else if(e.target.id==='cmes'){st.mese=e.target.value;st.com='';calPaint()}};
+ root.oninput=e=>{if(e.target.id==='cq'){st.q=e.target.value;st.com='';calPaint()}};
+ root.onmouseover=e=>{const li=e.target.closest('.ce');root.querySelectorAll('circle.hl').forEach(c=>c.classList.remove('hl'));if(li){const c=[...root.querySelectorAll('circle[data-com]')].find(x=>x.dataset.com===li.dataset.c);if(c)c.classList.add('hl')}}}
+function calAll(){document.getElementById('cf').innerHTML=calFilters();calPaint()}
+function calBody(){const y0=calToday().getUTCFullYear(),ps=[y0,y0+1,y0+2].map(y=>calFmt(easter(y),{day:'numeric',month:'long',year:'numeric'}));
+ const st=CAL.st;
+ app.innerHTML=`<div class="fade colc" id="cw"><h1 class="pt">${esc(t('n_calendario'))}</h1><p class="sub">${esc(cT('sub'))}</p>
+<p class="cin">${esc(cT('intro'))}<small>${esc(cT('pasqua'))}: ${esc(ps.join(' · '))}</small></p>
+<div class="cg" id="cg" data-v="${st.view}"><div class="cl-w"><div class="cf" id="cf"></div><p class="cn" id="cn" aria-live="polite"></p><ul class="cl" id="cl"></ul></div><div class="cm"><div id="cmap"></div>${calLegend()}</div></div>
+<div class="cnote"><h2>${esc(cT('dn'))}</h2><p>${esc(cT('n1'))}</p><p>${esc(cT('n2'))} <a href="#contact">${esc(cT('write'))}</a>.</p>
+<h2>${esc(cT('src'))}</h2><p>${CSRC.map(s=>`<a href="${s[1]}" target="_blank" rel="noopener">${esc(s[0])}</a>`).join(' · ')}</p><p>${esc(cT('map'))}</p></div></div>`;
+ calAll();calBind()}
+function calendario(){
+ if(CAL.ev&&CAL.map){calBody();return}
+ app.innerHTML=`<div class="fade colc"><h1 class="pt">${esc(t('n_calendario'))}</h1><p class="sub">${esc(cT('sub'))}</p><p class="cin" id="cld">${esc(cT(CAL.err?'err':'load'))}</p></div>`;
+ const base=/(^|\.)bonesph\.com$/.test(location.hostname)?'/data/':'data/';
+ Promise.all([fetch(base+'calendario.json').then(r=>{if(!r.ok)throw 0;return r.json()}),fetch(base+'mappa-sud.json').then(r=>{if(!r.ok)throw 0;return r.json()})]).then(a=>{CAL.ev=a[0].ev;CAL.map=a[1];CAL.err=false;if((location.hash||'').slice(1)==='calendario')calBody()}).catch(()=>{CAL.err=true;const c=document.getElementById('cld');if(c)c.textContent=cT('err')})}
 function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');document.body.classList.remove('postv');cur=null;
  document.querySelectorAll('nav a').forEach(a=>{const n=a.dataset.n;const on=h===n||(n==='progress'&&PROJ.some(p=>p.id===h&&!p.soon))||(n==='blog'&&h.indexOf('blog-')===0);on?a.setAttribute('aria-current','page'):a.removeAttribute('aria-current')});
  const p=PROJ.find(q=>q.id===h&&!q.soon);
- if(p)proj(p);else if(h==='work'&&SHOW_PORTFOLIO)work();else if(h==='gallery')gallery();else if(h==='progress')progress();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='prints'&&SHOW_PRINTS)prints();else if(h==='profile')profile();else if(h==='contact')contact();else home();
+ if(p)proj(p);else if(h==='work'&&SHOW_PORTFOLIO)work();else if(h==='gallery')gallery();else if(h==='progress')progress();else if(h==='blog')blog();else if(h.indexOf('blog-')===0&&BLOG.some(q=>'blog-'+q.id===h))post(BLOG.find(q=>'blog-'+q.id===h));else if(h==='prints'&&SHOW_PRINTS)prints();else if(h==='profile')profile();else if(h==='contact')contact();else if(h==='calendario')calendario();else home();
  window.scrollTo(0,0);gcCount(h)}
 addEventListener('hashchange',route);
 addEventListener('keydown',e=>{if(!cur)return;if(e.key==='ArrowRight')go(1);else if(e.key==='ArrowLeft')go(-1)});
