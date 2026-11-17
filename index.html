@@ -703,6 +703,7 @@ function gcCount(h){if(!/(^|\.)bonesph\.com$/.test(location.hostname))return;con
 const CALH='62bfb8f2ccafe4155757a8be95c751dcad98d4baa19b31003d2f5ed512925efb',CALF=[CALH.slice(0,8)];
 const CAL={ev:null,map:null,err:false,chk:{},st:{reg:'',tipo:'',anno:'next',mese:'',q:'',com:'',view:'list',k:0}};
 const CT={it:{
+ title:"Calendario Italia",
  sub:"Riti di devozione estrema e particolare nel Sud",
  intro:"Solo i riti in cui la fede passa dal corpo o dall'eccesso: sangue, penitenza, scalzi, ceri, torce, maschere, miracoli. Puglia, Basilicata, Campania, Calabria e Sicilia. Niente feste patronali ordinarie né semplici processioni. Le date si calcolano sul calendario di ogni anno: i riti pasquali si spostano con la Pasqua.",
  pasqua:"Pasqua",allReg:"Tutte le regioni",allTipo:"Tutti i tipi",tipi:{S:"Sangue e penitenza",P:"Corpo, fatica e voto",M:"Fuoco e rischio",A:"Riti arcaici e culti singolari"},
@@ -716,6 +717,7 @@ const CT={it:{
  map:"Confini regionali: ISTAT, elaborazione Openpolis (CC BY 4.0), semplificati. La mappa è uno schema, non una cartina stradale.",
  loc:"it-IT"},
 en:{
+ title:"Italy Calendar",
  sub:"Rites of extreme and singular devotion in the South",
  intro:"Only rites where faith passes through the body or excess: blood, penance, bare feet, candles, torches, masks, miracles. Puglia, Basilicata, Campania, Calabria and Sicily. No ordinary patronal feasts or plain processions. Dates are calculated for each year: Easter rites move with Easter.",
  pasqua:"Easter",allReg:"All regions",allTipo:"All types",tipi:{S:"Blood and penance",P:"Body, endurance and vows",M:"Fire and risk",A:"Archaic rites and singular cults"},
@@ -801,7 +803,7 @@ function calBind(){const st=CAL.st,root=document.getElementById('cw');
 function calAll(){document.getElementById('cf').innerHTML=calFilters();calPaint()}
 function calBody(){const y0=calToday().getUTCFullYear(),ps=[y0,y0+1,y0+2].map(y=>calFmt(easter(y),{day:'numeric',month:'long',year:'numeric'}));
  const st=CAL.st;
- app.innerHTML=`<div class="fade colc" id="cw"><h1 class="pt">${esc(t('n_calendario'))}</h1><p class="sub">${esc(cT('sub'))}</p>
+ app.innerHTML=`<div class="fade colc" id="cw"><h1 class="pt">${esc(cT('title'))}</h1><p class="sub">${esc(cT('sub'))}</p>
 <p class="cin">${esc(cT('intro'))}<small>${esc(cT('pasqua'))}: ${esc(ps.join(' · '))}</small></p>
 <div class="cg" id="cg" data-v="${st.view}"><div class="cl-w"><div class="cf" id="cf"></div><p class="cn" id="cn" aria-live="polite"></p><ul class="cl" id="cl"></ul></div><div class="cm"><div id="cmap"></div>${calLegend()}</div></div>
 <div class="cnote"><h2>${esc(cT('dn'))}</h2><p>${esc(cT('n1'))}</p><p>${esc(cT('n2'))} <a href="#contact">${esc(cT('write'))}</a>.</p>
@@ -814,7 +816,7 @@ function calGate(h){if(CAL.chk[h]===true){calendario();return true}
  app.innerHTML='';calSha(h).then(ok=>{CAL.chk[h]=ok;if((location.hash||'').slice(1)===h)route()});return true}
 function calendario(){
  if(CAL.ev&&CAL.map){calBody();return}
- app.innerHTML=`<div class="fade colc"><h1 class="pt">${esc(t('n_calendario'))}</h1><p class="sub">${esc(cT('sub'))}</p><p class="cin" id="cld">${esc(cT(CAL.err?'err':'load'))}</p></div>`;
+ app.innerHTML=`<div class="fade colc"><h1 class="pt">${esc(cT('title'))}</h1><p class="sub">${esc(cT('sub'))}</p><p class="cin" id="cld">${esc(cT(CAL.err?'err':'load'))}</p></div>`;
  const base=(/(^|\.)bonesph\.com$/.test(location.hostname)?'/data/':'data/');
  Promise.all([fetch(base+'c'+CALF[0]+'_v3.json').then(r=>{if(!r.ok)throw 0;return r.json()}),fetch(base+'m'+CALF[0]+'.json').then(r=>{if(!r.ok)throw 0;return r.json()})]).then(a=>{CAL.ev=a[0].ev;CAL.map=a[1];CAL.err=false;if(CAL.chk[(location.hash||'').slice(1)]===true)calBody()}).catch(()=>{CAL.err=true;const c=document.getElementById('cld');if(c)c.textContent=cT('err')})}
 function route(){clearInterval(heroT);const h=(location.hash||'#home').slice(1);document.body.classList.toggle('home',h==='home');document.body.classList.remove('postv');cur=null;
