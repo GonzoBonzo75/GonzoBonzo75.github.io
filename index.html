@@ -63,6 +63,7 @@ footer{padding:22px 0 26px;font:400 12px/1.5 var(--sans);color:var(--mut);displa
 .hero .tip p.tl{align-self:flex-start;font:italic 400 clamp(17px,1.6vw,21px)/1.4 var(--serif);letter-spacing:.1em;text-transform:uppercase;text-decoration:underline;text-decoration-color:#c23a2c;text-decoration-thickness:2px;text-underline-offset:8px}
 .hero .cap{display:none}
 @media (max-width:640px){.hero .tip{padding:56px 18px 22px;gap:8px}.hero .tip p{font-size:17px}.hero .tip p.tl{font-size:15px}}
+footer a{color:inherit;text-decoration:underline;text-underline-offset:2px}footer a:hover{color:var(--ink,inherit)}
 body.home footer{margin-top:18px}
 /* work */
 h1.pt{font:400 clamp(30px,5vw,46px)/1.1 var(--serif);letter-spacing:-.01em;margin:30px 0 6px}
@@ -259,7 +260,7 @@ body.postv main{min-height:0}
  <div class="tools"><button class="tm" id="tm" type="button" aria-label="Cambia tema"></button><button class="tm lg" id="lg" type="button">EN</button></div>
 </header>
 <main id="app"></main>
-<footer><span id="fl">© GENZO · Tutti i diritti riservati</span></footer>
+<footer><span id="fl">© GENZO · Tutti i diritti riservati</span><span id="fr"></span></footer>
 <script>
 const SHOW_PORTFOLIO=false; /* Portfolio nascosto: per riattivarlo metti true e rimetti il link #work nel menu */
 const SHOW_PRINTS=false; /* Stampe nascosta: per riattivarla metti true e rimetti il link #prints nel menu */
@@ -327,7 +328,7 @@ const T={
 it:{
  title:'GENZO · Fotogiornalista',desc:'Portfolio di GENZO, fotogiornalista: manifestazioni, riti e città in movimento.',ogdesc:'Fotogiornalismo: manifestazioni, riti e città in movimento.',
  n_home:'Home',n_work:'Portfolio',n_progress:'Progetti',n_blog:'Blog',n_prints:'Stampe',n_profile:'Profilo',n_contact:'Contatti',n_calendario:'Calendario',navLabel:'Principale',
- footL:'© GENZO · Tutti i diritti riservati',brand:'GENZO, home',
+ footL:'© GENZO · Tutti i diritti riservati',footR:'Sito realizzato da <a href="https://www.ilvetrinista.it" target="_blank" rel="noopener">Il Vetrinista</a>',brand:'GENZO, home',
  toLight:'Passa al tema chiaro',toDark:'Passa al tema scuro',lgBtn:'EN',lgLabel:'Switch to English',
  heroGo:'Vai ai progetti',soon:'In preparazione',
  workSub:'Le fotografie scelte',workSoon:'Qui arriverà una selezione delle fotografie che meritano di più. I lavori completi, intanto, sono sotto Progetti.',
@@ -356,7 +357,7 @@ it:{
 en:{
  title:'GENZO · Photojournalist',desc:'Portfolio of GENZO, photojournalist: demonstrations, rituals and cities in motion.',ogdesc:'Photojournalism: demonstrations, rituals and cities in motion.',
  n_home:'Home',n_work:'Portfolio',n_progress:'Projects',n_blog:'Blog',n_prints:'Prints',n_profile:'About',n_contact:'Contact',n_calendario:'Calendar',navLabel:'Main',
- footL:'© GENZO · All rights reserved',brand:'GENZO, home',
+ footL:'© GENZO · All rights reserved',footR:'Website by <a href="https://www.ilvetrinista.it" target="_blank" rel="noopener">Il Vetrinista</a>',brand:'GENZO, home',
  toLight:'Switch to light theme',toDark:'Switch to dark theme',lgBtn:'IT',lgLabel:'Passa all’italiano',
  heroGo:'Go to the projects',soon:'Coming soon',
  workSub:'Selected photographs',workSoon:'A selection of my best photographs will be here. In the meantime, the complete projects are under Projects.',
@@ -396,7 +397,7 @@ function applyLang(){document.documentElement.lang=LANG;document.title=t('title'
  setMeta('meta[name="description"]',t('desc'));setMeta('meta[property="og:title"]',t('title'));setMeta('meta[property="og:description"]',t('ogdesc'));
  document.querySelectorAll('nav a').forEach(a=>{a.textContent=t('n_'+a.dataset.n)});
  $('nav').setAttribute('aria-label',t('navLabel'));$('.brand').setAttribute('aria-label',t('brand'));
- $('#fl').textContent=t('footL');
+ $('#fl').textContent=t('footL');$('#fr').innerHTML=t('footR');
  const b=$('#lg');b.textContent=t('lgBtn');b.setAttribute('aria-label',t('lgLabel'));b.title=t('lgLabel');paintTm()}
 $('#lg').onclick=()=>{LANG=LANG==='it'?'en':'it';try{localStorage.setItem(LANG_KEY,LANG)}catch(e){}applyLang();const y=window.scrollY;route();window.scrollTo(0,y)};
 const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
